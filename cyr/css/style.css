@@ -119,6 +119,26 @@ div.footer {
     text-align: justify;
 }
 
+a.imejl {
+    text-decoration: none;
+}
+
+a.imejl:link {
+    color: white;        
+}
+
+a.imejl:visited {
+    color: white;        
+}
+
+a.imejl:active {
+    color: white;        
+}
+
+a.imejl:hover {
+    color: pink;        
+}
+
 /* settings for each instance, messy  */
 #home {
     position: fixed;

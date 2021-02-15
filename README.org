@@ -1,6 +1,7 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
-#+TITLE: My homepage
+#+TITLE: I have a personal website
+***** no kidding
 ** What is this repository?
    This repository I use for storing the source code for my personal
    webpage. As I am a [[mimuw.edu.pl][MIMUW]] student I have my quota on the

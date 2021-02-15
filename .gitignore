@@ -1,0 +1,44 @@
+
+Makefile
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+.\#*
+
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+### OCaml ###
+*.cmo
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+
+### LaTeX ###
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb

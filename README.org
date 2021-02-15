@@ -1,0 +1,15 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+#+TITLE: My homepage
+** What is this repository?
+   This repository I use for storing the source code for my personal
+   webpage. As I am a [[mimuw.edu.pl][MIMUW]] student I have my quota on the
+   ~students.mimuw.edu.pl~ server where I can host this page (among
+   other things). You can acces it [[https://students.mimuw.edu.pl/~gc429174/][*here*]]. For know it is all in the
+   [[file:cyr][~cyr~]] directory as it is based on my old project involving
+   cyryllics and html etc but now it suffices... Although in future I
+   may try to replace it with some /nice/ webpage like jekyll etc you
+   know what im talking about. I'm not into webdev atm but perhaps
+   I'll gain some proficiency in future.
+
+**** tldr: it is all an elaborate joke in a sense

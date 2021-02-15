@@ -1,0 +1,97 @@
+/* głupoty jakieś ale facetka kazala */
+
+body {
+    background-color: #333;
+    /* height: 100%; */
+    /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ee/Yus.svg), */
+    /*   url(https://www.hd-wallpapersdownload.com/script/bulk-upload/desktop-wallpaper-black-white-red-dowload.jpg), */
+    /*   linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)); */
+  /* background-repeat: no-repeat, */
+  /*     no-repeat, */
+  /*     no-repeat; */
+  /* background-position: right 5% bottom 350%, */
+  /*     left, */
+    /*     right 0% bottom 300%; */    
+}
+
+div.menu {
+    background-color: #333;
+    width: 120px;
+    height: 80px;
+    border-style: inset;
+    border-color: #ff0066;
+    left: 2%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    color: #CACECE;
+    white-space: normal;
+    position: fixed;
+    top: 50px;
+    z-index: 2;
+}
+div.menu:hover {
+    animation-name: col_ch;
+    animation-duration: 2s;
+}
+div.menu:active {
+    color: black;
+}
+a.menuLink:link {
+    color: #000;
+    text-decoration:none;
+    font-weight:normal;
+}
+a.menuLink:visited {
+    color: #000;
+    text-decoration:none;
+    font-weight:normal;
+}
+
+
+img {
+    postion: relative;
+    left: 10px;
+    width: 100px;
+    height: auto;
+}
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width: 30vh;/* 400px; */
+    height:auto;
+    display:block;
+    z-index:999;
+}
+
+#ibj {
+    top: 20px;
+}
+.container {
+    position: absolute;
+    width: 60%;
+    /* z-index: 15; */
+    /* left: 35%; */
+    top: 50px;
+    left: 25%;
+    width: 60%;
+    height: 400px;
+    margin:  auto;  /*-100px 0 0 -150px; */
+    background-color: #eee;
+    border-style: inset;
+    border-color: #0808ff;
+    text-align: justify;
+}
+
+
+@keyframes col_ch{
+    0% {
+        background-color: #333;
+    }
+
+    100% {
+        background-color: #EB360C;
+    }
+}/*dreffe*/

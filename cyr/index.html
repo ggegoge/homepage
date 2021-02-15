@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+  <title>Grzegorz Cichosz</title>
+
+  <head>
+    <!-- main js file -->
+    <script type="text/javascript" src="js/dict.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Piazzolla&family=Roboto&family=Roboto+Slab&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Piazzolla&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!-- Page styling -->
+    <link rel="stylesheet" type="text/css"
+          href="css/style.css?v=2">
+  </head>
+
+  <body>
+
+    <div class="top" id="1">
+      <div class="toptext">
+        <h1>Grzegorz Cichosz</h1>
+        <h5 id="xd">strona domowa, strona mimuwowa</h5>
+      </div>
+    </div>
+
+    <!-- <img sierp i muout -->
+    
+  <div class="allme">
+    <a  class="menuLink" href="#">
+      <div class="menu" id="home">strona główna</div>
+    </a>
+    <a  class="menuLink" href="#cyr">
+      <div class="menu" id="Cyrylizator">cyrylarz</div>
+    </a>
+    <a  class="menuLink" href="#jak">
+      <div class="menu" id="hows">o mnie</div>
+    </a>
+    <a  class="menuLink" href="#things">
+      <div class="menu" id="rzeczy">rzeczy</div>
+    </a>
+    <a class="menuLink"
+    href="#info">
+      <div class="menu" id="more">fajne rzeczy</div>
+    </a>
+    <a class="menuLink"
+    href="terkes.html">
+      <div class="menu" id="kicerkes">sekret</div>
+    </a>
+  </div>
+
+  <div class="footer">
+    copyleft (☭) grzegorz cichosz 2021 <br>
+    (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz g
+  </div>
+  
+  <div class="vsjo">
+    <div class="text" id="main">
+      <h2>Co to za strona do diabła?</h2>
+      <p>To moja strona autorska należąca do studentu wydziału
+        mimuw.</p>
+      <p>Powstała na bazie dawnego projektu sprzed wieków jaki
+      robiłem na informatykę w liceum. Pozostałości wciąż widać w
+      sekcji dotyczącej <a id="linek" href="#cyr">cyrylarza.</a> Cała
+      stronka w plain htmlu spod mojej ręki 3 lata temu z małymi edycjami w 2021
+        roku. </p>
+      <p>Dam tu linki do swoich archiwów i może jakieś fajne
+      rzeczy. Na przyszłość chciałbym zrobić sobie fajniejszą i
+      ładniejszą stronę w jakimś jekyllu czy czymś. Ale nie od razu
+        Rzym zbudowano amrite</p>      
+    </div>
+
+    <div class="text" id="cyr">
+      <h2>Cyrylarz i Metodziarz</h2>
+      <p>
+        Cyrylizator to narzędzie tłumaczące język polski, zapisane w
+        nim frazy, na polską cyrylicę. Czym jest polska cyrylica
+        wyjaśnilśmy na samym <a id="linek" href="#main">początku</a>.
+      </p>
+      <p>
+        W to pole tekstowe wpisz jakiś tekst. W celu tłumaczeniu
+        większych tekstów radzę udać się <a id="linek"
+                                          href="cyryling.html">tutaj</a>.
+      </p>
+      <p>
+        Zrobiłem też z tego wtyczkę do Chrome'a, ale nawet nie
+        korzystam z tej wyszukiwarki, więc trudno mi powiedzieć, czy zniosła
+        próbę czasu. Obejrzeć kod można <a id = "linek"
+                                           href="https://github.com/test0wanie/Cyrylizing-Polish-extension"
+                                           target="_blank"
+                                           rel="noopener
+                                              noreferrer">
+          o tu </a>.
+      </p>
+      <textarea cols=80 rows=10 id="input">wpisz tu tekst gościu...</textarea>
+      <p>
+        <input id="submit" type="button" value="Cyrylyzuj polski tekst"
+               onclick="begin()">
+      </p>
+      <p id ="output"></p>
+    </div>
+
+    <div class="text" id="jak">
+      <h2> O mnie</h2>
+      <p>
+        Dawniej trzymałem tutaj inforamcje o tym jak działa cyrylarz,
+        ale teraz chyba lepiej będzie tutaj zamieścić informacje o
+        sobie.
+      </p>
+      <p>
+        Otóż nazywam się Grzegorz i jestem studentem na
+        tzw <a id="linek" href="mimuw.edu.pl">mimuwie</a> i to moja
+        strona domowa szumnie mówiąc. Aktualnie jestem po udanym
+        zdaniu pierwszego semestru i... w zasadzie tyle. Nie mam wiele
+        więcej do dodania.
+      </p>
+    <!--   <p>Samo "dictionary" utworzyłem dzięki <a href="">temu</a> zestawowi komend w <i>C#</i><br>
+     -     Nie wystarczał on do moich celów - nie znam C# i nie da się go przeglądarkowo
+     -     zaimplementować bez jakiegoś serwera/localhosta. Dlatego skopiowałem cały kod
+     -     i za pomocą pythona zmieniłem to w dictionary o takiej strukturze: <br>
+     -   <code>RegExPol: RegExCyr</code><br>
+     -   <code>RegExPol</code> jest jakimś wzorem <i>(patternem)</i> w polskim tekście,
+     - a <code>RegExCyr</code> zawiera "scyrylizowany"
+     - odpowiednik. Następnie zmieniłem to w plik typu json, a taki w
+     - obiekt javascript – zapisany jest w pliku <code>dict.js</code>. Skrypt z pliku main.js
+     - (funkcja <code>cyrylize</code>) stosuje na całym tekście pobranym
+     - z pola tekstowego metodę <code>replace</code> używając kolejno
+     - każdej pozycji z wspomnianego obiektu w pliku <code>dict.js</code> i podmienia
+     - każde wystąpienie klucza jego danym wynikiem. Tak przebiega „cyrylizacja”</p> -->
+    </div>
+
+    <div class="text" id="things">
+      <h2>Rzeczy</h2>
+      <p>
+        <ul>
+          <li><a id="linek"
+          href="https://www.facebook.com/cyrpol/" target="_blank"
+                 rel="noopener noreferrer">
+              Stąd cyrylica wymyślona</a></li>
+          <li><a id="linek"
+                 href="https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat|Open+Sans|Piazzolla|Roboto|Roboto+Slab&preview.text_type=custom&query=mont&sidebar.open=true"
+                 target="_blank" rel="noopener noreferrer">
+              czcionki użyte przezemnie</a></li>
+          <li>tutaj <a id="linek"
+          href="https://github.com/test0wanie" target="_blank"
+                       rel="noopener noreferrer">
+              mój github</a> gdzie
+            okazjonalnie wrzucam co akurat robię</li>
+          <li>jak np stosunkowo kompletne archiwum moich
+          studiów: <a id="linek"
+                      href="https://github.com/test0wanie/studia"
+          target="_blank" rel="noopener noreferrer">
+              to repozytorium</a></li>
+          <li>ta lista będzie się wydłużać... </li>
+          </ul>
+      </p>
+    </div>
+
+    <div class="text" id="info">
+      <h2>Fajne rzeczy:</h2>
+      <p>
+        <ul>
+          <li><a id="linek" href="galeria.html">galeria liter</a> ale
+          nie jest to nic ciekawego tbf</li>
+          <li>albo mój more recent work: <a id="linek"
+                                            href="https://pypi.org/project/pytdm/"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+              pytdm</a></li>
+          <li><a id="linek"
+                 href="https://www.facebook.com/instytutczeczenistyki/"
+                 target="_blank" rel="noopener noreferrer">
+              fajny pej</a> (niemój, niech to będzie jasne ok?)</li>
+          <li>polecam stronę znajomego studenta
+            <a id="linek"
+               href="https://students.mimuw.edu.pl/~mm429570/"
+               target="_blank"
+               rel="noopener
+                    noreferrer">
+              michała
+              m</a> </li>
+          <li><a id="linek"
+          href="https://students.mimuw.edu.pl/~ag385527/dydaktyka/czeczenistyka/?fbclid=IwAR1aJo1Za6k2mbSvrTX-8g1zla4gQiuXWabEXpEKVQD-zSST_36iXiX3TB0"
+          target="_blank" rel="noopener noreferrer">
+              usos </a></li>          
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  </body>
+
+</html>

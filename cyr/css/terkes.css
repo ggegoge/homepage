@@ -1,5 +1,10 @@
 /*dreffe*/
 
+div.toptext {
+    margin-right: 0;
+}
+
+
 /* menu  */
 #home {
     position: fixed;

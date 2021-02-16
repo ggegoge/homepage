@@ -96,9 +96,9 @@ div.footer {
     background-color: #054E81;
     color: #fff;
     border-style: solid;
-    padding: 3px;
+    padding: 4px;
     border-color: white;
-    width: 247px; /* 22%; */
+    /* width: 247px; /\* 22%; *\/ */
     height: 60px;
     /* text-align: left; */
     vertical-align: left;

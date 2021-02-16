@@ -3,32 +3,32 @@
 
 ** Skąd właściwie ta cyrylica?
 Jest to kwestia złożona
-1. ta strona to oryginalnie (de facto zaszły już srogie zmiany, w
-   końcu może wejść w grę rodzaj /statku tezeusza/) była moja strona
-   zaliczeniowa na lekcję informatyki w pierwszej liceum (polecam
-   zobaczyć [[file:README_old.md][stare readme]] ~README_old.md~, które pochodzi z tamtych czasów
-2. byłem fanem cyrylicy w czasach gdy to wszystko oryginalnie powstawało
-3. był to 2017 rok
++ ta strona to oryginalnie (de facto zaszły już srogie zmiany, w
+  końcu może wejść w grę rodzaj /statku tezeusza/) była moja strona
+  zaliczeniowa na lekcję informatyki w pierwszej liceum (polecam
+  zobaczyć [[file:README_old.md][stare readme]] ~README_old.md~, które pochodzi z tamtych czasów
++ byłem fanem cyrylicy w czasach gdy to wszystko oryginalnie powstawało
++ był to 2017 rok
 
 ** Overview strony
 Dokonałem dużej reorganizacji i szlifu w 2021 roku adaptując tę stronę
 do celów obecnych. Zmiany zaszły na wielu polach:
-a. dodałem stopkę z mailem zapisanym w rachunku \lambda, ale to
+1. dodałem stopkę z mailem zapisanym w rachunku \lambda, ale to
    kwestia chwilowego miłośnictwa będącego pochodną funkcyjności moich
    zainteresowań w ostatnim krótkim czasie
-b. ~stylesheets~ są osobno w katalogu ~css~. Jest główny ~style.css~
+2. ~stylesheets~ są osobno w katalogu ~css~. Jest główny ~style.css~
    obowiązujący dla wszystkich podstron oraz personalne pomniejsze
    ceesesy według schematu: jeśli mamy stronę ~x.html~ to jej
    stylizacja to naczelny ~css/style.css~ oraz prywatny
    ~css/x.css~.
-c. Cały javascript też ma własne składowisko (katalog ~js~)
-d. ogólna renowacja stylu zaszła, ale nie było w tym rewolucji. Ogólny
+3. Cały javascript też ma własne składowisko (katalog ~js~)
+4. ogólna renowacja stylu zaszła, ale nie było w tym rewolucji. Ogólny
    wygląd strony nadal w jakichś 70-80% zgadza się z oryginałem
    (zależy jak blisko oko przyłożyć)
-e. użyłem [[https://katex.org][KaTeXa]] na jednej z podstron, ale nie wiem jak go nauczyć
+5. użyłem [[https://katex.org][KaTeXa]] na jednej z podstron, ale nie wiem jak go nauczyć
    użytku znaku z utf-8 (tak dokładnie to litery /ę/) wewnątrz
    mathmode'u. jeśli ktoś wie to proszę o informację!
-f. zalinkowałem wiele fajnych rzeczy
+6. zalinkowałem wiele fajnych rzeczy
 
 ** jaka jest przyszłość?
 *** przejście na coś lepszego?

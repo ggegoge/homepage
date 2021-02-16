@@ -19,10 +19,6 @@ a:hover {
 
 /* Top title like strip  */
 
-/* #xd { */
-/*     font-family: 'Piazzolla', serif; */
-/* } */
-
 div.top {
     background-color: #063530;
     color: #fff;
@@ -139,45 +135,16 @@ a.imejl:hover {
     color: pink;        
 }
 
-/* settings for each instance, messy  */
-#home {
-    position: fixed;
-    top: 50px;
-    z-index: 2;
-}/*dreffe*/
-
-#Cyrylizator {
-    position: fixed;
-    top: 135px;
-    z-index: 3;
-}
 textarea {
-  float: center;
-}
-#hows {
-    position: fixed;
-    top: 220px;
-    z-index: 4;
-}
-#rzeczy {
-    position: fixed;
-    top: 305px;
-    z-index: 5;
-}
-#more {
-    position: fixed;
-    top: 390px;
-    z-index: 6;
-}
-#kicerkes {
-    position: fixed;
-    top: 475px;
-    z-index: 7;
+    float: center;
 }
 
-/* div.vsjo {
 
-} */
+div.vsjo {
+    top: 120px;
+    position: absolute;
+    left: 27%;  
+}
 
 
 h2 {
@@ -186,13 +153,13 @@ h2 {
 
 /* setting for the divs containing any kind of information for the user  */
 div.text {
-    position: absolute;
+    /* position: relative; */
     /* width: 65%; */
-    widht: auto;
+    /* widht: auto; */
     /* z-index: 15; */
     /* left: 35%; */
-    top: 50px;
-    left: 27%;
+    /* top: 50px; */
+    /* left: 27%; */
     width: 650px;
     /* height: 90%; */
     margin:  auto;  /* -100px 0 0 -150px; */
@@ -211,37 +178,6 @@ h4 {
     font-family: 'Roboto', sans-serif;
     /* font-family: 'Open Sans', sans-serif; */
 }
-
-
-#main {
-    /* height: 780px; */
-    top: 120px;
-}
-#cyr {
-    height: 580px;/*750px;*/
-    top: 420px;
-}
-#jak {
-    /* height: 360px; */
-    top: 1020px;
-}
-#things {
-    /* height: 120px; */
-    top: 1270px;
-}
-#info {
-    /* height: 130px; */
-    top: 1500px;
-}/*dreffe*/
-
-#output {
-    font-family: 'Tinos', serif;
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    /* font-family: 'Open Sans', sans-serif; */
-}
-
 
 #linek {
     font-family: 'Tinos', serif;

@@ -1,89 +1,22 @@
-body {
-    background-color: #555;
-}
+/*dreffe*/
 
-a:link {
-    color: green;
-}
-a:visited {
-    color: green;
-}
-a:active {
-    color: red;
-}
-a:hover {
-    color: pink;
-}
-
-div {
-    position: absolute;
-    width: 60%;
-    /* z-index: 15; */
-    /* left: 35%; */
-    top: 50px;
-    left: 25%;
-    width: 600px;
-    height: auto;
-    margin:  auto;  /*-100px 0 0 -150px; */
-    background-color: #eee;
-    border-style: inset;
-    border-color: #0808ff;
-    text-align: justify;
+div.toptext {
+    margin-right: 5%;
 }
 
 
-div.menu {
-    background-color: #333;
-    width: 120px;
-    height: 80px;
-    border-style: inset;
-    border-color: #ff0066;
-    left: 2%;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 80px;
-    color: #CACECE;
-    white-space: normal;
+/* menu  */
+#home {
     position: fixed;
     top: 50px;
     z-index: 2;
-}
-div.menu:hover {
-    animation-name: col_ch;
-    animation-duration: 2s;
-}
-div.menu:active {
-    color: black;
-}
-a.menuLink:link {
-    color: #000;
-    text-decoration:none;
-    font-weight:normal;
-}
-a.menuLink:visited {
-    color: #000;
-    text-decoration:none;
-    font-weight:normal;
-}
+}/*dreffe*/
 
-h2 {
-    font-family: 'Piazzolla', serif;
-}
+
+/* inne na przyszłość? */
+#main { }
+
 #output {
     font-family: 'Piazzolla', serif;
     font-family: 'Roboto Slab', serif;
 }
-
-
-@keyframes col_ch{
-    0% {
-        background-color: #333;
-    }
-    50% {
-        background-color: pink;
-    }
-    100% {
-        background-color: #EB360C;
-     
-    }
-}/*dreffe*/

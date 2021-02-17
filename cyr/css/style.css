@@ -58,7 +58,14 @@ div.toptext {
 
 /* the mavigation bar on the left, settings for the general class  */
 
-div.menu {
+div.allme {
+    position: fixed;
+    top: 50px;
+    z-index: 2;
+    left: 2%;
+}
+
+div.menu {    
     background-color: #333;
     width: 120px;
     height: 80px;

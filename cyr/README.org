@@ -43,6 +43,28 @@ jakieś mniej fancy technologie np [[https://github.com/novoid/lazyblorg][lazybl
 Całkowite zamieszanie wewnątrz struktury obecnej?
 **** reformacyjnie
 Ulepszać krok po kroku tę stronę?
+
+Do ulepszenia:
+1. +ustawienia menu mogłyby być lepiej zrobione+ -- już zrobione
+2. duże porcje strony się pokrywają -- system jakichś include'ów?
+3. podstrona *dydaktyka*, ale nie wiem co bym tam trzymał...
+4. zrobić dla katalofu ~koty~ galerię zdjęć w jakimś
+   ~index.html~. Musiałbym coś jak [[https://stackoverflow.com/a/52473157][tutaj ukazane]] zrobić.
+5. to akurat oczywista zmiana. w menu ~index.html~ usunąć osobny link
+   do /fajnych rzeczy/. Byłaby to wciąż osobna sekcja, ale link do
+   rzeczy służyłby również do niej. Zamiast tego wolne miejsce
+   wykorzystałbym albo na dydaktykę (vide punkt 3.) albo na jakąś
+   stronę typu /inne/, która by linkowała do /innych/. W ogólności co
+   właściwie jest potrzebne na takiej stronie głównej?
+   + link do niej samej
+   + link do jakiegoś /about/
+   + link do /rzeczy/ chciałbym zostawić, tam mógłbym osobną listę
+     podstron wykonać w zasadzie
+   + *dydaktyka*, ale bez contentu trochę głupio...
+   + strona sekretna mogłaby zostać
+   + cyrylarz ma miejsce honorowe... ale czy musi być w menu? do
+     rozważenia
+6. bądź co bądź w menu każdej strony powinno być od 1 do 5 (+1) pól
 *** całkowicie nowa strona odręczna?
 Obecnie to poza moim zasięgiem oraz chęcią. *Nie lubię webdevu*. 
 Jednakże może w dalszej przyszłości najdzie mi na to ochota, kto wie.

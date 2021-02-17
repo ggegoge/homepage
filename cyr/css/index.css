@@ -1,39 +1,3 @@
-
-/* menu */
-#home {
-    position: fixed;
-    top: 50px;
-    z-index: 2;
-}/*dreffe*/
-
-#Cyrylizator {
-    position: fixed;
-    top: 135px;
-    z-index: 3;
-}
-
-#hows {
-    position: fixed;
-    top: 220px;
-    z-index: 4;
-}
-#rzeczy {
-    position: fixed;
-    top: 305px;
-    z-index: 5;
-}
-#more {
-    position: fixed;
-    top: 390px;
-    z-index: 6;
-}
-#kicerkes {
-    position: fixed;
-    top: 475px;
-    z-index: 7;
-}
-
-
 /* sekcje */
 #main { }
 #cyr {

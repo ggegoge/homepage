@@ -6,7 +6,7 @@ Jest to kwestia złożona
 + ta strona to oryginalnie (de facto zaszły już srogie zmiany, w
   końcu może wejść w grę rodzaj /statku tezeusza/) była moja strona
   zaliczeniowa na lekcję informatyki w pierwszej liceum (polecam
-  zobaczyć [[file:README_old.md][stare readme]] ~README_old.md~, które pochodzi z tamtych czasów
+  zobaczyć [[file:old/README_old.md][stare readme]] ~old/README_old.md~, które pochodzi z tamtych czasów
 + byłem fanem cyrylicy w czasach gdy to wszystko oryginalnie powstawało
 + był to 2017 rok
 

@@ -1,0 +1,89 @@
+#+TITLE: Pierwszy org-post!
+#+DATE: 19.02.2021
+
+** przykładowy post pełen niespodzianek
+**** Cóż to za nowoczesność?
+Oto jest [[https://orgmode.org][org mode]]! Jeden z lepszych /markup/ languaages tzw. Moim
+zdaniem wygodniejszy od markdownu z pewnością. 
+
+***** Kod lystyng!
++niestety nie ma syntax hajlajtingu :(+ jednak jest!
+
+Dam dwa przykłady ocamlowe, taką ogonową silnię wraz z rezultatami (na
+ich eksport łatwo pozwala zbazowany *org*)
+#+BEGIN_SRC ocaml :exports both :results value
+  let fact n =
+    let rec factail acc = function
+      | 0 -> acc
+      | k -> k - 1 |> factail (acc * k)
+    in
+    factail 1 n
+
+  open List;;
+  map (fun n -> (n, fact n)) [0; 1; 2; 3; 4; 5; 6; 7; 8] |> split
+
+#+END_SRC
+
+#+RESULTS:
+| 0 | 1 | 2 | 3 |  4 |   5 |   6 |    7 |     8 |
+| 1 | 1 | 2 | 6 | 24 | 120 | 720 | 5040 | 40320 |
+
+oraz taki drugi przykład z obracaniem drzewa dwójniackiego
+(and. /binary tree/):
+#+BEGIN_SRC ocaml :exports code
+  type 'a btree = Node of 'a btree * 'a * 'a btree | Nil
+
+  let rec invert = function
+    | Nil -> Nil
+    | Node(l, v, r) ->
+       let il = invert l and ir = invert r in
+       Node(ir, v, il)
+#+END_SRC
+
+#+RESULTS:
+: <fun>
+
+Mogę do tego dodać infiksik:
+#+BEGIN_SRC ocaml :exports both :results value :session
+  let infix t =
+    let rec aux acc = function
+      | Nil -> acc
+      | Node(l, v, r) -> aux (v::aux acc l) r
+    in
+    aux [] t |> rev
+
+  let t = Node(
+              Node(
+                  Node(Nil, 1, Nil),
+                  2,
+                  Node(Nil, 3, Nil)),
+              4,
+              Node(
+                  Node(Nil, 5, Nil),
+                  6,
+                  Nil));;
+  infix t;;
+#+END_SRC
+
+#+RESULTS:
+| 1 | 2 | 3 | 4 | 5 | 6 |
+
+**** /matematyka/
+Mam tutaj również funkcjonującego [[https://katex.org][KaTeXa]]. Dzięki temu jeśli napiszę:
+#+BEGIN_SRC latex
+  $$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
+#+END_SRC
+otrzymam:
+----------
+$$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
+---------
+Mogę też fajne rzeczy typu moce zbiorów robić:
+
+$$ \overline{\overline{\sf{P}(\mathbb{N})}} = 
+\mathfrak{c} = \overline{\overline\mathbb{R}} $$
+
+
+/voila/.
+Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/,
+ale może uda mi się to niegdyś naprawić. Bądź co bądź to kończy ten
+post blogowy. Był to w pewnym sensie zaledwie przykład.

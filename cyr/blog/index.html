@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <title>grzegorz blogorz</title>
+  <head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Oxygen+Mono&family=Piazzolla&family=Roboto&family=Roboto+Slab:wght@300&display=swap"
+          rel="stylesheet">
+    <!-- Page styling -->
+    <link rel="stylesheet" type="text/css"
+          href="../css/style.css?v=1">
+    <!-- syntax highliting -->
+    <link rel="stylesheet" href="../css/solarised_dark.css">
+    <!-- KaTeX -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+          integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+          crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+            integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+            crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+            integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+            crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
+    integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
+    crossorigin="anonymous">
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js"
+            integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9"
+            crossorigin="anonymous"></script>
+    <script>
+      window.WebFontConfig = {
+        custom: {
+          families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+            'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+            'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+            'KaTeX_Size4', 'KaTeX_Typewriter'],
+        },
+      };
+    </script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js"
+            integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc="
+            crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="top" id="1">
+      <div class="toptext">
+        <h1 class="site_title">blog??</h1>
+        <h5 class="site_subtitle">będę postować <i>może</i></h5>
+      </div>
+    </div>
+    <!-- <img sierp i muout -->
+    <div class="allme">
+      <a  class="menuLink" href="..">
+        <div class="menu" id="home">strona główna</div>
+      </a>
+    </div>
+    <div class="footer">
+      copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
+      <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
+       onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
+        <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
+           !-- g -->
+        <span id="mail_mat"></span> <!-- katexizowany mail -->
+      </a>
+    </div>
+    <script>
+      // mail w rachunku lambda
+      var mejl = document.getElementById('mail_mat');
+      document.addEventListener("DOMContentLoaded", function() {
+      katex.render(
+      String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
+      y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
+      mejl, {displayMode: false, strict: "warn"});
+      
+      }
+      );
+    </script>
+    <div class="vsjo">
+      <div class="text" id="ja?-blog?">
+        <h2 class="title">ja? blog?</h2>
+        <p>Tak. nie przesłyszeliście się człowieku. Tworzę oficjalnie <b>bloga</b>.</p>
+        <h3>Jak to powstaje?</h3>
+        <p>Całą inspiracją stał się prawdę powiedziawszy jekyll i tamtejsze easy
+          posty. Zrobiłem więc własne narzędzie w <i>ruby</i> o nazwie <b>orgise</b>.</p>
+        <h4>jak dodać nowe posty?</h4>
+        <p>Działa bardzo prosto: <code>ruby orgise.rb 0_intro.org index.html</code>.
+          Tak utworzę tego posta. Następnie utworzę kolejnego typu pierwszy post
+          czy coś. Tam dam kod itp. Również z <b>orgise&#8217;em</b> tego dokonam.</p>
+        <h4>edycja istniejących!</h4>
+        <p>jeśli program tworząc post znajdzie już istniejący z pasującym <code>id</code>,
+          to go zamieni stosownie.</p>
+        <h4>wiele postów na raz</h4>
+        <p>Może się zdarzyć, że chcę dokonać zmiany kilku postów na raz. Wtedy
+          załóżmy, że faktycznie zmieniam te piliki <code>.org</code>. Jeśli teraz
+          uruchomię swój skrypt bashowy <code>orgise.sh</code> to on wszystkie pozycje z
+          katalogu folderu <b>_posts</b> przetworzy za pomocą wspomnianego ruby&#8217;owego
+          programu. Tym samym staje się to bardzo proste.</p>
+        <h5>aspekt kolejności</h5>
+        <p>staje się to dość istotne, albowiem ten skrypt obsługuje te pliki w
+          jakiejś kolejności prawda? System jest taki, że przegląda je
+          posortowane komendą <code>sort -V</code>, czyli leksykograficznie chyba. Zatem np
+          nazwałem ten plik <code>0_intro.org</code>, ten poniżej nazwę <code>1_coś.org</code> itd&#8230;</p>
+        <h2>Czego należy się spodziewać?&#8230;</h2>
+        <p>W zasadzie nie mam pojęcia co tu będzie. Może jakieś losowe
+          rzeczy. Będę je zapewne składować tak ciurkiem bo nie mam jakiejś
+          dużej motywacji tworzenia każdemu osobnej strony oraz organizwania
+          ich. Ale zobaczy się. Sam program orgowy na pewno pomoże mi bardziej
+          niż jedynie tutaj, mogę za jego pomocą generować wszystkie strony bez
+          babrania się w htmlu obrzydliwym.</p>
+        <p>Znajdzie się tu minimum ten post wstępny oraz jeden popisowy
+          &#8211; pewnego rodzaku pokaz rzeczy <b>orgowych</b> jak matematyka i kod. Ale na razie tyle!</p>
+      </div>
+      <!-- fin_post_ja?-blog? -->
+      <div class="text" id="Pierwszy-org-post!">
+        <div class="date_wrap"><span id="datka">19.02.2021</span>
+        </div>
+        <h2 class="title">Pierwszy org-post!</h2>
+        <h3>przykładowy post pełen niespodzianek</h3>
+        <h5>Cóż to za nowoczesność?</h5>
+        <p>Oto jest <a id="linek" href="https://orgmode.org">org mode</a>! Jeden z lepszych <i>markup</i> languaages tzw. Moim
+          zdaniem wygodniejszy od markdownu z pewnością.</p>
+        <h6>Kod lystyng!</h6>
+        <p><del>niestety nie ma syntax hajlajtingu :(</del> jednak jest!</p>
+        <p>Dam dwa przykłady ocamlowe, taką ogonową silnię wraz z rezultatami (na
+          ich eksport łatwo pozwala zbazowany <b>org</b>)</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">let</span> <span class="n">fact</span> <span class="n">n</span> <span class="o">=</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">factail</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">function</span>
+    <span class="o">|</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="n">acc</span>
+    <span class="o">|</span> <span class="n">k</span> <span class="o">-&gt;</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">|&gt;</span> <span class="n">factail</span> <span class="p">(</span><span class="n">acc</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span>
+  <span class="k">in</span>
+  <span class="n">factail</span> <span class="mi">1</span> <span class="n">n</span>
+
+<span class="k">open</span> <span class="nc">List</span><span class="p">;;</span>
+<span class="n">map</span> <span class="p">(</span><span class="k">fun</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">n</span><span class="o">,</span> <span class="n">fact</span> <span class="n">n</span><span class="p">))</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span><span class="p">;</span> <span class="mi">8</span><span class="p">]</span> <span class="o">|&gt;</span> <span class="n">split</span></code></pre>
+        </div>
+        <table>
+          <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>6</td>
+            <td>24</td>
+            <td>120</td>
+            <td>720</td>
+            <td>5040</td>
+            <td>40320</td>
+          </tr>
+        </table>
+        <p>oraz taki drugi przykład z obracaniem drzewa dwójniackiego
+          (and. <i>binary tree</i>):</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">type</span> <span class="k">'</span><span class="n">a</span> <span class="n">btree</span> <span class="o">=</span> <span class="nc">Node</span> <span class="k">of</span> <span class="k">'</span><span class="n">a</span> <span class="n">btree</span> <span class="o">*</span> <span class="k">'</span><span class="n">a</span> <span class="o">*</span> <span class="k">'</span><span class="n">a</span> <span class="n">btree</span> <span class="o">|</span> <span class="nc">Nil</span>
+
+<span class="k">let</span> <span class="k">rec</span> <span class="n">invert</span> <span class="o">=</span> <span class="k">function</span>
+  <span class="o">|</span> <span class="nc">Nil</span> <span class="o">-&gt;</span> <span class="nc">Nil</span>
+  <span class="o">|</span> <span class="nc">Node</span><span class="p">(</span><span class="n">l</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">-&gt;</span>
+     <span class="k">let</span> <span class="n">il</span> <span class="o">=</span> <span class="n">invert</span> <span class="n">l</span> <span class="ow">and</span> <span class="n">ir</span> <span class="o">=</span> <span class="n">invert</span> <span class="n">r</span> <span class="k">in</span>
+     <span class="nc">Node</span><span class="p">(</span><span class="n">ir</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">il</span><span class="p">)</span></code></pre>
+        </div>
+        <p>Mogę do tego dodać infiksik:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">let</span> <span class="n">infix</span> <span class="n">t</span> <span class="o">=</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">function</span>
+    <span class="o">|</span> <span class="nc">Nil</span> <span class="o">-&gt;</span> <span class="n">acc</span>
+    <span class="o">|</span> <span class="nc">Node</span><span class="p">(</span><span class="n">l</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">aux</span> <span class="p">(</span><span class="n">v</span><span class="o">::</span><span class="n">aux</span> <span class="n">acc</span> <span class="n">l</span><span class="p">)</span> <span class="n">r</span>
+  <span class="k">in</span>
+  <span class="n">aux</span> <span class="bp">[]</span> <span class="n">t</span> <span class="o">|&gt;</span> <span class="n">rev</span>
+
+<span class="k">let</span> <span class="n">t</span> <span class="o">=</span> <span class="nc">Node</span><span class="p">(</span>
+            <span class="nc">Node</span><span class="p">(</span>
+                <span class="nc">Node</span><span class="p">(</span><span class="nc">Nil</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="nc">Nil</span><span class="p">)</span><span class="o">,</span>
+                <span class="mi">2</span><span class="o">,</span>
+                <span class="nc">Node</span><span class="p">(</span><span class="nc">Nil</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="nc">Nil</span><span class="p">))</span><span class="o">,</span>
+            <span class="mi">4</span><span class="o">,</span>
+            <span class="nc">Node</span><span class="p">(</span>
+                <span class="nc">Node</span><span class="p">(</span><span class="nc">Nil</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="nc">Nil</span><span class="p">)</span><span class="o">,</span>
+                <span class="mi">6</span><span class="o">,</span>
+                <span class="nc">Nil</span><span class="p">));;</span>
+<span class="n">infix</span> <span class="n">t</span><span class="p">;;</span></code></pre>
+        </div>
+        <table>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+        </table>
+        <h5><i>matematyka</i></h5>
+        <p>Mam tutaj również funkcjonującego <a id="linek" href="https://katex.org">KaTeXa</a>. Dzięki temu jeśli napiszę:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="p">$$</span><span class="nv">\textrm</span><span class="p">{</span><span class="nb">pijaczyna</span><span class="p">}{</span><span class="nb">:</span><span class="p">}</span><span class="nv">\;\;</span><span class="nb"> </span><span class="nv">\exists</span><span class="nb"> x</span><span class="nv">\ldotp\;</span><span class="nb"> P</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="nv">\to</span><span class="nb"> </span><span class="nv">\forall</span><span class="nb"> y P</span><span class="o">(</span><span class="nb">y</span><span class="o">)</span><span class="p">$$</span></code></pre>
+        </div>
+        <p>otrzymam:</p>
+        <hr />
+        <p>$$\textrm{pijaczyna}{:}\;\; &exist; x\ldotp\; P(x) &rarr; &forall; y P(y)$$</p>
+        <hr />
+        <p>Mogę też fajne rzeczy typu moce zbiorów robić:</p>
+        <p>$$ \overline{\overline{\sf{P}(\mathbb{N})}} =
+          \mathfrak{c} = \overline{\overline\mathbb{R}} $$</p>
+        <p><i>voila</i>.
+          Nie jestem pewien co należy zrobić, aby działała tzw <i>inline maths</i>,
+          ale może uda mi się to niegdyś naprawić. Bądź co bądź to kończy ten
+          post blogowy. Był to w pewnym sensie zaledwie przykład.</p>
+      </div>
+       <!-- fin_post_Pierwszy-org-post! -->
+      <!--END_KURDE-->
+    </div>
+  </body>
+</html>

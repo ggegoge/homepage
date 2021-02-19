@@ -1,0 +1,23 @@
+---
+:HtmlBlockTag:
+  :paragraph: p
+  :ordered_list: ol
+  :unordered_list: ul
+  :list_item: li
+  :definition_list: dl
+  :definition_term: dt
+  :definition_descr: dd
+  :table: table
+  :table_row: tr
+  :quote: blockquote
+  :example: pre
+  :src: pre
+  :inline_example: pre
+  :center: div
+  :heading1: h2
+  :heading2: h3
+  :heading3: h4
+  :heading4: h5
+  :heading5: h6
+  :heading6: strong
+  :title: h2

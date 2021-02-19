@@ -29,7 +29,10 @@ do celów obecnych. Zmiany zaszły na wielu polach:
    użytku znaku z utf-8 (tak dokładnie to litery /ę/) wewnątrz
    mathmode'u. jeśli ktoś wie to proszę o informację!
 6. zalinkowałem wiele fajnych rzeczy
-
+**** *orgise*
+*Orgise* to (tępe) narzędzie jakie napisałem w *ruby* na potrzeby
+ głównie [[file:blog][bloga]], ale przyda się ogólnie -- lepsze od pisania w syfnym
+ htmlu. Większy [[https://students.mimuw.edu.pl/~gc429174/cyr/blog#orgise][opis tutaj na blogu.]]
 ** jaka jest przyszłość?
 *** przejście na coś lepszego?
 myślałem o całkowitym porzuceniu tej strony i przejściu na jakąś

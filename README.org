@@ -12,3 +12,16 @@
    may try to replace it with some /nice/ webpage like jekyll etc you
    know what im talking about. I'm not into webdev atm but perhaps
    I'll gain some proficiency some day.
+*** ~cyr~
+    What i have there is best described in there but I just wanna add
+    the fact that I have made the web workflow of mine a little bit
+    more /automatised/ since now I have a tool called [[https://students.mimuw.edu.pl/~gc429174/cyr/blog/#orgise][orgise]] which
+    serves me for converting (automaticaly!) posts written in org mode
+    into my ~cyr~ page. Hence now I'm a little bit more sceptical
+    about switching to jekyll or something... Not that I haven't tried
+    to use it at all. In fact I had tried using it but... Well it is
+    nice (especially the way it looks but tbf only a few themes are
+    satisfying to me unfortunately) but customisation is a bit tricky
+    at times. And if my going to spend time tweaking both jekyll html
+    and plugins and all then... what is the difference (apart from
+    jekyll pages looking *much* better)?

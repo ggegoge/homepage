@@ -32,29 +32,30 @@ wartość z ~#+TITLE~ z myślnikami zamiast spacji, ale jeśli się
 sprecyzuje osobno ~#+IDENT~ to to pole zadecyduje o ~id~ htmlowym. 
 *** jak to jest zrobione?
 Najtrudniejszą część na szczęście zrobiono za mnie. *Gem* do ruby
-[[https://github.com/wallyqs/org-ruby][org-ruby]] zapewnia cały parsing i pewną customizację. Osobiście dodałem
-do tego przetwarzanie plików tak aby te zachowały kompatybilność z
-resztą strony. Poza tym obsługa ~#+DATE~ oraz małe zmiany w source
-kodzie org-ruby wynikłe z braku wdrożnia do głównej wersji niektórych
-ważnych zmian. To wszystko mocno regexpem potraktowałem. To była
-największa męka prawdę powiedziawszy, ponieważ [[http://regex.info/blog/2006-09-15/247][jak wiadomo]] regexp jest
-/bardzo/ kłopotlwy.
+[[https://github.com/wallyqs/org-ruby][org-ruby]] (/genialne/ narzędzie. ciekawe też, że [[https://github.com/github/markup#markups][korzysta z niego]]
+github renderując pliki ~.org~ u siebie) zapewnia cały parsing i pewną
+customizację. Osobiście dodałem do tego przetwarzanie plików tak aby
+te zachowały kompatybilność z resztą strony. Poza tym obsługa ~#+DATE~
+oraz małe zmiany w source kodzie org-ruby wynikłe z braku wdrożnia do
+głównej wersji niektórych ważnych zmian. To wszystko mocno regexpem
+potraktowałem. To była największa męka prawdę powiedziawszy, ponieważ
+[[http://regex.info/blog/2006-09-15/247][jak wiadomo]] regexp jest /bardzo/ kłopotliwy.
 
 Dodatkowo użyłem gemu [[https://github.com/threedaymonk/htmlbeautifier][html beautifier]] aby ten
-wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał "jak
-człowiek".
+wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał *jak
+człowiek*.
 
 Mogę załączyć mały fragmencik, ale zainteresowani mogą ujrzeć to
 wszystko na [[https://github.com/test0wanie/homepage/blob/master/cyr/orgise.rb][githubie]].
-
-/now you have two problems/:
+----------
+| *Some people, when confronted with a problem, think:*  /I know, I'll use regular expressions./  *Now they have two problems.*  |
+---------
 #+BEGIN_SRC ruby
   def make_postorg(org)
     html, titl = parsuj(org)
     titl.gsub! " ", "-"
     id = titl
     linkise(html)
-    if html.nil? then raise("nil html??") end
     res = ["<div class=\"text\" id=\"" + id + "\">\n" + html + "\n</div>" +
            " <!-- fin_post_" + id + " -->",
            (Regexp.new "<div class=\"text\" id=\"" + Regexp.escape(id) +

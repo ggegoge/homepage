@@ -261,26 +261,32 @@
           sprecyzuje osobno <code>#+IDENT</code> to to pole zadecyduje o <code>id</code> htmlowym.</p>
         <h4>jak to jest zrobione?</h4>
         <p>Najtrudniejszą część na szczęście zrobiono za mnie. <b>Gem</b> do ruby
-          <a id="linek" href="https://github.com/wallyqs/org-ruby">org-ruby</a> zapewnia cały parsing i pewną customizację. Osobiście dodałem
-          do tego przetwarzanie plików tak aby te zachowały kompatybilność z
-          resztą strony. Poza tym obsługa <code>#+DATE</code> oraz małe zmiany w source
-          kodzie org-ruby wynikłe z braku wdrożnia do głównej wersji niektórych
-          ważnych zmian. To wszystko mocno regexpem potraktowałem. To była
-          największa męka prawdę powiedziawszy, ponieważ <a id="linek" href="http://regex.info/blog/2006-09-15/247">jak wiadomo</a> regexp jest
-          <i>bardzo</i> kłopotlwy.</p>
+          <a id="linek" href="https://github.com/wallyqs/org-ruby">org-ruby</a> (<i>genialne</i> narzędzie. ciekawe też, że <a id="linek" href="https://github.com/github/markup#markups">korzysta z niego</a>
+          github renderując pliki <code>.org</code> u siebie) zapewnia cały parsing i pewną
+          customizację. Osobiście dodałem do tego przetwarzanie plików tak aby
+          te zachowały kompatybilność z resztą strony. Poza tym obsługa <code>#+DATE</code>
+          oraz małe zmiany w source kodzie org-ruby wynikłe z braku wdrożnia do
+          głównej wersji niektórych ważnych zmian. To wszystko mocno regexpem
+          potraktowałem. To była największa męka prawdę powiedziawszy, ponieważ
+          <a id="linek" href="http://regex.info/blog/2006-09-15/247">jak wiadomo</a> regexp jest <i>bardzo</i> kłopotliwy.</p>
         <p>Dodatkowo użyłem gemu <a id="linek" href="https://github.com/threedaymonk/htmlbeautifier">html beautifier</a> aby ten
-          wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał &#8220;jak
-          człowiek&#8221;.</p>
+          wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał <b>jak
+            człowiek</b>.</p>
         <p>Mogę załączyć mały fragmencik, ale zainteresowani mogą ujrzeć to
           wszystko na <a id="linek" href="https://github.com/test0wanie/homepage/blob/master/cyr/orgise.rb">githubie</a>.</p>
-        <p><i>now you have two problems</i>:</p>
+        <hr />
+        <table>
+          <tr>
+            <td><b>Some people, when confronted with a problem, think:</b>  <i>I know, I&#8217;ll use regular expressions.</i>  <b>Now they have two problems.</b></td>
+          </tr>
+        </table>
+        <hr />
         <div class="highlight">
           <pre class="codehilite"><code><span class="k">def</span> <span class="nf">make_postorg</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
   <span class="n">html</span><span class="p">,</span> <span class="n">titl</span> <span class="o">=</span> <span class="n">parsuj</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
   <span class="n">titl</span><span class="p">.</span><span class="nf">gsub!</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"-"</span>
   <span class="nb">id</span> <span class="o">=</span> <span class="n">titl</span>
   <span class="n">linkise</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">html</span><span class="p">.</span><span class="nf">nil?</span> <span class="k">then</span> <span class="k">raise</span><span class="p">(</span><span class="s2">"nil html??"</span><span class="p">)</span> <span class="k">end</span>
   <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">html</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span> <span class="o">+</span>
          <span class="s2">" &lt;!-- fin_post_"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">" --&gt;"</span><span class="p">,</span>
          <span class="p">(</span><span class="no">Regexp</span><span class="p">.</span><span class="nf">new</span> <span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="no">Regexp</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">+</span>

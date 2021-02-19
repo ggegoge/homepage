@@ -35,6 +35,15 @@ div.top {
     /* font-family: 'Open Sans', sans-serif; */
 }
 
+/* for instance settings  */
+h4, h5, h6 {
+    /* font-family: 'Roboto Slab', serif; */
+    /* font-family: 'Open Sans Condensed', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 h1.site_title {
     margin-top: 0;
     margin-bottom: 0;
@@ -44,6 +53,7 @@ h1.site_title {
 }
 
 h5.site_subtitle {
+    font-family: "Roboto Slab", serif;
     margin-top: 0;    
 }
 
@@ -179,13 +189,6 @@ div.text {
 
     font-family: 'Piazzolla', serif;
 }
-/* for instance settings  */
-h4 {
-    font-family: 'Roboto Slab', serif;
-    /* font-family: 'Open Sans Condensed', sans-serif; */
-    font-family: 'Roboto', sans-serif;
-    /* font-family: 'Open Sans', sans-serif; */
-}
 
 #linek {
     font-family: 'Tinos', serif;
@@ -243,8 +246,18 @@ h4 {
 
 /* tables */
 table {
-    width: 100%;
+    table-layout: fixed;
+    width: 70%;
     border-collapse: collapse;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+td {
+    text-align: center;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 }
 
 table, th, td {

@@ -8,7 +8,7 @@ a:link {
     color: green;
 }
 a:visited {
-    color: green;
+    color: olivedrab;
 }
 a:active {
     color: red;
@@ -40,6 +40,8 @@ h4, h5, h6 {
     /* font-family: 'Roboto Slab', serif; */
     /* font-family: 'Open Sans Condensed', sans-serif; */
     /* font-family: 'Roboto', sans-serif; */
+    margin-top: 0;
+    margin-bottom: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -269,4 +271,10 @@ pre, code {
     font-family: 'Oxygen Mono', monospace;
     font-family: 'Menlo', monospace;
     font-size: 90%;
+}
+
+.highlight {
+    padding: 1px;
+    margin: 1px;
+    padding-left: 4px;
 }

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <title>Orgise</title>
+  <head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Oxygen+Mono&family=Piazzolla&family=Roboto&family=Roboto+Slab:wght@300&display=swap"
+          rel="stylesheet">
+    <!-- Page styling -->
+    <link rel="stylesheet" type="text/css"
+          href="../../css/style.css?v=1">
+    <!-- syntax highliting -->
+    <link rel="stylesheet" href="../../css/solarised_dark.css">
+    <!-- KaTeX -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+          integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+          crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+            integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+            crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+            integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+            crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
+          integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
+          crossorigin="anonymous">
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js"
+            integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9"
+            crossorigin="anonymous"></script>
+    <script>
+      window.WebFontConfig = {
+        custom: {
+          families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+            'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+            'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+            'KaTeX_Size4', 'KaTeX_Typewriter'],
+        },
+      };
+    </script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js"
+            integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc="
+            crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="top" id="1">
+      <div class="toptext">
+        <h1 class="site_title">blog??</h1>
+        <h5 class="site_subtitle">będę postować <i>może</i></h5>
+      </div>
+    </div>
+    <!-- <img sierp i muout -->
+    <div class="allme">
+      <a  class="menuLink" href="../..">
+        <div class="menu" id="home">strona główna</div>
+      </a>
+      <a class="menuLink" href="..">
+        <div class="menu" id="blog_rest">reszta bloga</div>
+      </a>
+    </div>
+    <div class="footer">
+      copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
+      <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
+       onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
+        <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
+           !-- g -->
+        <span id="mail_mat"></span> <!-- katexizowany mail -->
+      </a>
+      <script>
+        // mail w rachunku lambda
+        var mejl = document.getElementById('mail_mat');
+        document.addEventListener("DOMContentLoaded", function() {
+          katex.render(
+            String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
+               y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
+            mejl, {displayMode: false, strict: "warn"});
+        
+          }
+        );
+      </script>
+    </div>
+    <div class="vsjo">
+      <div class="text" id="orgise">
+        <div class="date_wrap"><span id="datka">19.02.2021</span>
+        </div>
+        <h2 class="title">Orgise</h2>
+        <p>Krótki przegląd działania <b>orgise</b>&#8216;a i jego pseudo
+          dokumentację oraz napiszę z czego korzystałem. Co prawda raczej nikt
+          prócz mnie tego nie użyje, ale jestem tego świadom. Piszę tę
+          dokumentację po części, aby samemu nie zapomnieć o co chodzi.</p>
+        <p>Jeśli ktoś w ogóle nie wie <i>czy jest org</i>, radzę mu zajrzeć na <a id="linek" href="https://orgmode.org/">jego stronę</a> albo
+          obejrzeć dotyczący go fragment <a id="linek" href="https://youtu.be/JWD1Fpdd4Pc?t=1206">tego filmiku</a>, całość <a id="linek" href="https://youtu.be/SzA2YODtgK4">tej prelekcyjki</a>
+          bądź przeczytać jeden z niezliczonych <a id="linek" href="https://karl-voit.at/2017/09/23/orgmode-as-markup-only/">peanów cudzych</a>.</p>
+        <h4>czym jest <b>orgise</b>?</h4>
+        <p><b>Orgise</b> (czy też <code>orgise</code>) to narzędzie, jakie napisałem w ruby i
+          bashu celem oszczędzenia sobie syfienia rąk tym durnym htmlem.</p>
+        <h4>jak używać?</h4>
+        <p>Mamy dwie możliwości użycia.</p>
+        <ol>
+          <li>chcemy dodawać nowe <i>posty</i> ciurkiem do dołu istniejącej już strony</li>
+          <li>dodajemy nowe <i>posty</i>, każdy jako osobną stronę w folderze <code>posts</code></li>
+        </ol>
+        <p>Jak na razie zamłotkowałem to tylko na budowanie strony blog oraz
+          osobnych postów w podkatalogu na nie, ale warto byłoby dodać możliwość
+          wyboru katalogów źródłowych i wyników itp.</p>
+        <h5>dodawanie postów do strony</h5>
+        <h6>orgizacja całego folderu</h6>
+        <p>Użycie jest dość proste. Załóżmy, że np chcemy <b>zorgise</b>&#8216;ować cały katalog <code>_main</code>
+          (czyli: mam w tym katalogu pliki orgowe (obowiązkowo z tagiem
+          <code>#+TITLE</code>) tak, aby dodały się jako kolejne bloki na stronę w pliku
+          <code>index.html</code>. Wtedy wystarczy użyć komendy
+          <code>./orgise.sh</code>
+          i przetworzą się wszystkie pliki. Jedynym wyjątkiem są te,
+          które opatrzone są tagiem <code>#+EXCLUDE: true</code>.</p>
+        <h6>orgizacja pojedynczego pliku</h6>
+        <p>To trochę kwestia bardziej złożona, ale mamy też więcej
+          opcji. Wtedy składnia jest następująca:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code>ruby orgise.md forg page <span class="o">[</span>page_out] <span class="o">[</span><span class="nt">-n</span><span class="o">]</span></code></pre>
+        </div>
+        <p>gdzie <code>forg</code> to plik do zorgizowania, <code>page</code> to strona którą trzeba
+          zedytować, a <code>page_out</code> to miejsce do zapisania wyniku (jeśli się go
+          nie poda to będzie to domyślnie równe <code>page</code>), a użycie flagi <code>-n</code>
+          mówi, że zamiast edycji istniejącego posta chcemy utworzyć nowy.</p>
+        <p>Posty rozróżnia się po ich identyfikatorze. Standardowo jest to
+          wartość z <code>#+TITLE</code> z myślnikami zamiast spacji, ale jeśli się
+          sprecyzuje osobno <code>#+IDENT</code> to to pole zadecyduje o <code>id</code> htmlowym.</p>
+        <h5>nowe strony z postów</h5>
+        <h6>cały folder</h6>
+        <p>Z pomocą przychodzi ponownie <code>orgise.sh</code>, wystarczy posiadać
+          szablonową stronę i następnie wywołanie <code>./orgise.sh --newp</code> zwieńczy
+          dzieła utworzenia z każdego org-pliku z katalogu <code>blog/_posts</code> (tak,
+          <i>chamsko zamłotkowane</i>, ale mam nadzieję, że kiedyś poprawię to i
+          zrobię elegancko) osobnej strony opartej na tym schemacie.</p>
+        <h6>pojedyncza strona</h6>
+        <p>Podobnie jak poprzednio, ale tym razem trzeba również dodać flagę
+          <code>--newp</code>.</p>
+        <h4>jak wygląda workflow?</h4>
+        <p>Jak chcę utworzyć nowy post na tę stronę, robię to w następującym
+          stylu:</p>
+        <ul>
+          <li>piszę go w orgu, wrzucam do <code>_posts</code>. daję mu znaczniki <code>#+title</code>,
+            <code>#+date</code> i czasami <code>#+ident</code></li>
+          <li>jeśli chcę aby pojawił się na stronie głównej bloga piszę w podobnym stylu
+            krótkie streszczonko z linkiem, które następnie ląduje w <code>_main</code>.</li>
+          <li>komendą <code>./orgise.sh</code> aktualizuję zawartość strony głównej tzw bloga
+            i poprawiam to <code>./orgise --newp</code>, które skanuje katalog <code>_posts</code> i
+            bierze posty bez <code>#+exclude</code>, z których tworzy strony w <code>posts</code></li>
+          <li><i>voilà</i></li>
+        </ul>
+        <h4>jak to jest zrobione?</h4>
+        <p>Najtrudniejszą część na szczęście zrobiono za mnie. <b>Gem</b> do ruby
+          <a id="linek" href="https://github.com/wallyqs/org-ruby">org-ruby</a> (<i>genialne</i> narzędzie. ciekawe też, że <a id="linek" href="https://github.com/github/markup#markups">korzysta z niego</a>
+          github renderując pliki <code>.org</code> u siebie) zapewnia cały parsing i pewną
+          customizację. Osobiście dodałem do tego przetwarzanie plików tak aby
+          te zachowały kompatybilność z resztą strony. Poza tym obsługa <code>#+DATE</code>
+          oraz małe zmiany w source kodzie org-ruby wynikłe z braku wdrożnia do
+          głównej wersji niektórych ważnych zmian. To wszystko mocno regexpem
+          potraktowałem. To była największa męka prawdę powiedziawszy, ponieważ
+          <a id="linek" href="http://regex.info/blog/2006-09-15/247">jak wiadomo</a> regexp jest <i>bardzo</i> kłopotliwy.</p>
+        <p>Dodatkowo użyłem gemu <a id="linek" href="https://github.com/threedaymonk/htmlbeautifier">html beautifier</a> aby ten
+          wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał <b>jak
+            człowiek</b>.</p>
+        <p>Mogę załączyć mały fragmencik, ale zainteresowani mogą ujrzeć to
+          wszystko na <a id="linek" href="https://github.com/test0wanie/homepage/blob/master/cyr/orgise.rb">githubie</a>.</p>
+        <hr />
+        <table>
+          <tr>
+            <td><b>Some people, when confronted with a problem, think:</b>  <i>I know, I&#8217;ll use regular expressions.</i>  <b>Now they have two problems.</b></td>
+          </tr>
+        </table>
+        <hr />
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">def</span> <span class="nf">make_postorg</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+  <span class="n">html</span><span class="p">,</span> <span class="n">titl</span> <span class="o">=</span> <span class="n">parsuj</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+  <span class="n">titl</span><span class="p">.</span><span class="nf">gsub!</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"-"</span>
+  <span class="nb">id</span> <span class="o">=</span> <span class="n">titl</span>
+  <span class="n">linkise</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+  <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">html</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span> <span class="o">+</span>
+         <span class="s2">" &lt;!-- fin_post_"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">" --&gt;"</span><span class="p">,</span>
+         <span class="p">(</span><span class="no">Regexp</span><span class="p">.</span><span class="nf">new</span> <span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="no">Regexp</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">+</span>
+                     <span class="s2">"</span><span class="se">\"</span><span class="s2">&gt;(.|</span><span class="se">\n</span><span class="s2">)*&lt;/div&gt;(</span><span class="se">\s</span><span class="s2">|</span><span class="se">\n</span><span class="s2">)*"</span> <span class="o">+</span>
+                     <span class="no">Regexp</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="s2">" &lt;!-- fin_post_"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">" --&gt;"</span><span class="p">))]</span>
+  <span class="k">return</span> <span class="n">res</span>
+<span class="k">end</span></code></pre>
+        </div>
+        <p>sekwencyjna orgizacja plików:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">for </span>f <span class="k">in</span> <span class="sb">`</span><span class="nb">ls</span> <span class="nv">$dir</span>/<span class="k">*</span>.org | <span class="nb">sort</span> <span class="nt">-V</span><span class="sb">`</span>
+<span class="k">do
+    </span><span class="nb">echo </span>orgizuję <span class="s2">"</span><span class="nv">$f</span><span class="s2">"</span>
+    ruby orgise.rb <span class="nv">$f</span> <span class="nv">$outp</span>
+<span class="k">done</span></code></pre>
+        </div>
+        <p>Orgizacja wygląda tak:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code>$ ./orgise.sh
+orgizuję blog/_posts/0_intro.org
+* ---- ORGISE ---- *
+edition of a post at 3872
+blog/_posts/0_intro.org --&gt; blog/index.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgizuję blog/_posts/1_pierwszy.org
+* ---- ORGISE ---- *
+edition of a post at 6256
+blog/_posts/1_pierwszy.org --&gt; blog/index.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgizuję blog/_posts/3_orgise.org
+* ---- ORGISE ---- *
+blog/_posts/3_orgise.org --&gt; blog/index.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgizuję blog/_posts/post.org
+* ---- ORGISE ---- *
+blog/_posts/post.org is excluded</code></pre>
+        </div>
+        <h4><i>Che fare?</i></h4>
+        <p><del>W zasadzie blog miałby najwięcej sensu w formie typu: na głównej</del>
+          <del>stronie bloga jest post wproawadzawszy + linki (i exceprty) do</del>
+          <del>osobnych postów, które składowałoby się na oddzielnych htmlach? Chyba</del>
+          <del>to byłoby najlepsze&#8230; Trochę trudniejsze do zrealizowania, ale nie</del>
+          <del>niemożliwe. Zapewne musiałbym mieć szablon strony blogowej (na niej</del>
+          <del>trzymane menu do strony głównej + menu do strony głównej bloga) i jakoś ją</del>
+          <del>bashem kopiować, tam już zwykły orgise&#8230; Inny orgise-like mechanizm</del>
+          <del>wstawiałby następnie link na ~/blog/~ oraz może datę? Link na pewno, a</del>
+          <del>do tego może excerpcik, ale to troszkę roboty&#8230; aj aj&#8230;</del></p>
+        <p>^ wiele z tego już wprowadziłem. Prawdziwie należy się zastanowić nad
+          tym co robić w taki sposób:</p>
+        <ul>
+          <li>można doprecyzować skąd pobierać posty, dokąd.</li>
+          <li>powinno to być maksymalnie uniwersalne &#8211; powinno mi umożliwiać publikowanie na wszystkich stronach</li>
+          <li>mógłby sam tworzyć streszczenia jakoś sprytnie&#8230;</li>
+        </ul>
+      </div>
+       <!-- fin_post_orgise -->
+      <!--END_KURDE-->
+    </div>
+  </body>
+</html>

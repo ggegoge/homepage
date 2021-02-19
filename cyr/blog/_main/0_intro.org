@@ -4,7 +4,10 @@ Tak. nie przesłyszeliście się człowieku. Tworzę oficjalnie *bloga*.
 Całą inspiracją stał się prawdę powiedziawszy jekyll i tamtejsze easy
 posty. Zrobiłem więc własne narzędzie w /ruby/ o nazwie *orgise*.
 *** jak dodać nowe posty?
-Działa bardzo prosto: ~ruby orgise.rb 0_intro.org index.html~. 
++Działa bardzo prosto: ~ruby orgise.rb 0_intro.org index.html~.+
+actaully... *już nie do końca tak to działa.* Powiem o tym więcej w
+aktualizacji na blogu. Ale na razie niech przeszły ja kontynuuje:
+
 Tak utworzę tego posta. Następnie utworzę kolejnego typu pierwszy post
 czy coś. Tam dam kod itp. Również z *orgise'em* tego dokonam.
 *** edycja istniejących!

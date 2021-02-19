@@ -1,22 +1,34 @@
 #+TITLE: Orgise
 #+ident: orgise
 #+Date: 19.02.2021
-Tutaj zapiszę krótki przegląd działania *orgise*'a i jego pseudo
+Krótki przegląd działania *orgise*'a i jego pseudo
 dokumentację oraz napiszę z czego korzystałem. Co prawda raczej nikt
 prócz mnie tego nie użyje, ale jestem tego świadom. Piszę tę
 dokumentację po części, aby samemu nie zapomnieć o co chodzi.
+
+Jeśli ktoś w ogóle nie wie /czy jest org/, radzę mu zajrzeć na [[https://orgmode.org/][jego stronę]] albo
+obejrzeć dotyczący go fragment [[https://youtu.be/JWD1Fpdd4Pc?t=1206][tego filmiku]], całość [[https://youtu.be/SzA2YODtgK4][tej prelekcyjki]]
+bądź przeczytać jeden z niezliczonych [[https://karl-voit.at/2017/09/23/orgmode-as-markup-only/][peanów cudzych]].
 *** czym jest *orgise*?
 *Orgise* (czy też ~orgise~) to narzędzie, jakie napisałem w ruby i
  bashu celem oszczędzenia sobie syfienia rąk tym durnym htmlem. 
 *** jak używać?
-**** orgizacja całego folderu
-Użycie jest dość proste. Załóżmy, że np chcemy *zorgise*'ować cały katalog ~_posts~
+Mamy dwie możliwości użycia.
+1. chcemy dodawać nowe /posty/ ciurkiem do dołu istniejącej już strony
+2. dodajemy nowe /posty/, każdy jako osobną stronę w folderze ~posts~
+Jak na razie zamłotkowałem to tylko na budowanie strony blog oraz
+osobnych postów w podkatalogu na nie, ale warto byłoby dodać możliwość
+wyboru katalogów źródłowych i wyników itp.
+**** dodawanie postów do strony
+***** orgizacja całego folderu
+Użycie jest dość proste. Załóżmy, że np chcemy *zorgise*'ować cały katalog ~_main~
 (czyli: mam w tym katalogu pliki orgowe (obowiązkowo z tagiem
 ~#+TITLE~) tak, aby dodały się jako kolejne bloki na stronę w pliku
-~index.html~. Wtedy wystarczy użyć komendy ~orgise.sh _posts
-index.html~ i przetworzą się wszystkie pliki. Jedynym wyjątkiem są te,
-które opatrzone są tagiem ~#+EXCLUDE: true~. 
-**** orgizacja pojedynczego pliku
+~index.html~. Wtedy wystarczy użyć komendy 
+~./orgise.sh~
+i przetworzą się wszystkie pliki. Jedynym wyjątkiem są te,
+które opatrzone są tagiem ~#+EXCLUDE: true~.
+***** orgizacja pojedynczego pliku
 To trochę kwestia bardziej złożona, ale mamy też więcej
 opcji. Wtedy składnia jest następująca:
 #+BEGIN_SRC shell
@@ -30,6 +42,27 @@ mówi, że zamiast edycji istniejącego posta chcemy utworzyć nowy.
 Posty rozróżnia się po ich identyfikatorze. Standardowo jest to
 wartość z ~#+TITLE~ z myślnikami zamiast spacji, ale jeśli się
 sprecyzuje osobno ~#+IDENT~ to to pole zadecyduje o ~id~ htmlowym. 
+**** nowe strony z postów
+***** cały folder
+Z pomocą przychodzi ponownie ~orgise.sh~, wystarczy posiadać
+szablonową stronę i następnie wywołanie ~./orgise.sh --newp~ zwieńczy
+dzieła utworzenia z każdego org-pliku z katalogu ~blog/_posts~ (tak,
+/chamsko zamłotkowane/, ale mam nadzieję, że kiedyś poprawię to i
+zrobię elegancko) osobnej strony opartej na tym schemacie. 
+***** pojedyncza strona
+Podobnie jak poprzednio, ale tym razem trzeba również dodać flagę
+~--newp~. 
+*** jak wygląda workflow?
+Jak chcę utworzyć nowy post na tę stronę, robię to w następującym
+stylu:
++ piszę go w orgu, wrzucam do ~_posts~. daję mu znaczniki ~#+title~,
+  ~#+date~ i czasami ~#+ident~
++ jeśli chcę aby pojawił się na stronie głównej bloga piszę w podobnym stylu
+  krótkie streszczonko z linkiem, które następnie ląduje w ~_main~.
++ komendą ~./orgise.sh~ aktualizuję zawartość strony głównej tzw bloga
+  i poprawiam to ~./orgise --newp~, które skanuje katalog ~_posts~ i
+  bierze posty bez ~#+exclude~, z których tworzy strony w ~posts~
++ /voilà/
 *** jak to jest zrobione?
 Najtrudniejszą część na szczęście zrobiono za mnie. *Gem* do ruby
 [[https://github.com/wallyqs/org-ruby][org-ruby]] (/genialne/ narzędzie. ciekawe też, że [[https://github.com/github/markup#markups][korzysta z niego]]
@@ -94,3 +127,19 @@ Orgizacja wygląda tak:
   ,* ---- ORGISE ---- *
   blog/_posts/post.org is excluded
 #+END_src
+*** TODO /Che fare?/
++W zasadzie blog miałby najwięcej sensu w formie typu: na głównej+
++stronie bloga jest post wproawadzawszy + linki (i exceprty) do+
++osobnych postów, które składowałoby się na oddzielnych htmlach? Chyba+
++to byłoby najlepsze... Trochę trudniejsze do zrealizowania, ale nie+
++niemożliwe. Zapewne musiałbym mieć szablon strony blogowej (na niej+
++trzymane menu do strony głównej + menu do strony głównej bloga) i jakoś ją+
++bashem kopiować, tam już zwykły orgise... Inny orgise-like mechanizm+
++wstawiałby następnie link na ~/blog/~ oraz może datę? Link na pewno, a+
++do tego może excerpcik, ale to troszkę roboty... aj aj...+
+
+^ wiele z tego już wprowadziłem. Prawdziwie należy się zastanowić nad
+tym co robić w taki sposób:
++ można doprecyzować skąd pobierać posty, dokąd.
++ powinno to być maksymalnie uniwersalne -- powinno mi umożliwiać publikowanie na wszystkich stronach
++ mógłby sam tworzyć streszczenia jakoś sprytnie...

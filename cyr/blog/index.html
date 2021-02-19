@@ -28,9 +28,9 @@
             crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
     <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
-    integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
-    crossorigin="anonymous">
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
+          integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
+          crossorigin="anonymous">
     <script defer
             src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js"
             integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9"
@@ -71,19 +71,19 @@
            !-- g -->
         <span id="mail_mat"></span> <!-- katexizowany mail -->
       </a>
+      <script>
+        // mail w rachunku lambda
+        var mejl = document.getElementById('mail_mat');
+        document.addEventListener("DOMContentLoaded", function() {
+          katex.render(
+            String.raw`\small{(\lambda x.\lambda y\ldotp\;
+               y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
+            mejl, {displayMode: false, strict: "warn"});
+        
+          }
+        );
+      </script>
     </div>
-    <script>
-      // mail w rachunku lambda
-      var mejl = document.getElementById('mail_mat');
-      document.addEventListener("DOMContentLoaded", function() {
-      katex.render(
-      String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
-      y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
-      mejl, {displayMode: false, strict: "warn"});
-      
-      }
-      );
-    </script>
     <div class="vsjo">
       <div class="text" id="ja?-blog?">
         <h2 class="title">ja? blog?</h2>
@@ -226,7 +226,100 @@
           ale może uda mi się to niegdyś naprawić. Bądź co bądź to kończy ten
           post blogowy. Był to w pewnym sensie zaledwie przykład.</p>
       </div>
-       <!-- fin_post_Pierwszy-org-post! -->
+      <!-- fin_post_Pierwszy-org-post! -->
+      <div class="text" id="orgise">
+        <div class="date_wrap"><span id="datka">19.02.2021</span>
+        </div>
+        <h2 class="title">Orgise</h2>
+        <p>Tutaj zapiszę krótki przegląd działania <b>orgise</b>&#8216;a i jego pseudo
+          dokumentację oraz napiszę z czego korzystałem. Co prawda raczej nikt
+          prócz mnie tego nie użyje, ale jestem tego świadom. Piszę tę
+          dokumentację po części, aby samemu nie zapomnieć o co chodzi.</p>
+        <h4>czym jest <b>orgise</b>?</h4>
+        <p><b>Orgise</b> (czy też <code>orgise</code>) to narzędzie, jakie napisałem w ruby i
+          bashu celem oszczędzenia sobie syfienia rąk tym durnym htmlem.</p>
+        <h4>jak używać?</h4>
+        <h5>orgizacja całego folderu</h5>
+        <p>Użycie jest dość proste. Załóżmy, że np chcemy <b>zorgise</b>&#8216;ować cały katalog <code>_posts</code>
+          (czyli: mam w tym katalogu pliki orgowe (obowiązkowo z tagiem
+          <code>#+TITLE</code>) tak, aby dodały się jako kolejne bloki na stronę w pliku
+          <code>index.html</code>. Wtedy wystarczy użyć komendy <code>orgise.sh _posts
+            index.html</code> i przetworzą się wszystkie pliki. Jedynym wyjątkiem są te,
+          które opatrzone są tagiem <code>#+EXCLUDE: true</code>.</p>
+        <h5>orgizacja pojedynczego pliku</h5>
+        <p>To trochę kwestia bardziej złożona, ale mamy też więcej
+          opcji. Wtedy składnia jest następująca:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code>ruby orgise.md forg page <span class="o">[</span>page_out] <span class="o">[</span><span class="nt">-n</span><span class="o">]</span></code></pre>
+        </div>
+        <p>gdzie <code>forg</code> to plik do zorgizowania, <code>page</code> to strona którą trzeba
+          zedytować, a <code>page_out</code> to miejsce do zapisania wyniku (jeśli się go
+          nie poda to będzie to domyślnie równe <code>page</code>), a użycie flagi <code>-n</code>
+          mówi, że zamiast edycji istniejącego posta chcemy utworzyć nowy.</p>
+        <p>Posty rozróżnia się po ich identyfikatorze. Standardowo jest to
+          wartość z <code>#+TITLE</code> z myślnikami zamiast spacji, ale jeśli się
+          sprecyzuje osobno <code>#+IDENT</code> to to pole zadecyduje o <code>id</code> htmlowym.</p>
+        <h4>jak to jest zrobione?</h4>
+        <p>Najtrudniejszą część na szczęście zrobiono za mnie. <b>Gem</b> do ruby
+          <a id="linek" href="https://github.com/wallyqs/org-ruby">org-ruby</a> zapewnia cały parsing i pewną customizację. Osobiście dodałem
+          do tego przetwarzanie plików tak aby te zachowały kompatybilność z
+          resztą strony. Poza tym obsługa <code>#+DATE</code> oraz małe zmiany w source
+          kodzie org-ruby wynikłe z braku wdrożnia do głównej wersji niektórych
+          ważnych zmian. To wszystko mocno regexpem potraktowałem. To była
+          największa męka prawdę powiedziawszy, ponieważ <a id="linek" href="http://regex.info/blog/2006-09-15/247">jak wiadomo</a> regexp jest
+          <i>bardzo</i> kłopotlwy.</p>
+        <p>Dodatkowo użyłem gemu <a id="linek" href="https://github.com/threedaymonk/htmlbeautifier">html beautifier</a> aby ten
+          wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał &#8220;jak
+          człowiek&#8221;.</p>
+        <p>Mogę załączyć mały fragmencik, ale zainteresowani mogą ujrzeć to
+          wszystko na <a id="linek" href="https://github.com/test0wanie/homepage/blob/master/cyr/orgise.rb">githubie</a>.</p>
+        <p><i>now you have two problems</i>:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">def</span> <span class="nf">make_postorg</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+  <span class="n">html</span><span class="p">,</span> <span class="n">titl</span> <span class="o">=</span> <span class="n">parsuj</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+  <span class="n">titl</span><span class="p">.</span><span class="nf">gsub!</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"-"</span>
+  <span class="nb">id</span> <span class="o">=</span> <span class="n">titl</span>
+  <span class="n">linkise</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">html</span><span class="p">.</span><span class="nf">nil?</span> <span class="k">then</span> <span class="k">raise</span><span class="p">(</span><span class="s2">"nil html??"</span><span class="p">)</span> <span class="k">end</span>
+  <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">html</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span> <span class="o">+</span>
+         <span class="s2">" &lt;!-- fin_post_"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">" --&gt;"</span><span class="p">,</span>
+         <span class="p">(</span><span class="no">Regexp</span><span class="p">.</span><span class="nf">new</span> <span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="no">Regexp</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">+</span>
+                     <span class="s2">"</span><span class="se">\"</span><span class="s2">&gt;(.|</span><span class="se">\n</span><span class="s2">)*&lt;/div&gt;(</span><span class="se">\s</span><span class="s2">|</span><span class="se">\n</span><span class="s2">)*"</span> <span class="o">+</span>
+                     <span class="no">Regexp</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="s2">" &lt;!-- fin_post_"</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">" --&gt;"</span><span class="p">))]</span>
+  <span class="k">return</span> <span class="n">res</span>
+<span class="k">end</span></code></pre>
+        </div>
+        <p>sekwencyjna orgizacja plików:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="k">for </span>f <span class="k">in</span> <span class="sb">`</span><span class="nb">ls</span> <span class="nv">$dir</span>/<span class="k">*</span>.org | <span class="nb">sort</span> <span class="nt">-V</span><span class="sb">`</span>
+<span class="k">do
+    </span><span class="nb">echo </span>orgizuję <span class="s2">"</span><span class="nv">$f</span><span class="s2">"</span>
+    ruby orgise.rb <span class="nv">$f</span> <span class="nv">$outp</span>
+<span class="k">done</span></code></pre>
+        </div>
+        <p>Orgizacja wygląda tak:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code>$ ./orgise.sh
+orgizuję blog/_posts/0_intro.org
+* ---- ORGISE ---- *
+edition of a post at 3872
+blog/_posts/0_intro.org --&gt; blog/index.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgizuję blog/_posts/1_pierwszy.org
+* ---- ORGISE ---- *
+edition of a post at 6256
+blog/_posts/1_pierwszy.org --&gt; blog/index.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgizuję blog/_posts/3_orgise.org
+* ---- ORGISE ---- *
+blog/_posts/3_orgise.org --&gt; blog/index.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgizuję blog/_posts/post.org
+* ---- ORGISE ---- *
+blog/_posts/post.org is excluded</code></pre>
+        </div>
+      </div>
+       <!-- fin_post_orgise -->
       <!--END_KURDE-->
     </div>
   </body>

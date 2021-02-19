@@ -15,6 +15,7 @@
           href="css/style.css?v=1">
     <link rel="stylesheet" type="text/css"
           href="css/terkes.css?v=1">
+    
     <!-- syntax highliting -->
     <link rel="stylesheet" href="css/solarised_dark.css">
 
@@ -92,7 +93,7 @@
       var mejl = document.getElementById('mail_mat');
       document.addEventListener("DOMContentLoaded", function() {
         katex.render(
-          String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
+          String.raw`\small{(\lambda x.\lambda y\ldotp\;
              y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
           mejl, {displayMode: false, strict: "warn"});
     

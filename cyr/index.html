@@ -88,8 +88,8 @@
       <div class="menu" id="rzeczy">rzeczy</div>
     </a>
     <a class="menuLink"
-    href="#info">
-      <div class="menu" id="more">fajne rzeczy</div>
+       href="./blog">
+      <div class="menu" id="more">blog</div>
     </a>
     <a class="menuLink"
     href="terkes.html">
@@ -110,7 +110,7 @@
       var mejl = document.getElementById('mail_mat');
       document.addEventListener("DOMContentLoaded", function() {
         katex.render(
-          String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
+          String.raw`\small{(\lambda x.\lambda y\ldotp\;
              y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
           mejl, {displayMode: false, strict: "warn"});
     

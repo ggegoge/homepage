@@ -151,7 +151,7 @@ textarea {
 div.vsjo {
     top: 120px;
     position: absolute;
-    left: 27%;  
+    left: 17%;
 }
 
 
@@ -168,7 +168,7 @@ div.text {
     /* left: 35%; */
     /* top: 50px; */
     /* left: 27%; */
-    width: 650px;
+    width: 75%/* 650px */;
     /* height: 90%; */
     margin:  auto;  /* -100px 0 0 -150px; */
     background-color: #eee;

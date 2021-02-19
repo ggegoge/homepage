@@ -35,7 +35,7 @@ div.top {
     /* font-family: 'Open Sans', sans-serif; */
 }
 
-h1 {
+h1.site_title {
     margin-top: 0;
     margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
@@ -43,7 +43,7 @@ h1 {
     /* font-family: 'Monteserrat', sans-serif; */
 }
 
-h5 {
+h5.site_subtitle {
     margin-top: 0;    
 }
 
@@ -252,6 +252,8 @@ table, th, td {
     border: 1px solid black;
 }
 
-pre {
-    font-family: 'Menlo', sans-serif;
+pre, code {
+    font-family: 'Oxygen Mono', monospace;
+    font-family: 'Menlo', monospace;
+    font-size: 90%;
 }

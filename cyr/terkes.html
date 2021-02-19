@@ -64,10 +64,23 @@
     copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
     <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
        onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
-      (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
-      g
+      <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
+           !-- g -->
+      <span id="mail_mat"></span> <!-- katexizowany mail -->
     </a>
   </div>
+  <script>
+    // mail w rachunku lambda
+    var mejl = document.getElementById('mail_mat');
+    document.addEventListener("DOMContentLoaded", function() {
+    katex.render(
+    String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
+          y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
+    mejl, {displayMode: false, strict: "warn"});
+    
+    }
+    );    
+  </script>
   
   <div class="vsjo">
     <div class="text" id="main">
@@ -78,7 +91,7 @@
       <h2>Koci lemat</h2>
       <p>
         <!-- <span id="linek" style="fonst-size: 75%;">ang. the acab lemma </span> <br> -->
-        <b>Lemat  </b> <i> Wszystkie koty są piękne.</i>
+        <b>Lemat  </b> <i> wszystkie koty są piękne.</i>
         <br>
         <span id="textsc">Dowód</span> Każdy bliżej zaznajomiony z
         językiem logiki matematycznej i rachunku kwantyfikatorów
@@ -90,15 +103,18 @@
         <!-- (w angielskiej literaturze <i>the acab lemma</i>) --> jest prawdziwy.
         <p id="ked">Kot erat demonstrandum</p>
         <script>
-          var element = document.getElementById('allcat');
+          // kocia formuła
+          var kocia_formula = document.getElementById('allcat');
           document.addEventListener("DOMContentLoaded", function() {
-              katex.render("\\forall x\\ldotp Kot(x) \\to Pi\\textit{ę}kny(x).",
-                           element, {displayMode: true, strict: "warn"});
+              katex.render(String.raw`\forall x\ldotp Kot(x) \to Pi\textit{ę}kny(x).`,
+                  kocia_formula, {displayMode: true, strict: "warn"});
+
               }
           );
         </script>        
       </p>
     </div>
+    <!--END_KURDE-->
   </div>
 
   </body>

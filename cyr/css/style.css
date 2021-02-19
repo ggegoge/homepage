@@ -84,6 +84,7 @@ div.menu {
 div.menu:hover {
     animation-name: col_ch;
     animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 div.menu:active {
     color: black;
@@ -194,7 +195,18 @@ h4 {
     font-family: 'Open Sans', sans-serif;
 }
 
-
+.date_wrap {
+    position: relative;
+}
+#datka {
+    font-family: 'Monteserrat', sans-serif;
+    position: relative;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 75%;
+}
 
 /* animations  */
 
@@ -225,3 +237,21 @@ h4 {
     }
 }
 /*dreffe*/
+
+
+/* general: */
+
+/* tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    font-family: 'Roboto Slab', serif;
+    border: 1px solid black;
+}
+
+pre {
+    font-family: 'Menlo', sans-serif;
+}

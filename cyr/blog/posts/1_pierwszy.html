@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css"
           href="../../css/style.css?v=1">
     <!-- syntax highliting -->
-    <link rel="stylesheet" href="../../css/solarised_dark.css">
+    <!-- <link rel="stylesheet" href="../../css/solarised_dark.css"> -->
+    <link rel="stylesheet" href="../../css/minima.css">
     <!-- KaTeX -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
@@ -26,7 +27,13 @@
             src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
             integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
             crossorigin="anonymous"
-            onload="renderMathInElement(document.body);"></script>
+            onload="renderMathInElement(document.body, {
+                      delimiters : [
+                       {left: '$$', right: '$$', display: true},
+                       {left: '$', right: '$', display: false},
+                       {left: '\\(', right: '\\)', display: false},
+                       {left: '\\[', right: '\\]', display: true}                       
+                       ]});"></script>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
           integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
@@ -71,21 +78,10 @@
       <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
        onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
         <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
-           !-- g -->
-        <span id="mail_mat"></span> <!-- katexizowany mail -->
+             !-- g -->
+        $\footnotesize{(\lambda x.\lambda y\ldotp\;
+        y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}$
       </a>
-      <script>
-        // mail w rachunku lambda
-        var mejl = document.getElementById('mail_mat');
-        document.addEventListener("DOMContentLoaded", function() {
-          katex.render(
-            String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
-               y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
-            mejl, {displayMode: false, strict: "warn"});
-        
-          }
-        );
-      </script>
     </div>
     <div class="vsjo">
       <div class="text" id="Pierwszy-org-post!">
@@ -177,8 +173,80 @@
             <td>6</td>
           </tr>
         </table>
+        <h5>tabelki!</h5>
+        <p>Widzieliśmy powyżej tabelki generowane wykonaniem kodu <b>wewnątrz</b>
+          org-moudu, ale zobaczmy jak porządne tabele można tutaj wytworzyć.</p>
+        <table>
+          <tr>
+            <th>zbiór</th>
+            <th>oznaczenie</th>
+            <th>oznaczenie mocy</th>
+            <th>moc</th>
+          </tr>
+          <tr>
+            <td>liczby naturalne</td>
+            <td>$$\mathbb{N}$$</td>
+            <td>$$\overline{\overline{\mathbb{N}}} = \aleph_0$$</td>
+            <td>alef zero</td>
+          </tr>
+          <tr>
+            <td>zbiór potęgowy naturalnych</td>
+            <td>$$\sf P(\mathbb{N})$$</td>
+            <td>$$\overline{\overline{\sf P(\mathbb{N})}} = \mathfrak{c}$$</td>
+            <td><i>continuum</i></td>
+          </tr>
+          <tr>
+            <td>liczby rzeczywiste</td>
+            <td>$$\mathbb{R}$$</td>
+            <td>$$\overline{\overline{\mathbb{R}}} = \mathfrak{c}$$</td>
+            <td><i>continuum</i></td>
+          </tr>
+          <tr>
+            <td>zbiór potęgowy rzeczywistych</td>
+            <td>$$\sf P(\mathbb{R})$$</td>
+            <td>$$\overline{\overline{\sf P(\mathbb{R})}} = 2^\mathfrak{c}=\beth_2$$</td>
+            <td>bet dwa (chyba)</td>
+          </tr>
+        </table>
+        <p>ta jest dość skomplikowana, ale można zrobić również prostsze, jak ta:</p>
+        <table>
+          <tr>
+            <th>litera w łacince</th>
+            <th>litera w grece</th>
+            <th>litera hebrajska</th>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>&alpha;</td>
+            <td>$\aleph$</td>
+          </tr>
+          <tr>
+            <td>b</td>
+            <td>&beta;</td>
+            <td>$\beth$</td>
+          </tr>
+          <tr>
+            <td>c / g</td>
+            <td>&gamma;</td>
+            <td>$\gimel$</td>
+          </tr>
+          <tr>
+            <td>d</td>
+            <td>&delta;</td>
+            <td>$\daleth$</td>
+          </tr>
+        </table>
+        <p>którą otrzymałem tak:</p>
+        <div class="highlight">
+          <pre class="codehilite"><code>| litera w łacince | litera w grece | litera hebrajska |
+|------------------+----------------+------------------|
+| a                | \alpha         | $\aleph$         |
+| b                | \beta          | $\beth$          |
+| c / g            | \gamma         | $\gimel$         |
+| d                | \delta         | $\daleth$        |</code></pre>
+        </div>
         <h5><i>matematyka</i></h5>
-        <p>Mam tutaj również funkcjonującego <a id="linek" href="https://katex.org">KaTeXa</a>. Dzięki temu jeśli napiszę:</p>
+        <p>Mam tutaj również funkcjonującego <a id="linek" href="https://katex.org">KaTeXa</a> czy też &#92;(\KaTeX&#92;)-a. Dzięki temu jeśli napiszę:</p>
         <div class="highlight">
           <pre class="codehilite"><code><span class="p">$$</span><span class="nv">\textrm</span><span class="p">{</span><span class="nb">pijaczyna</span><span class="p">}{</span><span class="nb">:</span><span class="p">}</span><span class="nv">\;\;</span><span class="nb"> </span><span class="nv">\exists</span><span class="nb"> x</span><span class="nv">\ldotp\;</span><span class="nb"> P</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="nv">\to</span><span class="nb"> </span><span class="nv">\forall</span><span class="nb"> y P</span><span class="o">(</span><span class="nb">y</span><span class="o">)</span><span class="p">$$</span></code></pre>
         </div>
@@ -189,9 +257,25 @@
         <p>Mogę też fajne rzeczy typu moce zbiorów robić:</p>
         <p>$$ \overline{\overline{\sf{P}(\mathbb{N})}} =
           \mathfrak{c} = \overline{\overline\mathbb{R}} $$</p>
-        <p><i>voila</i>.
-          Nie jestem pewien co należy zrobić, aby działała tzw <i>inline maths</i>,
-          ale może uda mi się to niegdyś naprawić. Bądź co bądź to kończy ten
+        <p><i>voilà</i>.
+          <del>Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/,
+            ale może uda mi się to niegdyś naprawić.</del>
+          Udało mi się! Kto by pomyślał, że wystarczy przeczytać &#92;(\KaTeX&#92;)ową
+          dokumentację&#8230;</p>
+        <p>Chcąc wyrenderować np. duże ksi inline robię &#92;(&xi;&#92;)
+          czyli <code>\\(ksi\\)</code>! Suma? Nic prostszego: <code>\\(\sum_{n=0}^\infty \frac{1}{n!}\\)</code>
+          daje mi &#92;(&sum;_{n=0}^&infin; \frac{1}{n!}&#92;), a jeśli użyję
+          <code>$$\sum_{n=0}^\infty \frac{1}{n!}$$</code>, to dostanę
+          $$&sum;_{n=0}^&infin;\frac{1}{n!}$$
+          czyli tzw <i>display mode</i>. &#92;(\textit{et voilà}&#92;).</p>
+        <p>Powiem więcej! Pogmerałem w tym $\KaTeX$u i jest jeszcze prościej!
+          Dodałem otóż do listy <i>delimiters</i> pojedyncze dolary i teraz zrobiwszy</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="p">$</span><span class="nb">Y </span><span class="o">=</span><span class="nb"> </span><span class="nv">\lambda</span><span class="nb"> f. </span><span class="o">(</span><span class="nv">\lambda</span><span class="nb"> z. f </span><span class="o">(</span><span class="nb">z z</span><span class="o">))</span><span class="nb"> </span><span class="o">(</span><span class="nv">\lambda</span><span class="nb"> z. f </span><span class="o">(</span><span class="nb">z z</span><span class="o">))</span><span class="p">$</span></code></pre>
+        </div>
+        <p>otrzymam
+          $Y = &lambda; f. (&lambda; z. f (z z)) (&lambda; z. f (z z))$ czyli matematykę!</p>
+        <p>Bądź co bądź to kończy ten
           post blogowy. Był to w pewnym sensie zaledwie przykład.</p>
       </div>
        <!-- fin_post_Pierwszy-org-post! -->

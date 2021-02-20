@@ -3,35 +3,16 @@ Tak. nie przesłyszeliście się człowieku. Tworzę oficjalnie *bloga*.
 ** Jak to powstaje?
 Całą inspiracją stał się prawdę powiedziawszy jekyll i tamtejsze easy
 posty. Zrobiłem więc własne narzędzie w /ruby/ o nazwie *orgise*.
-*** jak dodać nowe posty?
-+Działa bardzo prosto: ~ruby orgise.rb 0_intro.org index.html~.+
-actaully... *już nie do końca tak to działa.* Powiem o tym więcej w
-aktualizacji na blogu. Ale na razie niech przeszły ja kontynuuje:
 
-Tak utworzę tego posta. Następnie utworzę kolejnego typu pierwszy post
-czy coś. Tam dam kod itp. Również z *orgise'em* tego dokonam.
-*** edycja istniejących!
-jeśli program tworząc post znajdzie już istniejący z pasującym ~id~,
-to go zamieni stosownie.
-*** wiele postów na raz
-Może się zdarzyć, że chcę dokonać zmiany kilku postów na raz. Wtedy
-załóżmy, że faktycznie zmieniam te piliki ~.org~. Jeśli teraz
-uruchomię swój skrypt bashowy ~orgise.sh~ to on wszystkie pozycje z
-katalogu folderu *_posts* przetworzy za pomocą wspomnianego ruby'owego
-programu. Tym samym staje się to bardzo proste.
-**** aspekt kolejności
-staje się to dość istotne, albowiem ten skrypt obsługuje te pliki w
-jakiejś kolejności prawda? System jest taki, że przegląda je
-posortowane komendą ~sort -V~, czyli leksykograficznie chyba. Zatem np
-nazwałem ten plik ~0_intro.org~, ten poniżej nazwę ~1_coś.org~ itd...
-
+Jego działanie opisałem nawet [[posts/2_orgise.html][w jednym z postów]].
 * Czego należy się spodziewać?...
 W zasadzie nie mam pojęcia co tu będzie. Może jakieś losowe
-rzeczy. Będę je zapewne składować tak ciurkiem bo nie mam jakiejś
-dużej motywacji tworzenia każdemu osobnej strony oraz organizwania
-ich. Ale zobaczy się. Sam program orgowy na pewno pomoże mi bardziej
+rzeczy. +Będę je zapewne składować tak ciurkiem bo nie mam jakiejś dużej motywacji tworzenia każdemu osobnej strony oraz organizwania ich.+ 
+Ale zobaczy się. Sam program orgowy na pewno pomoże mi bardziej
 niż jedynie tutaj, mogę za jego pomocą generować wszystkie strony bez
 babrania się w htmlu obrzydliwym.
 
 Znajdzie się tu minimum ten post wstępny oraz jeden popisowy
 -- pewnego rodzaku pokaz rzeczy *orgowych* jak matematyka i kod. Ale na razie tyle!
+
+****** Posty będą stackowane poniżej (opis + link)

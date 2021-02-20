@@ -68,8 +68,34 @@ Mogę do tego dodać infiksik:
 #+RESULTS:
 | 1 | 2 | 3 | 4 | 5 | 6 |
 
+**** tabelki!
+Widzieliśmy powyżej tabelki generowane wykonaniem kodu *wewnątrz*
+org-moudu, ale zobaczmy jak porządne tabele można tutaj wytworzyć.
+| zbiór                        | oznaczenie            | oznaczenie mocy                                                      | moc             |
+|------------------------------+-----------------------+----------------------------------------------------------------------+-----------------|
+| liczby naturalne             | $$\mathbb{N}$$        | $$\overline{\overline{\mathbb{N}}} = \aleph_0$$                      | alef zero       |
+| zbiór potęgowy naturalnych   | $$\sf P(\mathbb{N})$$ | $$\overline{\overline{\sf P(\mathbb{N})}} = \mathfrak{c}$$           | /continuum/     |
+| liczby rzeczywiste           | $$\mathbb{R}$$        | $$\overline{\overline{\mathbb{R}}} = \mathfrak{c}$$                  | /continuum/     |
+| zbiór potęgowy rzeczywistych | $$\sf P(\mathbb{R})$$ | $$\overline{\overline{\sf P(\mathbb{R})}} = 2^\mathfrak{c}=\beth_2$$ | bet dwa (chyba) |
+ta jest dość skomplikowana, ale można zrobić również prostsze, jak ta:
+| litera w łacince | litera w grece | litera hebrajska |
+|------------------+----------------+------------------|
+| a                | \alpha         | $\aleph$         |
+| b                | \beta          | $\beth$          |
+| c / g            | \gamma         | $\gimel$         |
+| d                | \delta         | $\daleth$        |
+którą otrzymałem tak:
+#+BEGIN_SRC org
+  | litera w łacince | litera w grece | litera hebrajska |
+  |------------------+----------------+------------------|
+  | a                | \alpha         | $\aleph$         |
+  | b                | \beta          | $\beth$          |
+  | c / g            | \gamma         | $\gimel$         |
+  | d                | \delta         | $\daleth$        |
+#+END_SRC
+
 **** /matematyka/
-Mam tutaj również funkcjonującego [[https://katex.org][KaTeXa]]. Dzięki temu jeśli napiszę:
+Mam tutaj również funkcjonującego [[https://katex.org][KaTeXa]] czy też \\(\KaTeX\\)-a. Dzięki temu jeśli napiszę:
 #+BEGIN_SRC latex
   $$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
 #+END_SRC
@@ -83,7 +109,26 @@ $$ \overline{\overline{\sf{P}(\mathbb{N})}} =
 \mathfrak{c} = \overline{\overline\mathbb{R}} $$
 
 
-/voila/.
-Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/,
-ale może uda mi się to niegdyś naprawić. Bądź co bądź to kończy ten
+/voilà/.
++Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/,
+ale może uda mi się to niegdyś naprawić.+ 
+Udało mi się! Kto by pomyślał, że wystarczy przeczytać \\(\KaTeX\\)ową
+dokumentację...
+
+ Chcąc wyrenderować np. duże ksi inline robię \\(\xi\\)
+czyli ~\\(ksi\\)~! Suma? Nic prostszego: ~\\(\sum_{n=0}^\infty \frac{1}{n!}\\)~ 
+daje mi \\(\sum_{n=0}^\infty \frac{1}{n!}\\), a jeśli użyję
+~$$\sum_{n=0}^\infty \frac{1}{n!}$$~, to dostanę 
+$$\sum_{n=0}^\infty\frac{1}{n!}$$ 
+czyli tzw /display mode/. \\(\textit{et voilà}\\).
+
+Powiem więcej! Pogmerałem w tym $\KaTeX$u i jest jeszcze prościej!
+Dodałem otóż do listy /delimiters/ pojedyncze dolary i teraz zrobiwszy
+#+BEGIN_SRC latex
+  $Y = \lambda f. (\lambda z. f (z z)) (\lambda z. f (z z))$ 
+#+END_SRC
+otrzymam
+$Y = \lambda f. (\lambda z. f (z z)) (\lambda z. f (z z))$ czyli matematykę!
+
+Bądź co bądź to kończy ten
 post blogowy. Był to w pewnym sensie zaledwie przykład.

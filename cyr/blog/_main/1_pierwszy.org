@@ -2,4 +2,6 @@
 #+DATE: 19.02.2021
 ****** [[posts/1_pierwszy.html][link]]
 
-/Pierwszy post napisany w orgu i zarazem krótka demonstracja jego możliwości/
+/Pierwszy post napisany w orgu i zarazem krótka demonstracja jego
+możliwości./ 
+/Do ujrzenia m. in. tabelki, $\LaTeX$owo--$\KaTeX$owa matematyka, fragmenty kodu.../

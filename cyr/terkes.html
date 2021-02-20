@@ -25,28 +25,32 @@
           href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
           integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
           crossorigin="anonymous">
-    
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer
             src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
             integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
             crossorigin="anonymous"></script>
-    
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer
             src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
             integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
             crossorigin="anonymous"
-            onload="renderMathInElement(document.body);"></script>
+            onload="renderMathInElement(document.body, {
+                      delimiters : [
+                       {left: '$$', right: '$$', display: true},
+                       {left: '$', right: '$', display: false},
+                       {left: '\\(', right: '\\)', display: false},
+                       {left: '\\[', right: '\\]', display: true}                       
+                       ]});">
+    </script>
     <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
-    integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
-    crossorigin="anonymous">
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
+          integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
+          crossorigin="anonymous">
     <script defer
             src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js"
             integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9"
             crossorigin="anonymous"></script>
-    
     <script>
       window.WebFontConfig = {
         custom: {
@@ -60,7 +64,8 @@
     <script defer
             src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js"
             integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc="
-            crossorigin="anonymous"></script> 
+            crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -85,21 +90,23 @@
     <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
        onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
       <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
-           !-- g -->
-      <span id="mail_mat"></span> <!-- katexizowany mail -->
+      !-- g -->
+      $\footnotesize{(\lambda x.\lambda y\ldotp\;
+      y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}$
+      <!-- <span id="mail_mat"></span> --> <!-- katexizowany mail -->
     </a>
-    <script>
-      // mail w rachunku lambda
-      var mejl = document.getElementById('mail_mat');
-      document.addEventListener("DOMContentLoaded", function() {
-        katex.render(
-          String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
-             y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
-          mejl, {displayMode: false, strict: "warn"});
-    
-        }
-      );    
-    </script>
+    <!-- <script>
+     -   // mail w rachunku lambda
+     -   var mejl = document.getElementById('mail_mat');
+     -   document.addEventListener("DOMContentLoaded", function() {
+     -     katex.render(
+     -       String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
+     -          y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
+     -       mejl, {displayMode: false, strict: "warn"});
+     - 
+     -     }
+     -   );    
+     - </script> -->
   </div>
 
   
@@ -112,27 +119,28 @@
       <h2>Koci lemat</h2>
       <p>
         <!-- <span id="linek" style="fonst-size: 75%;">ang. the acab lemma </span> <br> -->
-        <b>Lemat  </b> <i> wszystkie koty są piękne.</i>
+        <span id="emph"><b>Lemat  </b> <i> wszystkie koty są piękne.</i></span>
         <br>
         <span id="textsc">Dowód</span> Każdy bliżej zaznajomiony z
         językiem logiki matematycznej i rachunku kwantyfikatorów
         spostrzeże, że tezę można zapisać tak:
-        <div id="allcat"></div>
+        $$\forall x\ldotp Kot(x) \to Pi\textit{ę}kny(x).$$
+        <!-- <div id="allcat"></div> -->
         Bez straty ogólności możemy rozważyć tego kota:
         <img id="tichy" src="koty/kot2.jpg" alt="Kot">
         Istotnie, jest on bardzo piękny (trywialny fakt). Przeto koci lemat
         <!-- (w angielskiej literaturze <i>the acab lemma</i>) --> jest prawdziwy.
         <p id="ked">Kot erat demonstrandum</p>
-        <script>
-          // kocia formuła
-          var kocia_formula = document.getElementById('allcat');
-          document.addEventListener("DOMContentLoaded", function() {
-              katex.render(String.raw`\forall x\ldotp Kot(x) \to Pi\textit{ę}kny(x).`,
-                  kocia_formula, {displayMode: true, strict: "warn"});
-
-              }
-          );
-        </script>        
+        <!-- <script>
+         -   // kocia formuła
+         -   // var kocia_formula = document.getElementById('allcat');
+         -   // document.addEventListener("DOMContentLoaded", function() {
+         -       // katex.render(String.raw`\forall x\ldotp Kot(x) \to Pi\textit{ę}kny(x).`,
+         -           // kocia_formula, {displayMode: true, strict: "warn"});
+         - 
+         -       // }
+         -   // );
+         - </script>         -->
       </p>
     </div>
     <!--END_KURDE-->

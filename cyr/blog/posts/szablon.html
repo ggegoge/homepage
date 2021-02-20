@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css"
           href="../../css/style.css?v=1">
     <!-- syntax highliting -->
-    <link rel="stylesheet" href="../../css/solarised_dark.css">
+    <!-- <link rel="stylesheet" href="../../css/solarised_dark.css"> -->
+    <link rel="stylesheet" href="../../css/minima.css">
     <!-- KaTeX -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
@@ -26,7 +27,14 @@
             src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
             integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
             crossorigin="anonymous"
-            onload="renderMathInElement(document.body);"></script>
+            onload="renderMathInElement(document.body, {
+                      delimiters : [
+                       {left: '$$', right: '$$', display: true},
+                       {left: '$', right: '$', display: false},
+                       {left: '\\(', right: '\\)', display: false},
+                       {left: '\\[', right: '\\]', display: true}                       
+                       ]});">
+    </script>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
           integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
@@ -71,21 +79,10 @@
       <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
        onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
         <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
-           !-- g -->
-        <span id="mail_mat"></span> <!-- katexizowany mail -->
+             !-- g -->
+        $\footnotesize{(\lambda x.\lambda y\ldotp\;
+        y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}$
       </a>
-      <script>
-        // mail w rachunku lambda
-        var mejl = document.getElementById('mail_mat');
-        document.addEventListener("DOMContentLoaded", function() {
-          katex.render(
-            String.raw`\footnotesize{(\lambda x.\lambda y\ldotp\;
-               y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}`,
-            mejl, {displayMode: false, strict: "warn"});
-        
-          }
-        );
-      </script>
     </div>
     <div class="vsjo">
 

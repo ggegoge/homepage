@@ -2,6 +2,7 @@
 
 body {
     background-color: #555;
+    /* background-color: #ced7df; */
 }
 
 a:link {
@@ -36,6 +37,12 @@ div.top {
 }
 
 /* for instance settings  */
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Piazzolla", serif;
+}
+
 h4, h5, h6 {
     /* font-family: 'Roboto Slab', serif; */
     /* font-family: 'Open Sans Condensed', sans-serif; */
@@ -43,6 +50,7 @@ h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0;
     font-family: 'Open Sans', sans-serif;
+    font-family: "Piazzolla", serif;
 }
 
 
@@ -190,6 +198,10 @@ div.text {
     padding: 10px;
 
     font-family: 'Piazzolla', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    /* font-family: 'Roboto', sans-serif;
+     * font-family: 'Open Sans', sans-serif; */
 }
 
 #linek {
@@ -198,6 +210,7 @@ div.text {
     font-family: 'Open Sans Condensed', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .date_wrap {
@@ -249,22 +262,32 @@ div.text {
 /* tables */
 table {
     table-layout: fixed;
-    width: 70%;
+    width: 100%;
     border-collapse: collapse;
     margin-left:auto; 
     margin-right:auto;
+    border: 1px solid black;
 }
 
 td {
-    text-align: center;
+    border: 1px solid #718395;
+    text-align: left;
     overflow: hidden; 
     text-overflow: ellipsis; 
-    word-wrap: break-word;
+    word-wrap: break-word;    
+}
+
+th {
+    border: 1px solid #718395;
+    background-color: #d3d8de;
+}
+
+td, th {
+    padding: 10px 15px;
 }
 
 table, th, td {
     font-family: 'Roboto Slab', serif;
-    border: 1px solid black;
 }
 
 pre, code {
@@ -276,5 +299,5 @@ pre, code {
 .highlight {
     padding: 1px;
     margin: 1px;
-    padding-left: 4px;
+    padding-left: 5px;
 }

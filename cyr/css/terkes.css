@@ -8,16 +8,24 @@ div.toptext {
 #main { }
 #kot { }
 
+#emph {
+    font-family: "Piazzolla", serif;
+}
+
 #textsc {
-  font-variant-caps: small-caps;
+    font-family: "Piazzolla", serif;
+    font-variant-caps: small-caps;
 }
 
 #ked {
+    font-family: "Piazzolla", serif;    
     text-align: right;
     font-variant-caps: small-caps;
 }
 
 #tichy {
+    margin-top: 1px;
+    margin-bottom: 1px;
     display: block;
     /* width: 650px; */
     height: 400px;

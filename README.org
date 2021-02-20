@@ -15,7 +15,7 @@
 *** ~cyr~
     What i have there is best described in there but I just wanna add
     the fact that I have made the web workflow of mine a little bit
-    more /automatised/ since now I have a tool called [[https://students.mimuw.edu.pl/~gc429174/cyr/blog/#orgise][orgise]] which
+    more /automatised/ since now I have a tool called [[https://students.mimuw.edu.pl/~gc429174/cyr/blog/posts/2_orgise.html][orgise]] which
     serves me for converting (automaticaly!) posts written in org mode
     into my ~cyr~ page. Hence now I'm a little bit more sceptical
     about switching to jekyll or something... Not that I haven't tried

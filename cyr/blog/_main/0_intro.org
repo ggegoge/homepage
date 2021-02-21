@@ -1,7 +1,7 @@
 #+TITLE: ja? blog?
 Tak. nie przesłyszeliście się człowieku. Tworzę oficjalnie *bloga*
 (choć to może być za dużo powiedziane, raczej tworzę sekcję do
-losowych rzeczy i testów).
+losowych rzeczy i testów, jest to więc ledwie pseudo-blog).
 ** Jak to powstaje?
 Całą inspiracją stał się prawdę powiedziawszy jekyll i tamtejsze easy
 posty. Zrobiłem więc własne narzędzie w /ruby/ o nazwie *orgise*,

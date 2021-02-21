@@ -1,6 +1,6 @@
 #+TITLE: Orgise
 #+ident: orgise
-#+Date: 19.02.2021
+#+Date: 21.02.2021
 Krótki przegląd działania *orgise*'a i jego pseudo
 dokumentację oraz napiszę z czego korzystałem. Co prawda raczej nikt
 prócz mnie tego nie użyje, ale jestem tego świadom. Piszę tę
@@ -10,23 +10,34 @@ Jeśli ktoś w ogóle nie wie /czy jest org/, radzę mu zajrzeć na [[https://or
 obejrzeć dotyczący go fragment [[https://youtu.be/JWD1Fpdd4Pc?t=1206][tego filmiku]], całość [[https://youtu.be/SzA2YODtgK4][tej prelekcyjki]]
 bądź przeczytać jeden z niezliczonych [[https://karl-voit.at/2017/09/23/orgmode-as-markup-only/][peanów cudzych]].
 *** czym jest *orgise*?
-*Orgise* (czy też ~orgise~) to narzędzie, jakie napisałem w ruby i
- bashu celem oszczędzenia sobie syfienia rąk tym durnym htmlem. 
-*** jak używać?
-Mamy dwie możliwości użycia.
-1. chcemy dodawać nowe /posty/ ciurkiem do dołu istniejącej już strony
-2. dodajemy nowe /posty/, każdy jako osobną stronę w folderze ~posts~
-Jak na razie zamłotkowałem to tylko na budowanie strony blog oraz
-osobnych postów w podkatalogu na nie, ale warto byłoby dodać możliwość
-wyboru katalogów źródłowych i wyników itp.
-**** dodawanie postów do strony
+*Orgise* (czy też ~orgise~) to narzędzie, jakie napisałem w /ruby i
+ bashu/ celem oszczędzenia sobie syfienia rąk tym durnym htmlem. 
+*** jak go używać?
+*Orgise* funkcjonuje w dwu trybach:
+1. tryb dodawczy -- chcemy dodawać nowe /posty/ ciurkiem do dołu
+   istniejącej już strony
+2. tryb nowo-stronny -- dodajemy nowe /posty/, każdy jako osobną
+   stronę w folderze ~posts~
+
+Tryb warunkuje ostatni argument. Jeśli jest to ~--newp~ to orgise
+będzie funkcjonować w trybie nowych stron. Wpp włączy tryb edycyjny.
+**** tryb dodawczy
+uruchomienie ~orgise.sh~ *bez* flagi ~--newp~.
 ***** orgizacja całego folderu
 Użycie jest dość proste. Załóżmy, że np chcemy *zorgise*'ować cały katalog ~_main~
 (czyli: mam w tym katalogu pliki orgowe (obowiązkowo z tagiem
 ~#+TITLE~) tak, aby dodały się jako kolejne bloki na stronę w pliku
 ~index.html~. Wtedy wystarczy użyć komendy 
-~./orgise.sh~
-i przetworzą się wszystkie pliki. Jedynym wyjątkiem są te,
+#+BEGIN_EXAMPLE
+  ./orgise.sh [dir] [outp]
+#+END_EXAMPLE
+gdzie opcjonalne argumenty ~dir~ i ~outp~ to odpowiednio katalog z
+którego pobierane będą (w kolejności posortownej) pliki orgowe celem
+orgizacji, a ~outp~ to strona (plik htmlowy), do której zostaną
+dodane/na której zostaną zedytowane. Defaultowo ~dir="blog/_main"~,
+a ~outp="blog/index.html"~.
+
+Przetworzą się wszystkie pliki z katalogu ~dir~. Jedynym wyjątkiem są te,
 które opatrzone są tagiem ~#+EXCLUDE: true~.
 ***** orgizacja pojedynczego pliku
 To trochę kwestia bardziej złożona, ale mamy też więcej
@@ -42,15 +53,21 @@ mówi, że zamiast edycji istniejącego posta chcemy utworzyć nowy.
 Posty rozróżnia się po ich identyfikatorze. Standardowo jest to
 wartość z ~#+TITLE~ z myślnikami zamiast spacji, ale jeśli się
 sprecyzuje osobno ~#+IDENT~ to to pole zadecyduje o ~id~ htmlowym. 
-**** nowe strony z postów
+**** tryb nowostronny
+uruchomienie ~orgise.sh~ *wraz z* flagą ~--newp~.
 ***** cały folder
-Z pomocą przychodzi ponownie ~orgise.sh~, wystarczy posiadać
-szablonową stronę i następnie wywołanie ~./orgise.sh --newp~ zwieńczy
-dzieła utworzenia z każdego org-pliku z katalogu ~blog/_posts~ (tak,
-/chamsko zamłotkowane/, ale mam nadzieję, że kiedyś poprawię to i
-zrobię elegancko) osobnej strony opartej na tym schemacie. 
+Podobna składnia jak powyżej.
+#+BEGIN_EXAMPLE
+  ./orgise.sh [dir] [outp] [szablon] --newp
+#+END_EXAMPLE
+Argumenty opcjonalne:
++ ~dir~ to katalog z orgowymi plikami do unowostronnienia. defautlowo
+  ~dir=blog/_posts~
++ ~outp~ to katalog na wrzucenie nowopowstałych stron. defaultowo ~outp=blog/posts~
++ ~szablon~ to szablon, z którego orgise ma tworzyć strony. defaultowo
+  ~szablon=blog/posts/szablon.html~
 ***** pojedyncza strona
-Podobnie jak poprzednio, ale tym razem trzeba również dodać flagę
+Podobnie jak poprzednio ~ruby orgise.rb~, ale tym razem trzeba również dodać flagę
 ~--newp~. 
 *** jak wygląda workflow?
 Jak chcę utworzyć nowy post na tę stronę, robię to w następującym
@@ -106,40 +123,48 @@ sekwencyjna orgizacja plików:
   done
 
 #+END_SRC
-Orgizacja wygląda tak:
-#+BEGIN_src
-  $ ./orgise.sh
-  orgizuję blog/_posts/0_intro.org
-  ,* ---- ORGISE ---- *
-  edition of a post at 3872
-  blog/_posts/0_intro.org --> blog/index.html
-  ,* ---- THUS CONCLUDING THE ORGISATION ---- *
-  orgizuję blog/_posts/1_pierwszy.org
-  ,* ---- ORGISE ---- *
-  edition of a post at 6256
-  blog/_posts/1_pierwszy.org --> blog/index.html
-  ,* ---- THUS CONCLUDING THE ORGISATION ---- *
-  orgizuję blog/_posts/3_orgise.org
-  ,* ---- ORGISE ---- *
-  blog/_posts/3_orgise.org --> blog/index.html
-  ,* ---- THUS CONCLUDING THE ORGISATION ---- *
-  orgizuję blog/_posts/post.org
-  ,* ---- ORGISE ---- *
-  blog/_posts/post.org is excluded
-#+END_src
-*** TODO /Che fare?/
-+W zasadzie blog miałby najwięcej sensu w formie typu: na głównej+
-+stronie bloga jest post wproawadzawszy + linki (i exceprty) do+
-+osobnych postów, które składowałoby się na oddzielnych htmlach? Chyba+
-+to byłoby najlepsze... Trochę trudniejsze do zrealizowania, ale nie+
-+niemożliwe. Zapewne musiałbym mieć szablon strony blogowej (na niej+
-+trzymane menu do strony głównej + menu do strony głównej bloga) i jakoś ją+
-+bashem kopiować, tam już zwykły orgise... Inny orgise-like mechanizm+
-+wstawiałby następnie link na ~/blog/~ oraz może datę? Link na pewno, a+
-+do tego może excerpcik, ale to troszkę roboty... aj aj...+
+***** Orgizacja wygląda tak:
+      w trybie dodawczym:
+  #+BEGIN_EXAMPLE
+    $ ./orgise.sh
+    orgise -- append mode
+    appending orgised blog/_main posts into blog/index.html
+    orgising blog/_main/0_intro.org
+    ,* ---- ORGISE ---- *
+    edition of a post at 3863
+    blog/_main/0_intro.org --> blog/index.html
+    ,* ---- THUS CONCLUDING THE ORGISATION ---- *
+    orgising blog/_main/1_pierwszy.org
+    ,* ---- ORGISE ---- *
+    edition of a post at 5333
+    blog/_main/1_pierwszy.org --> blog/index.html
+    ,* ---- THUS CONCLUDING THE ORGISATION ---- *
+    orgising blog/_main/2_orgise.org
+    ,* ---- ORGISE ---- *
+    edition of a post at 5866
+    blog/_main/2_orgise.org --> blog/index.html
+    ,* ---- THUS CONCLUDING THE ORGISATION ---- *
+  #+END_EXAMPLE
+  w trybie nowostronnym:
+  #+BEGIN_EXAMPLE
+    $ ./orgise.sh --newp
+    orgise -- new page mode
+    orgising everything from blog/_posts into new pages in blog/posts
+    orgising blog/_posts/1_pierwszy.org
+    ,* ---- ORGISE ---- *
+    blog/_posts/1_pierwszy.org --> blog/posts/1_pierwszy.html
+    ,* ---- THUS CONCLUDING THE ORGISATION ---- *
+    orgised blog/posts/1_pierwszy.html
+    orgising blog/_posts/2_orgise.org
+    ,* ---- ORGISE ---- *
+    blog/_posts/2_orgise.org --> blog/posts/2_orgise.html
+    ,* ---- THUS CONCLUDING THE ORGISATION ---- *
+    orgised blog/posts/2_orgise.html
+    orgising blog/_posts/tractatus.org
+    ,* ---- ORGISE ---- *
+    blog/_posts/tractatus.org is excluded
+  #+END_EXAMPLE
 
-^ wiele z tego już wprowadziłem. Prawdziwie należy się zastanowić nad
-tym co robić w taki sposób:
-+ można doprecyzować skąd pobierać posty, dokąd.
-+ powinno to być maksymalnie uniwersalne -- powinno mi umożliwiać publikowanie na wszystkich stronach
-+ mógłby sam tworzyć streszczenia jakoś sprytnie...
+*** TODO /[[https://www.tate.org.uk/art/artworks/merz-che-fare-ar00598][Che fare?]]/
+Jedyne co pozostało do zrobienia, to obmyślenie, jak zacząć tego
+używać na innych stronach.

@@ -85,7 +85,7 @@
     </div>
     <div class="vsjo">
       <div class="text" id="orgise">
-        <div class="date_wrap"><span id="datka">19.02.2021</span>
+        <div class="date_wrap"><span id="datka">21.02.2021</span>
         </div>
         <h2 class="title">Orgise</h2>
         <p>Krótki przegląd działania <b>orgise</b>&#8216;a i jego pseudo
@@ -96,25 +96,34 @@
           obejrzeć dotyczący go fragment <a id="linek" href="https://youtu.be/JWD1Fpdd4Pc?t=1206">tego filmiku</a>, całość <a id="linek" href="https://youtu.be/SzA2YODtgK4">tej prelekcyjki</a>
           bądź przeczytać jeden z niezliczonych <a id="linek" href="https://karl-voit.at/2017/09/23/orgmode-as-markup-only/">peanów cudzych</a>.</p>
         <h4>czym jest <b>orgise</b>?</h4>
-        <p><b>Orgise</b> (czy też <code>orgise</code>) to narzędzie, jakie napisałem w ruby i
-          bashu celem oszczędzenia sobie syfienia rąk tym durnym htmlem.</p>
-        <h4>jak używać?</h4>
-        <p>Mamy dwie możliwości użycia.</p>
+        <p><b>Orgise</b> (czy też <code>orgise</code>) to narzędzie, jakie napisałem w <i>ruby i
+            bashu</i> celem oszczędzenia sobie syfienia rąk tym durnym htmlem.</p>
+        <h4>jak go używać?</h4>
+        <p><b>Orgise</b> funkcjonuje w dwu trybach:</p>
         <ol>
-          <li>chcemy dodawać nowe <i>posty</i> ciurkiem do dołu istniejącej już strony</li>
-          <li>dodajemy nowe <i>posty</i>, każdy jako osobną stronę w folderze <code>posts</code></li>
+          <li>tryb dodawczy &#8211; chcemy dodawać nowe <i>posty</i> ciurkiem do dołu
+            istniejącej już strony</li>
+          <li>tryb nowo-stronny &#8211; dodajemy nowe <i>posty</i>, każdy jako osobną
+            stronę w folderze <code>posts</code></li>
         </ol>
-        <p>Jak na razie zamłotkowałem to tylko na budowanie strony blog oraz
-          osobnych postów w podkatalogu na nie, ale warto byłoby dodać możliwość
-          wyboru katalogów źródłowych i wyników itp.</p>
-        <h5>dodawanie postów do strony</h5>
+        <p>Tryb warunkuje ostatni argument. Jeśli jest to <code>--newp</code> to orgise
+          będzie funkcjonować w trybie nowych stron. Wpp włączy tryb edycyjny.</p>
+        <h5>tryb dodawczy</h5>
+        <p>uruchomienie <code>orgise.sh</code> <b>bez</b> flagi <code>--newp</code>.</p>
         <h6>orgizacja całego folderu</h6>
         <p>Użycie jest dość proste. Załóżmy, że np chcemy <b>zorgise</b>&#8216;ować cały katalog <code>_main</code>
           (czyli: mam w tym katalogu pliki orgowe (obowiązkowo z tagiem
           <code>#+TITLE</code>) tak, aby dodały się jako kolejne bloki na stronę w pliku
-          <code>index.html</code>. Wtedy wystarczy użyć komendy
-          <code>./orgise.sh</code>
-          i przetworzą się wszystkie pliki. Jedynym wyjątkiem są te,
+          <code>index.html</code>. Wtedy wystarczy użyć komendy</p>
+        <pre class="example">
+./orgise.sh [dir] [outp]
+</pre>
+        <p>gdzie opcjonalne argumenty <code>dir</code> i <code>outp</code> to odpowiednio katalog z
+          którego pobierane będą (w kolejności posortownej) pliki orgowe celem
+          orgizacji, a <code>outp</code> to strona (plik htmlowy), do której zostaną
+          dodane/na której zostaną zedytowane. Defaultowo ~dir=&#8221;blog/_main&#8221;~,
+          a ~outp=&#8221;blog/index.html&#8221;~.</p>
+        <p>Przetworzą się wszystkie pliki z katalogu <code>dir</code>. Jedynym wyjątkiem są te,
           które opatrzone są tagiem <code>#+EXCLUDE: true</code>.</p>
         <h6>orgizacja pojedynczego pliku</h6>
         <p>To trochę kwestia bardziej złożona, ale mamy też więcej
@@ -129,15 +138,23 @@
         <p>Posty rozróżnia się po ich identyfikatorze. Standardowo jest to
           wartość z <code>#+TITLE</code> z myślnikami zamiast spacji, ale jeśli się
           sprecyzuje osobno <code>#+IDENT</code> to to pole zadecyduje o <code>id</code> htmlowym.</p>
-        <h5>nowe strony z postów</h5>
+        <h5>tryb nowostronny</h5>
+        <p>uruchomienie <code>orgise.sh</code> <b>wraz z</b> flagą <code>--newp</code>.</p>
         <h6>cały folder</h6>
-        <p>Z pomocą przychodzi ponownie <code>orgise.sh</code>, wystarczy posiadać
-          szablonową stronę i następnie wywołanie <code>./orgise.sh --newp</code> zwieńczy
-          dzieła utworzenia z każdego org-pliku z katalogu <code>blog/_posts</code> (tak,
-          <i>chamsko zamłotkowane</i>, ale mam nadzieję, że kiedyś poprawię to i
-          zrobię elegancko) osobnej strony opartej na tym schemacie.</p>
+        <p>Podobna składnia jak powyżej.</p>
+        <pre class="example">
+./orgise.sh [dir] [outp] [szablon] --newp
+</pre>
+        <p>Argumenty opcjonalne:</p>
+        <ul>
+          <li><code>dir</code> to katalog z orgowymi plikami do unowostronnienia. defautlowo
+            <code>dir=blog/_posts</code></li>
+          <li><code>outp</code> to katalog na wrzucenie nowopowstałych stron. defaultowo <code>outp=blog/posts</code></li>
+          <li><code>szablon</code> to szablon, z którego orgise ma tworzyć strony. defaultowo
+            <code>szablon=blog/posts/szablon.html</code></li>
+        </ul>
         <h6>pojedyncza strona</h6>
-        <p>Podobnie jak poprzednio, ale tym razem trzeba również dodać flagę
+        <p>Podobnie jak poprzednio <code>ruby orgise.rb</code>, ale tym razem trzeba również dodać flagę
           <code>--newp</code>.</p>
         <h4>jak wygląda workflow?</h4>
         <p>Jak chcę utworzyć nowy post na tę stronę, robię to w następującym
@@ -196,44 +213,50 @@
     ruby orgise.rb <span class="nv">$f</span> <span class="nv">$outp</span>
 <span class="k">done</span></code></pre>
         </div>
-        <p>Orgizacja wygląda tak:</p>
-        <div class="highlight">
-          <pre class="codehilite"><code>$ ./orgise.sh
-orgizuję blog/_posts/0_intro.org
+        <h6>Orgizacja wygląda tak:</h6>
+        <p>w trybie dodawczym:</p>
+        <pre class="example">
+$ ./orgise.sh
+orgise -- append mode
+appending orgised blog/_main posts into blog/index.html
+orgising blog/_main/0_intro.org
 * ---- ORGISE ---- *
-edition of a post at 3872
-blog/_posts/0_intro.org --&gt; blog/index.html
+edition of a post at 3863
+blog/_main/0_intro.org --&gt; blog/index.html
 * ---- THUS CONCLUDING THE ORGISATION ---- *
-orgizuję blog/_posts/1_pierwszy.org
+orgising blog/_main/1_pierwszy.org
 * ---- ORGISE ---- *
-edition of a post at 6256
-blog/_posts/1_pierwszy.org --&gt; blog/index.html
+edition of a post at 5333
+blog/_main/1_pierwszy.org --&gt; blog/index.html
 * ---- THUS CONCLUDING THE ORGISATION ---- *
-orgizuję blog/_posts/3_orgise.org
+orgising blog/_main/2_orgise.org
 * ---- ORGISE ---- *
-blog/_posts/3_orgise.org --&gt; blog/index.html
+edition of a post at 5866
+blog/_main/2_orgise.org --&gt; blog/index.html
 * ---- THUS CONCLUDING THE ORGISATION ---- *
-orgizuję blog/_posts/post.org
+</pre>
+        <p>w trybie nowostronnym:</p>
+        <pre class="example">
+$ ./orgise.sh --newp
+orgise -- new page mode
+orgising everything from blog/_posts into new pages in blog/posts
+orgising blog/_posts/1_pierwszy.org
 * ---- ORGISE ---- *
-blog/_posts/post.org is excluded</code></pre>
-        </div>
-        <h4><i>Che fare?</i></h4>
-        <p><del>W zasadzie blog miałby najwięcej sensu w formie typu: na głównej</del>
-          <del>stronie bloga jest post wproawadzawszy + linki (i exceprty) do</del>
-          <del>osobnych postów, które składowałoby się na oddzielnych htmlach? Chyba</del>
-          <del>to byłoby najlepsze&#8230; Trochę trudniejsze do zrealizowania, ale nie</del>
-          <del>niemożliwe. Zapewne musiałbym mieć szablon strony blogowej (na niej</del>
-          <del>trzymane menu do strony głównej + menu do strony głównej bloga) i jakoś ją</del>
-          <del>bashem kopiować, tam już zwykły orgise&#8230; Inny orgise-like mechanizm</del>
-          <del>wstawiałby następnie link na ~/blog/~ oraz może datę? Link na pewno, a</del>
-          <del>do tego może excerpcik, ale to troszkę roboty&#8230; aj aj&#8230;</del></p>
-        <p>^ wiele z tego już wprowadziłem. Prawdziwie należy się zastanowić nad
-          tym co robić w taki sposób:</p>
-        <ul>
-          <li>można doprecyzować skąd pobierać posty, dokąd.</li>
-          <li>powinno to być maksymalnie uniwersalne &#8211; powinno mi umożliwiać publikowanie na wszystkich stronach</li>
-          <li>mógłby sam tworzyć streszczenia jakoś sprytnie&#8230;</li>
-        </ul>
+blog/_posts/1_pierwszy.org --&gt; blog/posts/1_pierwszy.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgised blog/posts/1_pierwszy.html
+orgising blog/_posts/2_orgise.org
+* ---- ORGISE ---- *
+blog/_posts/2_orgise.org --&gt; blog/posts/2_orgise.html
+* ---- THUS CONCLUDING THE ORGISATION ---- *
+orgised blog/posts/2_orgise.html
+orgising blog/_posts/tractatus.org
+* ---- ORGISE ---- *
+blog/_posts/tractatus.org is excluded
+</pre>
+        <h4><i><a id="linek" href="https://www.tate.org.uk/art/artworks/merz-che-fare-ar00598">Che fare?</a></i></h4>
+        <p>Jedyne co pozostało do zrobienia, to obmyślenie, jak zacząć tego
+          używać na innych stronach.</p>
       </div>
        <!-- fin_post_orgise -->
       <!--END_KURDE-->

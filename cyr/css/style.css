@@ -296,7 +296,7 @@ pre, code {
     font-size: 90%;
 }
 
-.highlight {
+.highlight, .example {
     padding: 1px;
     margin: 1px;
     padding-left: 5px;

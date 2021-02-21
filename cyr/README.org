@@ -32,7 +32,9 @@ do celów obecnych. Zmiany zaszły na wielu polach:
 **** *orgise*
 *Orgise* to (tępe) narzędzie jakie napisałem w *ruby* na potrzeby
  głównie [[file:blog][bloga]], ale przyda się ogólnie -- lepsze od pisania w syfnym
- htmlu. Większy [[https://students.mimuw.edu.pl/~gc429174/cyr/blog#orgise][opis tutaj na blogu.]]
+ htmlu. Większy [[https://students.mimuw.edu.pl/~gc429174/cyr/blog#orgise][opis tutaj na blogu]] lub w tym [[file:blog/_posts/2_orgise.org][pliku orgowym]], z którego
+ powstał ten blog-post (aczkolwiek moje wyświetlanie orga jest lepsze
+ niż githubowe, warto porównać [[blog/_posts/1_pierwszy.org][ten org]] z [[https://students.mimuw.edu.pl/~gc429174/cyr/blog/posts/1_pierwszy.html][tą stroną]]).
 ** jaka jest przyszłość?
 *** przejście na coś lepszego?
 myślałem o całkowitym porzuceniu tej strony i przejściu na jakąś

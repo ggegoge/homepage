@@ -1,28 +1,81 @@
 #!/bin/bash
 
-# argumenty: $1 to folder z "postami", $2 to strona do nadpisania
+# tryb zależy od ostatniego argumentu
+
 
 cd "$(dirname "$0")"
-pwd
-echo i have $# args
 
-if [ $# -gt 0 ]
-then        
-    dir=$1
-    if [ $# -gt 1 ]
-    then
-        outp=$2
-    fi
+# getting the last arg
+for i in $@; do :; done
+if [ "$i" == "--newp" ]
+then
+    echo orgise -- new page mode
+    case $# in
+        1)
+            dir="blog/_posts"
+            outp="blog/posts"
+            szablon=blog/posts/szablon.html
+            ;;
+        2)
+            dir=$1
+            outp="blog/posts"
+            szablon=blog/posts/szablon.html
+            ;;
+        3)
+            dir=$1
+            outp=$2
+            szablon=blog/posts/szablon.html
+            ;;
+        4)
+            dir=$1
+            outp=$2
+            szablon=$3
+            ;;
+        *)
+            echo too many args, ignoring all after the third one
+            dir=$1
+            outp=$2
+            szablon=$3
+            ;;
+    esac
+    echo orgising everything from $dir into new pages in $outp
+    for f in $dir/*.org
+    do
+        echo orgising "$f"
+        filename=$(basename -- "$f")
+        filename="${filename%.*}"
+        newf="${outp}/${filename}.html"
+        touch $newf
+        cp $szablon $newf
+        ruby orgise.rb $f $newf --newp
+        cmp --silent $szablon $newf && rm $newf || echo orgised $newf
+
+    done
 else
-    echo defaultuję parametry więc
-    dir=blog/_posts
-    outp=blog/index.html
+    echo orgise -- append mode
+    case $# in
+        0)
+            dir="blog/_main"
+            outp="blog/index.html"
+            ;;
+        1)
+            dir=$1
+            outp="blog/index.html"
+            ;;
+        2)
+            dir=$1
+            outp=$2
+            ;;
+        *)
+            echo "too many args, ingoring all of them after the second one"
+            dir=$1
+            outp=$2
+            ;;
+    esac
+    echo appending orgised $dir posts into $outp
+    for f in `ls $dir/*.org | sort -V`
+    do
+        echo orgising "$f"
+        ruby orgise.rb $f $outp
+    done
 fi
-echo Orgizuję folder $dir do strony $outp
-
-for f in `ls $dir/*.org | sort -V`
-do
-    echo orgizuję "$f"
-    printf "puszczam \033[1;31morgise.rb\033[0m\n"
-    ruby orgise.rb $f $outp
-done

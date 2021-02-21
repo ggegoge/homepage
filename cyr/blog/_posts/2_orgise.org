@@ -168,3 +168,26 @@ sekwencyjna orgizacja plików:
 *** TODO /[[https://www.tate.org.uk/art/artworks/merz-che-fare-ar00598][Che fare?]]/
 Jedyne co pozostało do zrobienia, to obmyślenie, jak zacząć tego
 używać na innych stronach.
+
+**** DONE Lateszny formating!
+ Oho! Wiem. Przydałoby się dodać obsługę jakichś komend specjalnych!
+ Np. że dodanie $\LaTeX$owo ~textsc~ do utworzy taki span z klasą
+ ~textsc~ sformatowaną należycie -- kapitaliki. Dodałbym też chętnie ~emph~ na
+ przykład jako specjalny szeryfowy krój. Tak samo klasę ~qed~ na dowodziki.
+
+ A nawet już to zrobiłem! /Voilà/:
+
+ \emph{*koci lemat*: /wszystkie koty są piękne/} 
+
+ \textsc{Dowód:} \emph{piękność jest [[../../koty][oczywista]], trafność użycia
+ kwantyfikatora $\forall$ -- ćwiczenie}.
+
+ \qed{kot erat}
+# \emph{multi
+# line emphasis}
+
+# \textsc{multi
+# line capitalisation}
+
+# \qed{multi
+# line quod erat}

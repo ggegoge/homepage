@@ -1,12 +1,14 @@
-/*dreffe*/
-
-div.toptext {
-    margin-right: 0;
+.kot-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  width:100%;
 }
-
-/* inne na przyszłość? */
-#main { }
-#kot { }
+.kot-wrapper > div img {
+    /* max-width: 100%; */
+    height: 200px;
+}
 
 #tichy {
     margin-top: 1px;
@@ -23,5 +25,3 @@ div.toptext {
     margin-right: auto;
     /* width: auto; */
 }
-
-/*dreffe*/

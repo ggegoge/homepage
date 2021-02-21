@@ -43,8 +43,16 @@ def parsuj(org)
   else
     html_date = ""
   end
-  if ident != "" then title = ident end
-  return html_date + p.to_html, title
+  if ident == "" then ident = title.dup end
+  # extra latex tagss
+  remph = /\\emph\{((.|\n)+?)\}/
+  rextsc = /\\textsc\{((.|\n)+?)\}/
+  reqed = /\\qed\{((.|\n)+?)\}/
+  p = p.to_html
+  p.gsub! remph, '<span class="emph">\1</span>'
+  p.gsub! rextsc, '<span class="textsc">\1</span>'
+  p.gsub! reqed, '<p class="qed">\1</p>'
+  return html_date + p, ident, title
 end
 
 def linkise(post)
@@ -52,24 +60,24 @@ def linkise(post)
 end
 
 def make_postorg(org)
-  html, titl = parsuj(org)
-  titl.gsub! " ", "-"
-  id = titl
+  html, id, titl = parsuj(org)
+  id.gsub! " ", "-"
   linkise(html)
   if html.nil? then raise("nil html??") end
   res = ["<div class=\"text\" id=\"" + id + "\">\n" + html + "\n</div>" +
          " <!-- fin_post_" + id + " -->",
          (Regexp.new "<div class=\"text\" id=\"" + Regexp.escape(id) +
                      "\">(.|\n)*</div>(\s|\n)*" +
-                     Regexp.escape(" <!-- fin_post_" + id + " -->"))]
+                     Regexp.escape(" <!-- fin_post_" + id + " -->")),
+         titl]
   return res
 end
 
 def make_post(fname)
   file = File.open(fname)
   org = file.read
-  post, beg_re = make_postorg(org)
-  return post, beg_re
+  post, beg_re, titl = make_postorg(org)
+  return post, beg_re, titl
 end
 
 # Find the word 'like'
@@ -93,9 +101,9 @@ def read_page(page)
   return page
 end
 
-def orgise(forg, page, edit=true)
+def orgise(forg, page, newp, edit=true)
   is_end(page)
-  post, beg_re = make_post(forg)
+  post, beg_re, titl = make_post(forg)
   if edit then
     if !(page =~ beg_re).nil? then
       puts ("edition of a post at " + (page =~ beg_re).to_s)
@@ -106,13 +114,14 @@ def orgise(forg, page, edit=true)
   else
     insert_post(post, page)
   end
+  if newp then page.gsub! "___szablon___", titl end
   beautiful = HtmlBeautifier.beautify(page)
   return beautiful
 end
 
-def file_orgise(forg, path, path_out, edit)
+def file_orgise(forg, path, path_out, edit, newp)
   page = read_page(path)
-  beautiful = orgise(forg, page, edit)
+  beautiful = orgise(forg, page, newp, edit)
   File.write(path_out, beautiful)
 end
   
@@ -129,7 +138,7 @@ def main_orgise
       if ARGV.length >= 4 then        
         path_out = ARGV[2]
         edit = ARGV[3] != "-n"
-      elsif ARGV[2] != "-n" then
+      elsif ARGV[2] != "-n" and ARGV[2] != "--newp" then
         path_out = ARGV[1]
         edit = true
       else
@@ -141,8 +150,9 @@ def main_orgise
       edit = true
     end
   end
+  newp = ARGV[ARGV.length - 1] == "--newp"
   begin
-    file_orgise(forg, path, path_out, edit)
+    file_orgise(forg, path, path_out, edit, newp)
     puts forg + " --> "+ path_out
     puts "* ---- THUS CONCLUDING THE ORGISATION ---- *"
   rescue ExcludedPost

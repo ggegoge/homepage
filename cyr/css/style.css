@@ -237,3 +237,18 @@ pre, code {
     margin: 1px;
     padding-left: 5px;
 }
+
+.emph {
+    font-family: "Piazzolla", serif;
+}
+
+.textsc {
+    font-family: "Piazzolla", serif;
+    font-variant-caps: small-caps;
+}
+
+.qed {
+    font-family: "Piazzolla", serif;    
+    text-align: right;
+    font-variant-caps: small-caps;
+}

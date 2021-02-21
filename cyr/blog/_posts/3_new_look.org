@@ -1,0 +1,66 @@
+#+TITLE: Zmiany, zmiany, zmiany...
+#+DATE: 21.02.2021
+#+ident: new-look
+Istotnie, zmieniło się wiele i prawdę powiedziawszy /wydaje mi się/,
+że są to zmiany na lepsze. Ale do rzeczy, *co właściwie się zmieniło?*
+** Zmienił się cały layout
+*** Kolory są dość świeże
+ *To* jest ta najważniejsza zmiana. Wymagała trochę zabawy i pracy, ale
+ końcowy efekt uznaję za satysfakcjonujący i przyjemny dla oka.
+*** Pełen spis zmian
+ ale
+  koniec końców zmiany można podsumować tak:
+ 1. kolor tła jednolity -- użyłem koloru, który dawniej obowiązywał w
+    sekcjach tekstowych na stronie, i ustawiłem go na generalne
+    tło. teraz wygląda tak właśnie... /świeżo/ not gonna lie. jest też
+    to bardziej modernistyczne jak na strony internetowe.
+    + w realiach htmlu skok z 2010 do 2015?
+    + stara wersja jest wciąż (gdzieniegdzie) do zobaczenia! Choćby
+      zajrzenie na [[../../][stronę główną]] nam to udowodni -- w pierwszej sekcji
+      przywitalnej widnieje fragment „/ale jeśli ktoś by chciał
+      zobaczyć jak wyglądał stary styl, to może się przełączać/ _tym
+      linkiem_." Rzeczony link uruchomi javascripta, który zmieni
+      styl
+      strony i zobaczymy jej /dawną i utraconą piękność/...
+ 2. menu przeszło podobną modernizacje co cała strona
+    + stara dobra animacja przeszła eradykację kosztem podświetlenia
+      na brudnoróżowy kolor
+    + menu jest zupełnie bezramkowe
+    + kolor wewnętrzny menu to kolor ogólny tła. tym samym menu wygląda
+      jak zwykły tekst zawieszony w przestrzeni
+    + po najechaniu prócz wspomnianego brudnego różu jaki przybiera
+      całe pole, sam tekst /grubnie/
+    + ma wreszcie właściwą pozycję -- oryginalnie najeżdżało na pasek
+      górny (nie wiem dlaczego tak to zrobiłem)
+ 3. strona stała się szersza -- teraz na tekst przeznaczona jest
+    większa część ekranu i wygląda to całkiem ok
+ 4. ramki wokół sekcji zostały też zmienione
+    + są tylko od góry
+    + są "srebrne" (~border-color: silver~)
+ 5. część blogowa również się stransformowała
+    + daty mają teraz dyskretniejszy kolor
+    + nagłówki mają bardziej właściwe rozmiary i wagi niż defaultowe
+      ustawienia
+    + tytuły postów są dodatkowo widoczne w prawym górnym rogu w
+      formacie "blog?? | /tytuł posta/"
+ 6. pasek górny wreszcie dotyka góry jak należy
+
+***** Tęsknota za starym layoutem
+Odczuwam w pewnym sensie ten efekt. Odszedłem od dawnego dzieła ad
+2017 i poszedłem z duchem czasu. Można by rzec, że ten słynny jekyll
+co mi ciągle łaził po głowie, dokonał efektu Mahometa. Nie przyszedł
+jakoś do mnie, /więc ja przyszedłem do niego/. Czy to dobrze? Kto tam
+wie. Ale gdyby ktoś bardzo chciał oglądać dawną wersję, to jak
+wspomniałem powyżej w punkcie 1 -- jest to możliwe na głównej stronie.
+
+** Co wciąż wymaga poprawienia?
+Kolor pudełka mailowo--copyleftowego -- wciąż nie wiem czy jaki dać
+nowy jego układ kolorystyczny. Ta biała granica obecna wygląda... no
+tak sobie. Czy i to zamienić na tę jednolitość reszty strony? Czy
+zostawić jak jest?
+
+W tej sekundzie nie mam żadnych innych bieżących poprawek w zamyśle, ale
+głównie dlatego, że się nie zastanawiałem. Zresztą... jaka jest
+przyszłość tej strony? Te wszystkie zmiany są na pewien sposób czcze i
+służą jedynie satysfakcji twórcy (t. /mnie/). Zatem nie ma co się
+przejmować prawdę powiedziawszy.

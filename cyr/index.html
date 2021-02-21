@@ -14,8 +14,24 @@
           rel="stylesheet">
     
     <!-- Page styling -->
-    <link rel="stylesheet" type="text/css"
-          href="css/style.css?v=1">
+    <link rel="stylesheet" id="main-style" type="text/css"
+          href="css/style.css">
+    <script> 
+        function changeStyle() { 
+            // Obtains an array of all <link> 
+            // elements. 
+            // Select your element using indexing. 
+            var style = document.getElementById('main-style'); 
+  
+            // Change the value of href attribute  
+            // to change the css sheet. 
+            if (style.getAttribute('href') == 'css/style.css') { 
+                style.setAttribute('href', 'css/old_style.css'); 
+            } else { 
+                style.setAttribute('href', 'css/style.css'); 
+            } 
+        } 
+    </script> 
     <link rel="stylesheet" type="text/css"
           href="css/index.css?v=1">
     <!-- syntax highliting -->
@@ -131,7 +147,12 @@
         z <s>małymi</s> pewnymi zmiankami w 2021
         roku. <b>Z pewnością</b> nie jest to najładniejsza strona
         świata, powiem więcej, jest dość brzydka, ale nie umiem dobrze
-        dobrać kolorów i układu do potrzeb niestety.
+        dobrać kolorów i układu do potrzeb niestety. Ustawiona jest i
+        tak w lekko odświeżonym stylu (co nie znaczy, że lepszym), ale
+        jeśli ktoś by chciał zobaczyć jak wyglądał stary styl, to może
+        się przełączać <a id="linek" onclick="changeStyle()"
+        href="#">tym linkiem</a> (polecam obejrzeć dość kiczowatą
+        animację przycisków w menu, był to szkolny wymóg).
       </p>
       <p>
         Dam tu linki do swoich archiwów i może jakieś fajne

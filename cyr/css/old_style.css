@@ -5,12 +5,22 @@ html, body {
     padding: 0;
 }
 
-body { background-color: #eee }
+body {
+    background-color: #555;
+}
 
-a:link { color: green }
-a:visited { color: olivedrab }
-a:active { color: red }
-a:hover { color: #DB7093 /* pink */ }
+a:link {
+    color: green;
+}
+a:visited {
+    color: olivedrab;
+}
+a:active {
+    color: red;
+}
+a:hover {
+    color: pink;
+}
 
 /* Top title like strip  */
 div.top {
@@ -27,16 +37,17 @@ div.top {
 
 
 /* headers */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 0;
-}
-h1, h2, h3 {
     font-family: "Piazzolla", serif;
 }
 
 h4, h5, h6 {
-    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Piazzolla", serif;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
 }
 
 h2 { font-size: 1.55rem }
@@ -62,7 +73,9 @@ h6 {
 h1.site_title {
     margin-top: 0;
     margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
     font-family: 'Open Sans', sans-serif;    
+    /* font-family: 'Monteserrat', sans-serif; */
 }
 
 h5.site_subtitle {
@@ -80,33 +93,37 @@ div.toptext {
 }
 
 /* the mavigation bar on the left, settings for the general class  */
+
 div.allme {
     position: fixed;
-    top: 60px;
+    top: 50px;
     z-index: 2;
     left: 2%;
 }
 
-div.menu {
-    font-size: 105%;
-    background-color: #eee;
-    width: 130px;
-    border-color: silver;
-    border-width: thin;
+div.menu {    
+    background-color: #333;
+    width: 120px;
+    height: 80px;
+    border-style: inset /* solid */;
+    border-color: #ff0066;
     left: 2%;
     text-align: center;
     vertical-align: middle;
-    line-height: 50px;
-    color: #333;
+    line-height: 80px;
+    color: #CACECE;
     white-space: normal;
+    font-family: "Piazzolla", serif;
     font-family: 'Roboto', sans-serif;
 }
 div.menu:hover {
-    font-weight: 600;
-    background-color: #DB7093;
+    /* background-color: #DB7093; */
+    animation-name: col_ch;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 div.menu:active {
-    color: white;
+    color: black;
 }
 a.menuLink:link {
     color: #000;
@@ -136,23 +153,35 @@ div.footer {
     text-align: justify;
 }
 
-a.imejl { text-decoration: none }
+a.imejl {
+    text-decoration: none;
+}
 
-a.imejl:link { color: white }
+a.imejl:link {
+    color: white;        
+}
 
-a.imejl:visited { color: white }
+a.imejl:visited {
+    color: white;        
+}
 
-a.imejl:active { color: white }
+a.imejl:active {
+    color: white;        
+}
 
-a.imejl:hover { color: pink }
+a.imejl:hover {
+    color: pink;        
+}
 
-textarea { }
+textarea {
+    float: center;
+}
 
 
 div.vsjo {
     top: 120px;
     position: absolute;
-    left: 17%;
+    left: 27%;
 }
 
 
@@ -162,27 +191,42 @@ h2 {
 
 /* setting for the divs containing any kind of information for the user  */
 div.text {
-    width: 80%;
-    margin:  auto;
+    /* position: relative; */
+    /* width: 65%; */
+    /* widht: auto; */
+    /* z-index: 15; */
+    /* left: 35%; */
+    /* top: 50px; */
+    /* left: 27%; */
+    width: /* 80% */650px;
+    /* height: 90%; */
+    margin:  auto;  /* -100px 0 0 -150px; */
     background-color: #eee;
-    border-style: solid none none none;
-    border-width: medium thin thin thin;
-    border-color: silver;
+    border-style: /* inset none none none */ inset;
+    /* border-width: medium thin thin thin; */
+    border-color: #0808ff;
     text-align: justify;
     padding: 10px;
 
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Piazzolla', serif;
+    /* font-family: 'Montserrat', sans-serif;
+     * font-family: 'Open Sans Condensed', sans-serif; */
+    /* font-family: 'Roboto', sans-serif;
+     * font-family: 'Open Sans', sans-serif; */
 }
 
 #linek {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Tinos', serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .date_wrap {
     position: relative;
 }
 #datka {
-    color: #657687;
     font-family: 'Monteserrat', sans-serif;
     position: relative;
     text-align: right;
@@ -192,6 +236,38 @@ div.text {
     font-size: 75%;
 }
 
+/* animations  */
+
+/* changing th colour of the button like divs */
+@keyframes col_ch{
+    0% {
+        background-color: #333;
+    }
+    50% {
+        background-color: pink;
+    }
+    100% {
+        background-color: #EB360C;     
+    }
+}/*dreffe*/
+
+/* Used  for hooverng over square imgs on the site */
+/* makes them increase in size nine times for time */
+/* set up in animation-duration */
+@keyframes img_p {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+    }
+}
+/*dreffe*/
+
+
+/* general: */
 
 /* tables */
 table {
@@ -223,8 +299,6 @@ td, th {
 table, th, td {
     font-family: 'Roboto Slab', serif;
 }
-
-/* code listing */
 
 pre, code {
     font-family: 'Oxygen Mono', monospace;

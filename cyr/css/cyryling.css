@@ -8,6 +8,15 @@ div.toptext {
 #main { }
 
 #output {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Tinos', serif;
     font-family: 'Piazzolla', serif;
     font-family: 'Roboto Slab', serif;
+
+    border-style: none solid none solid;
+    padding-left: 4px;
+    border-width: thin;
+    border-color: silver;
 }

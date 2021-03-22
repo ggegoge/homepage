@@ -17,10 +17,9 @@ Istotnie, zmieniło się wiele i prawdę powiedziawszy /wydaje mi się/,
     + w realiach htmlu skok z 2010 do 2015?
     + stara wersja jest wciąż (gdzieniegdzie) do zobaczenia! Choćby
       zajrzenie na [[../../][stronę główną]] nam to udowodni -- w pierwszej sekcji
-      przywitalnej widnieje fragment „/ale jeśli ktoś by chciał
-      zobaczyć jak wyglądał stary styl, to może się przełączać/ _tym
-      linkiem_." Rzeczony link uruchomi javascripta, który zmieni
-      styl
+      przywitalnej widnieje fragment:
+      | /ale jeśli ktoś by chciał zobaczyć jak wyglądał stary styl, to może się przełączać/ _tym linkiem_.   |
+      Rzeczony link uruchomi javascripta, który zmieni styl
       strony i zobaczymy jej /dawną i utraconą piękność/...
  2. menu przeszło podobną modernizacje co cała strona
     + stara dobra animacja przeszła eradykację kosztem podświetlenia

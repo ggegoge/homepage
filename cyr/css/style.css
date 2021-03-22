@@ -89,7 +89,7 @@ div.allme {
 
 div.menu {
     font-size: 105%;
-    background-color: #eee;
+    /* background-color: #eee; */
     width: 130px;
     border-color: silver;
     border-width: thin;
@@ -164,7 +164,7 @@ h2 {
 div.text {
     width: 80%;
     margin:  auto;
-    background-color: #eee;
+    /* background-color: #eee; */
     border-style: solid none none none;
     border-width: medium thin thin thin;
     border-color: silver;

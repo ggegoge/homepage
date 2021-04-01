@@ -1,4 +1,4 @@
-#+TITLE: Pierwszy org post!
+#+TITLE: Pierwszy org post
 #+DATE: 19.02.2021
 ****** [[posts/1_pierwszy.html][link]]
 

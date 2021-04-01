@@ -3,132 +3,126 @@
 
 ** przykładowy post pełen niespodzianek
 **** Cóż to za nowoczesność?
-Oto jest [[https://orgmode.org][org mode]]! Jeden z lepszych /markup/ languaages tzw. Moim
-zdaniem wygodniejszy od markdownu z pewnością. 
+     Oto jest [[https://orgmode.org][org mode]]. Jeden z lepszych /markup/ languaages tzw. Moim zdaniem wygodniejszy od
+     markdownu z pewnością.
 
 ***** Kod lystyng!
-+niestety nie ma syntax hajlajtingu :(+ jednak jest!
+      +niestety nie ma syntax hajlajtingu :(+ jednak jest!
 
-Dam dwa przykłady ocamlowe, taką ogonową silnię wraz z rezultatami (na
-ich eksport łatwo pozwala zbazowany *org*)
-#+BEGIN_SRC ocaml :exports both :results value
-  let fact n =
-    let rec factail acc = function
-      | 0 -> acc
-      | k -> k - 1 |> factail (acc * k)
-    in
-    factail 1 n
+      Dam dwa przykłady ocamlowe, taką ogonową silnię wraz z rezultatami (na ich eksport łatwo pozwala
+      zbazowany *org*)
+      #+BEGIN_SRC ocaml :exports both :results value
+        let fact n =
+          let rec factail acc = function
+            | 0 -> acc
+            | k -> k - 1 |> factail (acc * k)
+          in
+          factail 1 n
 
-  open List;;
-  map (fun n -> (n, fact n)) [0; 1; 2; 3; 4; 5; 6; 7; 8] |> split
+        open List;;
+        map (fun n -> (n, fact n)) [0; 1; 2; 3; 4; 5; 6; 7; 8] |> split
 
-#+END_SRC
+      #+END_SRC
 
-#+RESULTS:
-| 0 | 1 | 2 | 3 |  4 |   5 |   6 |    7 |     8 |
-| 1 | 1 | 2 | 6 | 24 | 120 | 720 | 5040 | 40320 |
+      #+RESULTS:
+      | 0 | 1 | 2 | 3 |  4 |   5 |   6 |    7 |     8 |
+      | 1 | 1 | 2 | 6 | 24 | 120 | 720 | 5040 | 40320 |
 
-oraz taki drugi przykład z obracaniem drzewa dwójniackiego
-(and. /binary tree/):
-#+BEGIN_SRC ocaml :exports code
-  type 'a btree = Node of 'a btree * 'a * 'a btree | Nil
+      oraz taki drugi przykład z obracaniem drzewa dwójniackiego (and. /binary tree/):
+      #+BEGIN_SRC ocaml :exports code
+        type 'a btree = Node of 'a btree * 'a * 'a btree | Nil
 
-  let rec invert = function
-    | Nil -> Nil
-    | Node(l, v, r) ->
-       let il = invert l and ir = invert r in
-       Node(ir, v, il)
-#+END_SRC
+        let rec invert = function
+          | Nil -> Nil
+          | Node(l, v, r) ->
+             let il = invert l and ir = invert r in
+             Node(ir, v, il)
+      #+END_SRC
 
-#+RESULTS:
-: <fun>
+      #+RESULTS:
+      : <fun>
 
-Mogę do tego dodać infiksik:
-#+BEGIN_SRC ocaml :exports both :results value :session
-  let infix t =
-    let rec aux acc = function
-      | Nil -> acc
-      | Node(l, v, r) -> aux (v::aux acc l) r
-    in
-    aux [] t |> rev
+      Mogę do tego dodać infiksik:
+      #+BEGIN_SRC ocaml :exports both :results value :session
+        let infix t =
+          let rec aux acc = function
+            | Nil -> acc
+            | Node(l, v, r) -> aux (v::aux acc l) r
+          in
+          aux [] t |> rev
 
-  let t = Node(
-              Node(
-                  Node(Nil, 1, Nil),
-                  2,
-                  Node(Nil, 3, Nil)),
-              4,
-              Node(
-                  Node(Nil, 5, Nil),
-                  6,
-                  Nil));;
-  infix t;;
-#+END_SRC
+        let t = Node(
+                    Node(
+                        Node(Nil, 1, Nil),
+                        2,
+                        Node(Nil, 3, Nil)),
+                    4,
+                    Node(
+                        Node(Nil, 5, Nil),
+                        6,
+                        Nil));;
+        infix t;;
+      #+END_SRC
 
-#+RESULTS:
-| 1 | 2 | 3 | 4 | 5 | 6 |
+      #+RESULTS:
+      | 1 | 2 | 3 | 4 | 5 | 6 |
 
 **** tabelki!
-Widzieliśmy powyżej tabelki generowane wykonaniem kodu *wewnątrz*
-org-moudu, ale zobaczmy jak porządne tabele można tutaj wytworzyć.
-| zbiór                        | oznaczenie            | oznaczenie mocy                                                      | moc             |
-|------------------------------+-----------------------+----------------------------------------------------------------------+-----------------|
-| liczby naturalne             | $$\mathbb{N}$$        | $$\overline{\overline{\mathbb{N}}} = \aleph_0$$                      | alef zero       |
-| zbiór potęgowy naturalnych   | $$\sf P(\mathbb{N})$$ | $$\overline{\overline{\sf P(\mathbb{N})}} = \mathfrak{c}$$           | /continuum/     |
-| liczby rzeczywiste           | $$\mathbb{R}$$        | $$\overline{\overline{\mathbb{R}}} = \mathfrak{c}$$                  | /continuum/     |
-| zbiór potęgowy rzeczywistych | $$\sf P(\mathbb{R})$$ | $$\overline{\overline{\sf P(\mathbb{R})}} = 2^\mathfrak{c}=\beth_2$$ | bet dwa (chyba) |
-ta jest dość skomplikowana, ale można zrobić również prostsze, jak ta:
-| litera w łacince | litera w grece | litera hebrajska |
-|------------------+----------------+------------------|
-| a                | \alpha         | $\aleph$         |
-| b                | \beta          | $\beth$          |
-| c / g            | \gamma         | $\gimel$         |
-| d                | \delta         | $\daleth$        |
-którą otrzymałem tak:
-#+BEGIN_SRC org
-  | litera w łacince | litera w grece | litera hebrajska |
-  |------------------+----------------+------------------|
-  | a                | \alpha         | $\aleph$         |
-  | b                | \beta          | $\beth$          |
-  | c / g            | \gamma         | $\gimel$         |
-  | d                | \delta         | $\daleth$        |
-#+END_SRC
+     Widzieliśmy powyżej tabelki generowane wykonaniem kodu *wewnątrz* org-moudu, ale zobaczmy jak
+     porządne tabele można tutaj wytworzyć.
+     | zbiór                        | oznaczenie            | oznaczenie mocy                                                      | moc             |
+     |------------------------------+-----------------------+----------------------------------------------------------------------+-----------------|
+     | liczby naturalne             | $$\mathbb{N}$$        | $$\overline{\overline{\mathbb{N}}} = \aleph_0$$                      | alef zero       |
+     | zbiór potęgowy naturalnych   | $$\sf P(\mathbb{N})$$ | $$\overline{\overline{\sf P(\mathbb{N})}} = \mathfrak{c}$$           | /continuum/     |
+     | liczby rzeczywiste           | $$\mathbb{R}$$        | $$\overline{\overline{\mathbb{R}}} = \mathfrak{c}$$                  | /continuum/     |
+     | zbiór potęgowy rzeczywistych | $$\sf P(\mathbb{R})$$ | $$\overline{\overline{\sf P(\mathbb{R})}} = 2^\mathfrak{c}=\beth_2$$ | bet dwa (chyba) |
+     ta jest dość skomplikowana, ale można zrobić również prostsze, jak ta:
+     | litera w łacince | litera w grece | litera hebrajska |
+     |------------------+----------------+------------------|
+     | a                | \alpha         | $\aleph$         |
+     | b                | \beta          | $\beth$          |
+     | c / g            | \gamma         | $\gimel$         |
+     | d                | \delta         | $\daleth$        |
+     którą otrzymałem tak:
+     #+BEGIN_SRC org
+       | litera w łacince | litera w grece | litera hebrajska |
+       |------------------+----------------+------------------|
+       | a                | \alpha         | $\aleph$         |
+       | b                | \beta          | $\beth$          |
+       | c / g            | \gamma         | $\gimel$         |
+       | d                | \delta         | $\daleth$        |
+     #+END_SRC
 
 **** /matematyka/
-Mam tutaj również funkcjonującego [[https://katex.org][KaTeXa]] czy też \\(\KaTeX\\)-a. Dzięki temu jeśli napiszę:
-#+BEGIN_SRC latex
-  $$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
-#+END_SRC
-otrzymam:
-----------
-$$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
----------
-Mogę też fajne rzeczy typu moce zbiorów robić:
+     Mam tutaj również funkcjonującego [[https://katex.org][KaTeXa]] czy też \\(\KaTeX\\)-a. Dzięki temu jeśli napiszę:
+     #+BEGIN_SRC latex
+       $$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
+     #+END_SRC
+     otrzymam:
+     ----------
+     $$\textrm{pijaczyna}{:}\;\; \exists x\ldotp\; P(x) \to \forall y P(y)$$
+     ---------
+     Mogę też fajne rzeczy typu moce zbiorów robić (bardzo lubię takie znaczki):
 
-$$ \overline{\overline{\sf{P}(\mathbb{N})}} = 
-\mathfrak{c} = \overline{\overline\mathbb{R}} $$
+     $$ \overline{\overline{\sf{P}(\mathbb{N})}} = 
+     \mathfrak{c} = \overline{\overline\mathbb{R}} $$
 
 
-/voilà/.
-+Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/,
-ale może uda mi się to niegdyś naprawić.+ 
-Udało mi się! Kto by pomyślał, że wystarczy przeczytać \\(\KaTeX\\)ową
-dokumentację...
+     /voilà/.  +Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/, ale może uda mi
+     się to niegdyś naprawić.+ Udało mi się! Kto by pomyślał, że wystarczy przeczytać
+     \\(\KaTeX\\)ową dokumentację...
 
- Chcąc wyrenderować np. duże ksi inline robię \\(\xi\\)
-czyli ~\\(ksi\\)~! Suma? Nic prostszego: ~\\(\sum_{n=0}^\infty \frac{1}{n!}\\)~ 
-daje mi \\(\sum_{n=0}^\infty \frac{1}{n!}\\), a jeśli użyję
-~$$\sum_{n=0}^\infty \frac{1}{n!}$$~, to dostanę 
-$$\sum_{n=0}^\infty\frac{1}{n!}$$ 
-czyli tzw /display mode/. \\(\textit{et voilà}\\).
+     Chcąc wyrenderować np. duże ksi inline robię \\(\xi\\) czyli ~\\(ksi\\)~! Suma? Nic prostszego:
+     ~\\(\sum_{n=0}^\infty \frac{1}{n!}\\)~ daje mi \\(\sum_{n=0}^\infty \frac{1}{n!}\\), a jeśli
+     użyję ~$$\sum_{n=0}^\infty \frac{1}{n!}$$~, to dostanę $$\sum_{n=0}^\infty\frac{1}{n!}$$ czyli
+     tzw /display mode/. \\(\textit{et voilà}\\).
 
-Powiem więcej! Pogmerałem w tym $\KaTeX$u i jest jeszcze prościej!
-Dodałem otóż do listy /delimiters/ pojedyncze dolary i teraz zrobiwszy
-#+BEGIN_SRC latex
-  $Y = \lambda f. (\lambda z. f (z z)) (\lambda z. f (z z))$ 
-#+END_SRC
-otrzymam
-$Y = \lambda f. (\lambda z. f (z z)) (\lambda z. f (z z))$ czyli matematykę!
+     Powiem więcej! Pogmerałem w tym $\KaTeX$u i jest jeszcze prościej!  Dodałem otóż do listy
+     /delimiters/ pojedyncze dolary i teraz zrobiwszy
+     #+BEGIN_SRC latex
+       $Y = \lambda f. (\lambda z. f (z z)) (\lambda z. f (z z))$ 
+     #+END_SRC
+     otrzymam
+     $Y = \lambda f. (\lambda z. f (z z)) (\lambda z. f (z z))$ czyli matematykę!
 
-Bądź co bądź to kończy ten
-post blogowy. Był to w pewnym sensie zaledwie przykład.
+     Bądź co bądź to kończy ten post blogowy. Był to w pewnym sensie zaledwie przykład.

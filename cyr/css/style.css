@@ -1,5 +1,7 @@
 /*dreffe*/
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Oxygen+Mono&family=Piazzolla&family=Lato&family=Roboto&family=Roboto+Slab:wght@300&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
@@ -172,6 +174,7 @@ div.text {
     padding: 10px;
 
     font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 #linek {

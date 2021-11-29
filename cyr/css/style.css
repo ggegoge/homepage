@@ -20,7 +20,7 @@ div.top {
     background-color: #063530;
     color: #fff;
     width: 100%;
-    height: 60px;
+    height: 70px;
     text-align: center;
     vertical-align: middle;
     line-height: 30px;
@@ -64,7 +64,8 @@ h6 {
 h1.site_title {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: 'Open Sans', sans-serif;    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem
 }
 
 h5.site_subtitle {

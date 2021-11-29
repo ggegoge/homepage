@@ -74,7 +74,7 @@
       </a>
     </div>
     <div class="footer">
-      copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
+      copyleft (ɔ) <!-- (☭) --> grzegorz cichosz 2021 <br>
       <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
        onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
         <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
@@ -88,17 +88,16 @@
         <div class="date_wrap"><span id="datka">21.02.2021</span>
         </div>
         <h2 class="title">Orgise</h2>
-        <p>Krótki przegląd działania <b>orgise</b>&#8216;a i jego pseudo
-          dokumentację oraz napiszę z czego korzystałem. Co prawda raczej nikt
-          prócz mnie tego nie użyje, ale jestem tego świadom. Piszę tę
-          dokumentację po części, aby samemu nie zapomnieć o co chodzi.</p>
+        <p>Krótki przegląd działania <b>orgise</b>&#8216;a i jego pseudo dokumentację oraz napiszę z czego korzystałem. Co
+          prawda raczej nikt prócz mnie tego nie użyje, ale jestem tego świadom. Piszę tę dokumentację po
+          części, aby samemu nie zapomnieć o co chodzi.</p>
         <p>Jeśli ktoś w ogóle nie wie <i>czy jest org</i>, radzę mu zajrzeć na <a id="linek" href="https://orgmode.org/">jego stronę</a> albo
           obejrzeć dotyczący go fragment <a id="linek" href="https://youtu.be/JWD1Fpdd4Pc?t=1206">tego filmiku</a>, całość <a id="linek" href="https://youtu.be/SzA2YODtgK4">tej prelekcyjki</a>
           bądź przeczytać jeden z niezliczonych <a id="linek" href="https://karl-voit.at/2017/09/23/orgmode-as-markup-only/">peanów cudzych</a>.</p>
         <h4>czym jest <b>orgise</b>?</h4>
-        <p><b>Orgise</b> (czy też <code>orgise</code>) to narzędzie, jakie napisałem w <i>ruby i
-            bashu</i> celem oszczędzenia sobie syfienia rąk tym durnym htmlem.</p>
-        <h4>jak go używać?</h4>
+        <p><b>Orgise</b> (czy też <code>orgise</code>) to narzędzie, jakie napisałem w <i>ruby i bashu</i> celem oszczędzenia
+          sobie syfienia rąk tym durnym htmlem.</p>
+        <h4>jak go używać? informacja dla mnie samego z przyszłości</h4>
         <p><b>Orgise</b> funkcjonuje w dwu trybach:</p>
         <ol>
           <li>tryb dodawczy &#8211; chcemy dodawać nowe <i>posty</i> ciurkiem do dołu
@@ -111,33 +110,30 @@
         <h5>tryb dodawczy</h5>
         <p>uruchomienie <code>orgise.sh</code> <b>bez</b> flagi <code>--newp</code>.</p>
         <h6>orgizacja całego folderu</h6>
-        <p>Użycie jest dość proste. Załóżmy, że np chcemy <b>zorgise</b>&#8216;ować cały katalog <code>_main</code>
-          (czyli: mam w tym katalogu pliki orgowe (obowiązkowo z tagiem
-          <code>#+TITLE</code>) tak, aby dodały się jako kolejne bloki na stronę w pliku
-          <code>index.html</code>. Wtedy wystarczy użyć komendy</p>
+        <p>Użycie jest dość proste. Załóżmy, że np chcemy <b>zorgise</b>&#8216;ować cały katalog <code>_main</code> (czyli: mam w tym
+          katalogu pliki orgowe (obowiązkowo z tagiem <code>#+TITLE</code>) tak, aby dodały się jako kolejne bloki na
+          stronę w pliku <code>index.html</code>. Wtedy wystarczy użyć komendy</p>
         <pre class="example">
 ./orgise.sh [dir] [outp]
 </pre>
-        <p>gdzie opcjonalne argumenty <code>dir</code> i <code>outp</code> to odpowiednio katalog z
-          którego pobierane będą (w kolejności posortownej) pliki orgowe celem
-          orgizacji, a <code>outp</code> to strona (plik htmlowy), do której zostaną
-          dodane/na której zostaną zedytowane. Defaultowo ~dir=&#8221;blog/_main&#8221;~,
-          a ~outp=&#8221;blog/index.html&#8221;~.</p>
-        <p>Przetworzą się wszystkie pliki z katalogu <code>dir</code>. Jedynym wyjątkiem są te,
-          które opatrzone są tagiem <code>#+EXCLUDE: true</code>.</p>
+        <p>gdzie opcjonalne argumenty <code>dir</code> i <code>outp</code> to odpowiednio katalog z którego pobierane będą (w
+          kolejności posortownej) pliki orgowe celem orgizacji, a <code>outp</code> to strona (plik htmlowy), do
+          której zostaną dodane/na której zostaną zedytowane. Defaultowo ~dir=&#8221;blog/_main&#8221;~, a
+          ~outp=&#8221;blog/index.html&#8221;~.</p>
+        <p>Przetworzą się wszystkie pliki z katalogu <code>dir</code>. Jedynym wyjątkiem są te, które opatrzone są
+          tagiem <code>#+EXCLUDE: true</code>.</p>
         <h6>orgizacja pojedynczego pliku</h6>
-        <p>To trochę kwestia bardziej złożona, ale mamy też więcej
-          opcji. Wtedy składnia jest następująca:</p>
+        <p>To trochę kwestia bardziej złożona, ale mamy też więcej opcji. Wtedy składnia jest
+          następująca:</p>
         <div class="highlight">
           <pre class="codehilite"><code>ruby orgise.md forg page <span class="o">[</span>page_out] <span class="o">[</span><span class="nt">-n</span><span class="o">]</span></code></pre>
         </div>
-        <p>gdzie <code>forg</code> to plik do zorgizowania, <code>page</code> to strona którą trzeba
-          zedytować, a <code>page_out</code> to miejsce do zapisania wyniku (jeśli się go
-          nie poda to będzie to domyślnie równe <code>page</code>), a użycie flagi <code>-n</code>
-          mówi, że zamiast edycji istniejącego posta chcemy utworzyć nowy.</p>
-        <p>Posty rozróżnia się po ich identyfikatorze. Standardowo jest to
-          wartość z <code>#+TITLE</code> z myślnikami zamiast spacji, ale jeśli się
-          sprecyzuje osobno <code>#+IDENT</code> to to pole zadecyduje o <code>id</code> htmlowym.</p>
+        <p>gdzie <code>forg</code> to plik do zorgizowania, <code>page</code> to strona którą trzeba zedytować, a <code>page_out</code> to
+          miejsce do zapisania wyniku (jeśli się go nie poda to będzie to domyślnie równe <code>page</code>), a użycie
+          flagi <code>-n</code> mówi, że zamiast edycji istniejącego posta chcemy utworzyć nowy.</p>
+        <p>Posty rozróżnia się po ich identyfikatorze. Standardowo jest to wartość z <code>#+TITLE</code> z
+          myślnikami zamiast spacji, ale jeśli się sprecyzuje osobno <code>#+IDENT</code> to to pole zadecyduje o
+          <code>id</code> htmlowym.</p>
         <h5>tryb nowostronny</h5>
         <p>uruchomienie <code>orgise.sh</code> <b>wraz z</b> flagą <code>--newp</code>.</p>
         <h6>cały folder</h6>
@@ -147,43 +143,37 @@
 </pre>
         <p>Argumenty opcjonalne:</p>
         <ul>
-          <li><code>dir</code> to katalog z orgowymi plikami do unowostronnienia. defautlowo
-            <code>dir=blog/_posts</code></li>
+          <li><code>dir</code> to katalog z orgowymi plikami do unowostronnienia. defautlowo <code>dir=blog/_posts</code></li>
           <li><code>outp</code> to katalog na wrzucenie nowopowstałych stron. defaultowo <code>outp=blog/posts</code></li>
           <li><code>szablon</code> to szablon, z którego orgise ma tworzyć strony. defaultowo
             <code>szablon=blog/posts/szablon.html</code></li>
         </ul>
         <h6>pojedyncza strona</h6>
-        <p>Podobnie jak poprzednio <code>ruby orgise.rb</code>, ale tym razem trzeba również dodać flagę
-          <code>--newp</code>.</p>
+        <p>Podobnie jak poprzednio <code>ruby orgise.rb</code>, ale tym razem trzeba również dodać flagę <code>--newp</code>.</p>
         <h4>jak wygląda workflow?</h4>
         <p>Jak chcę utworzyć nowy post na tę stronę, robię to w następującym
           stylu:</p>
         <ul>
           <li>piszę go w orgu, wrzucam do <code>_posts</code>. daję mu znaczniki <code>#+title</code>,
             <code>#+date</code> i czasami <code>#+ident</code></li>
-          <li>jeśli chcę aby pojawił się na stronie głównej bloga piszę w podobnym stylu
-            krótkie streszczonko z linkiem, które następnie ląduje w <code>_main</code>.</li>
-          <li>komendą <code>./orgise.sh</code> aktualizuję zawartość strony głównej tzw bloga
-            i poprawiam to <code>./orgise --newp</code>, które skanuje katalog <code>_posts</code> i
-            bierze posty bez <code>#+exclude</code>, z których tworzy strony w <code>posts</code></li>
+          <li>jeśli chcę aby pojawił się na stronie głównej bloga piszę w podobnym stylu krótkie
+            streszczonko z linkiem, które następnie ląduje w <code>_main</code>.</li>
+          <li>komendą <code>./orgise.sh</code> aktualizuję zawartość strony głqównej tzw bloga i poprawiam to <code>./orgise
+              --newp</code>, które skanuje katalog <code>_posts</code> i bierze posty bez <code>#+exclude</code>, z których tworzy
+            strony w <code>posts</code></li>
           <li><i>voilà</i></li>
         </ul>
         <h4>jak to jest zrobione?</h4>
-        <p>Najtrudniejszą część na szczęście zrobiono za mnie. <b>Gem</b> do ruby
-          <a id="linek" href="https://github.com/wallyqs/org-ruby">org-ruby</a> (<i>genialne</i> narzędzie. ciekawe też, że <a id="linek" href="https://github.com/github/markup#markups">korzysta z niego</a>
-          github renderując pliki <code>.org</code> u siebie) zapewnia cały parsing i pewną
-          customizację. Osobiście dodałem do tego przetwarzanie plików tak aby
-          te zachowały kompatybilność z resztą strony. Poza tym obsługa <code>#+DATE</code>
-          oraz małe zmiany w source kodzie org-ruby wynikłe z braku wdrożnia do
-          głównej wersji niektórych ważnych zmian. To wszystko mocno regexpem
-          potraktowałem. To była największa męka prawdę powiedziawszy, ponieważ
-          <a id="linek" href="http://regex.info/blog/2006-09-15/247">jak wiadomo</a> regexp jest <i>bardzo</i> kłopotliwy.</p>
-        <p>Dodatkowo użyłem gemu <a id="linek" href="https://github.com/threedaymonk/htmlbeautifier">html beautifier</a> aby ten
-          wyegenrowany regexpowym wstawianiem i zamienianiem html wyglądał <b>jak
-            człowiek</b>.</p>
-        <p>Mogę załączyć mały fragmencik, ale zainteresowani mogą ujrzeć to
-          wszystko na <a id="linek" href="https://github.com/test0wanie/homepage/blob/master/cyr/orgise.rb">githubie</a>.</p>
+        <p>Najtrudniejszą część na szczęście zrobiono za mnie. <b>Gem</b> do ruby <a id="linek" href="https://github.com/wallyqs/org-ruby">org-ruby</a> (<i>genialne</i>
+          narzędzie. ciekawe też, że <a id="linek" href="https://github.com/github/markup#markups">korzysta z niego</a> github renderując pliki <code>.org</code> u siebie) zapewnia
+          cały parsing i pewną customizację. Osobiście dodałem do tego przetwarzanie plików tak aby te
+          zachowały kompatybilność z resztą strony. Poza tym obsługa <code>#+DATE</code> oraz małe zmiany w source
+          kodzie org-ruby wynikłe z braku wdrożnia do głównej wersji niektórych ważnych zmian. To wszystko
+          mocno regexpem potraktowałem. To była największa męka prawdę powiedziawszy, ponieważ <a id="linek" href="http://regex.info/blog/2006-09-15/247">jak wiadomo</a>
+          regexp jest <i>bardzo</i> kłopotliwy.</p>
+        <p>Dodatkowo użyłem gemu <a id="linek" href="https://github.com/threedaymonk/htmlbeautifier">html beautifier</a> aby ten wyegenrowany regexpowym wstawianiem i zamienianiem
+          html wyglądał <b>jak człowiek</b>.</p>
+        <p>Mogę załączyć mały fragmencik, ale zainteresowani mogą ujrzeć to wszystko na <a id="linek" href="https://github.com/test0wanie/homepage/blob/master/cyr/orgise.rb">githubie</a>.</p>
         <hr />
         <table>
           <tr>
@@ -255,17 +245,16 @@ orgising blog/_posts/tractatus.org
 blog/_posts/tractatus.org is excluded
 </pre>
         <h4><i><a id="linek" href="https://www.tate.org.uk/art/artworks/merz-che-fare-ar00598">Che fare?</a></i></h4>
-        <p>Jedyne co pozostało do zrobienia, to obmyślenie, jak zacząć tego
-          używać na innych stronach.</p>
+        <p>Jedyne co pozostało do zrobienia, to obmyślenie, jak zacząć tego używać na innych stronach.</p>
         <h5>Lateszny formating!</h5>
-        <p>Oho! Wiem. Przydałoby się dodać obsługę jakichś komend specjalnych!
-          Np. że dodanie $\LaTeX$owo <code>textsc</code> do utworzy taki span z klasą
-          <code>textsc</code> sformatowaną należycie &#8211; kapitaliki. Dodałbym też chętnie <code>emph</code> na
-          przykład jako specjalny szeryfowy krój. Tak samo klasę <code>qed</code> na dowodziki.</p>
+        <p>Oho! Wiem. Przydałoby się dodać obsługę jakichś komend specjalnych!  Np. że dodanie $\LaTeX$owo
+          <code>textsc</code> do utworzy taki span z klasą <code>textsc</code> sformatowaną należycie &#8211; kapitaliki. Dodałbym
+          też chętnie <code>emph</code> na przykład jako specjalny szeryfowy krój. Tak samo klasę <code>qed</code> na
+          dowodziki.</p>
         <p>A nawet już to zrobiłem! <i>Voilà</i>:</p>
         <p><span class="emph"><b>koci lemat</b>: <i>wszystkie koty są piękne</i></span></p>
-        <p><span class="textsc">Dowód:</span> <span class="emph">piękność jest <a id="linek" href="../../koty">oczywista</a>, trafność użycia
-            kwantyfikatora $&forall;$ &#8211; ćwiczenie</span>.</p>
+        <p><span class="textsc">Dowód:</span> <span class="emph">piękność jest <a id="linek" href="../../koty">oczywista</a>, trafność użycia kwantyfikatora $&forall;$ &#8211;
+            ćwiczenie</span>.</p>
         <p>
           <p class="qed">kot erat</p>
         </p>

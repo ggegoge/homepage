@@ -74,7 +74,7 @@
       </a>
     </div>
     <div class="footer">
-      copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
+      copyleft (ɔ) <!-- (☭) --> grzegorz cichosz 2021 <br>
       <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
        onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
         <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
@@ -90,12 +90,12 @@
         <h2 class="title">Pierwszy org-post!</h2>
         <h3>przykładowy post pełen niespodzianek</h3>
         <h5>Cóż to za nowoczesność?</h5>
-        <p>Oto jest <a id="linek" href="https://orgmode.org">org mode</a>! Jeden z lepszych <i>markup</i> languaages tzw. Moim
-          zdaniem wygodniejszy od markdownu z pewnością.</p>
+        <p>Oto jest <a id="linek" href="https://orgmode.org">org mode</a>. Jeden z lepszych <i>markup</i> languaages tzw. Moim zdaniem wygodniejszy od
+          markdownu z pewnością.</p>
         <h6>Kod lystyng!</h6>
         <p><del>niestety nie ma syntax hajlajtingu :(</del> jednak jest!</p>
-        <p>Dam dwa przykłady ocamlowe, taką ogonową silnię wraz z rezultatami (na
-          ich eksport łatwo pozwala zbazowany <b>org</b>)</p>
+        <p>Dam dwa przykłady ocamlowe, taką ogonową silnię wraz z rezultatami (na ich eksport łatwo pozwala
+          zbazowany <b>org</b>)</p>
         <div class="highlight">
           <pre class="codehilite"><code><span class="k">let</span> <span class="n">fact</span> <span class="n">n</span> <span class="o">=</span>
   <span class="k">let</span> <span class="k">rec</span> <span class="n">factail</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">function</span>
@@ -131,8 +131,7 @@
             <td>40320</td>
           </tr>
         </table>
-        <p>oraz taki drugi przykład z obracaniem drzewa dwójniackiego
-          (and. <i>binary tree</i>):</p>
+        <p>oraz taki drugi przykład z obracaniem drzewa dwójniackiego (and. <i>binary tree</i>):</p>
         <div class="highlight">
           <pre class="codehilite"><code><span class="k">type</span> <span class="k">'</span><span class="n">a</span> <span class="n">btree</span> <span class="o">=</span> <span class="nc">Node</span> <span class="k">of</span> <span class="k">'</span><span class="n">a</span> <span class="n">btree</span> <span class="o">*</span> <span class="k">'</span><span class="n">a</span> <span class="o">*</span> <span class="k">'</span><span class="n">a</span> <span class="n">btree</span> <span class="o">|</span> <span class="nc">Nil</span>
 
@@ -174,8 +173,8 @@
           </tr>
         </table>
         <h5>tabelki!</h5>
-        <p>Widzieliśmy powyżej tabelki generowane wykonaniem kodu <b>wewnątrz</b>
-          org-moudu, ale zobaczmy jak porządne tabele można tutaj wytworzyć.</p>
+        <p>Widzieliśmy powyżej tabelki generowane wykonaniem kodu <b>wewnątrz</b> org-moudu, ale zobaczmy jak
+          porządne tabele można tutaj wytworzyć.</p>
         <table>
           <tr>
             <th>zbiór</th>
@@ -254,29 +253,24 @@
         <hr />
         <p>$$\textrm{pijaczyna}{:}\;\; &exist; x\ldotp\; P(x) &rarr; &forall; y P(y)$$</p>
         <hr />
-        <p>Mogę też fajne rzeczy typu moce zbiorów robić:</p>
+        <p>Mogę też fajne rzeczy typu moce zbiorów robić (bardzo lubię takie znaczki):</p>
         <p>$$ \overline{\overline{\sf{P}(\mathbb{N})}} =
           \mathfrak{c} = \overline{\overline\mathbb{R}} $$</p>
-        <p><i>voilà</i>.
-          <del>Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/,
-            ale może uda mi się to niegdyś naprawić.</del>
-          Udało mi się! Kto by pomyślał, że wystarczy przeczytać &#92;(\KaTeX&#92;)ową
-          dokumentację&#8230;</p>
-        <p>Chcąc wyrenderować np. duże ksi inline robię &#92;(&xi;&#92;)
-          czyli <code>\\(ksi\\)</code>! Suma? Nic prostszego: <code>\\(\sum_{n=0}^\infty \frac{1}{n!}\\)</code>
-          daje mi &#92;(&sum;_{n=0}^&infin; \frac{1}{n!}&#92;), a jeśli użyję
-          <code>$$\sum_{n=0}^\infty \frac{1}{n!}$$</code>, to dostanę
-          $$&sum;_{n=0}^&infin;\frac{1}{n!}$$
-          czyli tzw <i>display mode</i>. &#92;(\textit{et voilà}&#92;).</p>
-        <p>Powiem więcej! Pogmerałem w tym $\KaTeX$u i jest jeszcze prościej!
-          Dodałem otóż do listy <i>delimiters</i> pojedyncze dolary i teraz zrobiwszy</p>
+        <p><i>voilà</i>.  <del>Nie jestem pewien co należy zrobić, aby działała tzw /inline maths/, ale może uda mi
+            się to niegdyś naprawić.</del> Udało mi się! Kto by pomyślał, że wystarczy przeczytać
+          &#92;(\KaTeX&#92;)ową dokumentację&#8230;</p>
+        <p>Chcąc wyrenderować np. duże ksi inline robię &#92;(&xi;&#92;) czyli <code>\\(ksi\\)</code>! Suma? Nic prostszego:
+          <code>\\(\sum_{n=0}^\infty \frac{1}{n!}\\)</code> daje mi &#92;(&sum;_{n=0}^&infin; \frac{1}{n!}&#92;), a jeśli
+          użyję <code>$$\sum_{n=0}^\infty \frac{1}{n!}$$</code>, to dostanę $$&sum;_{n=0}^&infin;\frac{1}{n!}$$ czyli
+          tzw <i>display mode</i>. &#92;(\textit{et voilà}&#92;).</p>
+        <p>Powiem więcej! Pogmerałem w tym $\KaTeX$u i jest jeszcze prościej!  Dodałem otóż do listy
+          <i>delimiters</i> pojedyncze dolary i teraz zrobiwszy</p>
         <div class="highlight">
           <pre class="codehilite"><code><span class="p">$</span><span class="nb">Y </span><span class="o">=</span><span class="nb"> </span><span class="nv">\lambda</span><span class="nb"> f. </span><span class="o">(</span><span class="nv">\lambda</span><span class="nb"> z. f </span><span class="o">(</span><span class="nb">z z</span><span class="o">))</span><span class="nb"> </span><span class="o">(</span><span class="nv">\lambda</span><span class="nb"> z. f </span><span class="o">(</span><span class="nb">z z</span><span class="o">))</span><span class="p">$</span></code></pre>
         </div>
         <p>otrzymam
           $Y = &lambda; f. (&lambda; z. f (z z)) (&lambda; z. f (z z))$ czyli matematykę!</p>
-        <p>Bądź co bądź to kończy ten
-          post blogowy. Był to w pewnym sensie zaledwie przykład.</p>
+        <p>Bądź co bądź to kończy ten post blogowy. Był to w pewnym sensie zaledwie przykład.</p>
       </div>
        <!-- fin_post_Pierwszy-org-post! -->
       <!--END_KURDE-->

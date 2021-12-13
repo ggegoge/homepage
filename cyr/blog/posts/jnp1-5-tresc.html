@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <title>Zadanie 5 z jnp1, treść</title>
+  <head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Oxygen+Mono&family=Piazzolla&family=Roboto&family=Roboto+Slab:wght@300&display=swap"
+          rel="stylesheet">
+    <!-- Page styling -->
+    <link rel="stylesheet" type="text/css"
+          href="../../css/style.css?v=1">
+    <!-- syntax highliting -->
+    <!-- <link rel="stylesheet" href="../../css/solarised_dark.css"> -->
+    <link rel="stylesheet" href="../../css/minima.css">
+    <!-- KaTeX -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+          integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+          crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+            integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+            crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+            integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+            crossorigin="anonymous"
+            onload="renderMathInElement(document.body, {
+                      delimiters : [
+                       {left: '$$', right: '$$', display: true},
+                       {left: '$', right: '$', display: false},
+                       {left: '\\(', right: '\\)', display: false},
+                       {left: '\\[', right: '\\]', display: true}                       
+                       ]});"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
+          integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
+          crossorigin="anonymous">
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js"
+            integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9"
+            crossorigin="anonymous"></script>
+    <script>
+      window.WebFontConfig = {
+        custom: {
+          families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+            'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+            'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+            'KaTeX_Size4', 'KaTeX_Typewriter'],
+        },
+      };
+    </script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js"
+            integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc="
+            crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="top" id="1">
+      <div class="toptext">
+        <h1 class="site_title">blog?? | Zadanie 5 z jnp1, treść</h1>
+        <h5 class="site_subtitle">losowe rzeczy przydatne <i>może</i></h5>
+      </div>
+    </div>
+    <!-- <img sierp i muout -->
+    <div class="allme">
+      <a  class="menuLink" href="../..">
+        <div class="menu" id="home">strona główna</div>
+      </a>
+      <a class="menuLink" href="..">
+        <div class="menu" id="blog_rest">reszta bloga</div>
+      </a>
+    </div>
+    <div class="footer">
+      copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
+      <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
+       onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
+        <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
+             !-- g -->
+        $\footnotesize{(\lambda x.\lambda y\ldotp\;
+        y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}$
+      </a>
+    </div>
+    <div class="vsjo">
+      <div class="text" id="jnp1-z5-tresc">
+        <div class="date_wrap"><span id="datka">peczar lub ktos pewnei</span>
+        </div>
+        <h2 class="title">Zadanie 5 z jnp1, treść</h2>
+        <hr />
+        <h2>Zadanie Genealogia Wirusów</h2>
+        <p>Biolog zajmujący się klasyfikowaniem wirusów potrzebuje klasy do
+          manipulowania informacjami o ich genealogii. Nowy wirus powstaje przez
+          mutację jakiegoś znanego wirusa. Może też powstać przez zmutowanie
+          połączenia więcej niż jednego wirusa. Genealogia wirusa jest grafem
+          skierowanym acyklicznym o jednym źródle, które reprezentuje wirusa
+          macierzystego. Wierzchołek grafu odpowiada konkretnej mutacji wirusa.
+          Krawędź łączy wirusa z bezpośrednio otrzymaną z niego mutacją.</p>
+        <p>Należy zaimplementować szablon klasy, która reprezentuje taki graf.</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="n">template</span> <span class="o">&lt;</span><span class="kr">typename</span> <span class="n">Virus</span><span class="o">&gt;</span> <span class="n">VirusGenealogy</span><span class="p">;</span></code></pre>
+        </div>
+        <p>Klasa <code>Virus</code> reprezentuje informacje o wirusie. Jej implementacja
+          zostanie dostarczona w stosownym czasie.</p>
+        <p>Klasa <code>VirusGenealogy</code> powinna udostępniać następujący interfejs.</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="c1">// Tworzy nową genealogię.</span>
+<span class="c1">// Tworzy także węzeł wirusa macierzystego o identyfikatorze stem_id.</span>
+<span class="n">VirusGenealogy</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">stem_id</span><span class="p">);</span>
+
+<span class="c1">// Zwraca identyfikator wirusa macierzystego.</span>
+<span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="n">get_stem_id</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// Zwraca iterator pozwalający przeglądać listę identyfikatorów</span>
+<span class="c1">// bezpośrednich następników wirusa o podanym identyfikatorze.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli dany wirus nie istnieje.</span>
+<span class="c1">// Iterator musi spełniać koncept bidirectional_iterator oraz</span>
+<span class="c1">// typeid(*v.get_children_begin()) == typeid(const Virus &amp;).</span>
+<span class="n">VirusGenealogy</span><span class="o">&lt;</span><span class="n">Virus</span><span class="o">&gt;::</span><span class="n">children_iterator</span> <span class="n">get_children_begin</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// Iterator wskazujący na element za końcem wyżej wspomnianej listy.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli dany wirus nie istnieje.</span>
+<span class="n">VirusGenealogy</span><span class="o">&lt;</span><span class="n">Virus</span><span class="o">&gt;::</span><span class="n">children_iterator</span> <span class="n">get_children_end</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// Zwraca listę identyfikatorów bezpośrednich poprzedników wirusa</span>
+<span class="c1">// o podanym identyfikatorze.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli dany wirus nie istnieje.</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span><span class="o">&gt;</span> <span class="n">get_parents</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// Sprawdza, czy wirus o podanym identyfikatorze istnieje.</span>
+<span class="n">bool</span> <span class="n">exists</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// Zwraca referencję do obiektu reprezentującego wirus o podanym</span>
+<span class="c1">// identyfikatorze.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli żądany wirus nie istnieje.</span>
+<span class="k">const</span> <span class="n">Virus</span><span class="o">&amp;</span> <span class="n">operator</span><span class="p">[](</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// Tworzy węzeł reprezentujący nowy wirus o identyfikatorze id</span>
+<span class="c1">// powstały z wirusów o podanym identyfikatorze parent_id lub</span>
+<span class="c1">// podanych identyfikatorach parent_ids.</span>
+<span class="c1">// Zgłasza wyjątek VirusAlreadyCreated, jeśli wirus o identyfikatorze</span>
+<span class="c1">// id już istnieje.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli któryś z wyspecyfikowanych</span>
+<span class="c1">// poprzedników nie istnieje.</span>
+<span class="kt">void</span> <span class="nf">create</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">,</span> <span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">parent_id</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">create</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">parent_ids</span><span class="p">);</span>
+
+<span class="c1">// Dodaje nową krawędź w grafie genealogii.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli któryś z podanych wirusów nie istnieje.</span>
+<span class="kt">void</span> <span class="nf">connect</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">child_id</span><span class="p">,</span> <span class="n">virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">parent_id</span><span class="p">);</span>
+
+<span class="c1">// Usuwa wirus o podanym identyfikatorze.</span>
+<span class="c1">// Zgłasza wyjątek VirusNotFound, jeśli żądany wirus nie istnieje.</span>
+<span class="c1">// Zgłasza wyjątek TriedToRemoveStemVirus przy próbie usunięcia</span>
+<span class="c1">// wirusa macierzystego.</span>
+<span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="n">Virus</span><span class="o">::</span><span class="n">id_type</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">);</span></code></pre>
+        </div>
+        <h3>Zakładamy, że:</h3>
+        <ul>
+          <li>klasa <code>Virus</code> ma konstruktor przyjmujący argument typu <code>Virus::id_type</code>;</li>
+          <li>klasa <code>Virus</code> ma metodę <code>Virus::id_type get_id() const;</code></li>
+          <li>typ <code>Virus::id_type</code> ma konstruktor bezargumentowy, konstruktor
+            kopiujący, operator przypisania;</li>
+          <li>wartości typu <code>Virus::id_type</code> tworzą porządek liniowy i można je
+            porównywać za pomocą operatorów <code>&lt;=&gt;,~ ~==</code>, <code>!=, &lt;=, &gt;=, &lt;, &gt;.</code></li>
+        </ul>
+        <h3>Ponadto</h3>
+        <ul>
+          <li>wszystkie metody klasy VirusGenealogy powinny gwarantować silną odporność
+            na wyjątki, a tam, gdzie to jest możliwe i pożądane, powinny być no-throw;</li>
+          <li>próba użycia konstruktora kopiującego lub operatora przypisania dla
+            obiektów klasy VirusGenealogy powinna zakończyć się błędem kompilacji;</li>
+          <li>zachowanie obiektu typu VirusGenealogy po utworzeniu cyklu pozostaje
+            niezdefiniowane – nie trzeba wykrywać takiej sytuacji;</li>
+          <li>wyjątki VirusAlreadyCreated, VirusNotFound oraz TriedToRemoveStemVirus
+            powinny być zdefiniowane poza klasą VirusGenealogy i powinny publicznie
+            dziedziczyć po std::exception;</li>
+          <li>wyszukiwanie wirusów powinno być szybsze niż liniowe.</li>
+        </ul>
+        <p><b>Zarządzanie pamięcią powinno być zrealizowane za pomocą sprytnych wskaźników z biblioteki standardowej</b></p>
+        <h3>Przykład użycia</h3>
+        <p>Przykład użycia znajduje się w pliku <code>virus_example.cc</code>. Powinien wypisać na
+          standardowe wyjście:</p>
+        <pre class="example">
+VirusNotFound
+VirusAlreadyCreated
+TriedToRemoveStemVirus
+</pre>
+        <h3>Ustalenia techniczne</h3>
+        <p>Rozwiązanie będzie kompilowane poleceniem</p>
+        <pre class="example">
+g++ -Wall -Wextra -O2 -std=c++20 *.cc
+</pre>
+        <p>Będziemy sprawdzać poprawność zarządzania pamięcią za pomocą valgrinda.</p>
+        <p>Jako rozwiązanie należy dostarczyć plik <code>virus_genealogy.h</code>, który
+          należy umieścić w repozytorium w katalogu</p>
+        <p><code>grupaN/zadanie5/ab123456+cd123456</code></p>
+        <p>lub</p>
+        <p><code>grupaN/zadanie5/ab123456+cd123456+ef123456</code></p>
+        <p>gdzie <code>N</code> jest numerem grupy, a <code>ab123456</code>, <code>cd123456</code>, <code>ef123456</code> są identyfikatorami
+          członków zespołu umieszczającego to rozwiązanie. Katalog z rozwiązaniem nie
+          powinien zawierać innych plików. Nie wolno umieszczać w repozytorium plików
+          dużych, binarnych, tymczasowych (np. <code>*.o</code>) ani innych zbędnych.</p>
+      </div>
+       <!-- fin_post_jnp1-z5-tresc -->
+      <!--END_KURDE-->
+    </div>
+  </body>
+</html>

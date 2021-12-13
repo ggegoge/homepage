@@ -1,5 +1,6 @@
 #+TITLE: Orgise
+#+EXCLUDE: true
 #+DATE: 21.02.2021
 ****** [[posts/2_orgise.html][link]]
 
-/Post opisuje działanie narzędzia/ *orgise* /oraz proces jego powstawania./
+/ale program wysrałem/

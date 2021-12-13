@@ -1,7 +1,8 @@
 #+TITLE: Zmiany typu niemałe
+#+EXCLUDE: true
 #+DATE: 21.02.2021
 #+ident: new-look
 ****** [[posts/3_new_look.html][link]]
 
 /Krótkie sprawozdanko ze zmian, które przeszła ta strona w procesie
-jej/ unowocześniania /tak zwanego/.
+jej/ unowocześniania /tak zwanego/. /Akurat z tego jestem całkiem dumny./

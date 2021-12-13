@@ -1,6 +1,6 @@
-#+TITLE: ja? blog?
-Ok chyba się z tego wycofam bo jednak po miesiącu nie jestem dumny. Ale piszę je w [[https://en.wikipedia.org/wiki/Org-mode][fajnej rzeczy]] to
-może troszkę zostawię
+#+TITLE: hę?
+Miałem zdecydowanie za dużo czasu niegdyś xd, ale jakies fajne rzeczy moze tu wrzucę sobie
+czemu nie bo czasem może coś się znajdzie
 # Tak. nie przesłyszeliście się człowieku. Tworzę oficjalnie *bloga*
 # (choć to może być za dużo powiedziane, raczej tworzę sekcję do
 # losowych rzeczy i testów, jest to więc ledwie pseudo-blog).

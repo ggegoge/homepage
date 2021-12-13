@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <title>notatki do zadania 5 z jnp1</title>
+  <head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Oxygen+Mono&family=Piazzolla&family=Roboto&family=Roboto+Slab:wght@300&display=swap"
+          rel="stylesheet">
+    <!-- Page styling -->
+    <link rel="stylesheet" type="text/css"
+          href="../../css/style.css?v=1">
+    <!-- syntax highliting -->
+    <!-- <link rel="stylesheet" href="../../css/solarised_dark.css"> -->
+    <link rel="stylesheet" href="../../css/minima.css">
+    <!-- KaTeX -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+          integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+          crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+            integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+            crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+            integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+            crossorigin="anonymous"
+            onload="renderMathInElement(document.body, {
+                      delimiters : [
+                       {left: '$$', right: '$$', display: true},
+                       {left: '$', right: '$', display: false},
+                       {left: '\\(', right: '\\)', display: false},
+                       {left: '\\[', right: '\\]', display: true}                       
+                       ]});"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"
+          integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV"
+          crossorigin="anonymous">
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js"
+            integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9"
+            crossorigin="anonymous"></script>
+    <script>
+      window.WebFontConfig = {
+        custom: {
+          families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+            'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+            'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+            'KaTeX_Size4', 'KaTeX_Typewriter'],
+        },
+      };
+    </script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js"
+            integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc="
+            crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="top" id="1">
+      <div class="toptext">
+        <h1 class="site_title">blog?? | notatki do zadania 5 z jnp1</h1>
+        <h5 class="site_subtitle">losowe rzeczy przydatne <i>może</i></h5>
+      </div>
+    </div>
+    <!-- <img sierp i muout -->
+    <div class="allme">
+      <a  class="menuLink" href="../..">
+        <div class="menu" id="home">strona główna</div>
+      </a>
+      <a class="menuLink" href="..">
+        <div class="menu" id="blog_rest">reszta bloga</div>
+      </a>
+    </div>
+    <div class="footer">
+      copyleft <!-- (ɔ) --> (☭) grzegorz cichosz 2021 <br>
+      <a href="mailto:g@@cichosz@students@@mimuw@@edu@@com"
+       onmouseover="this.href=this.href.replaceAll('@@','.')" class="imejl">
+        <!-- (&lambda;x.&lambda;y. <u>y.x@students.mimuw.edu.pl</u>) cichosz
+             !-- g -->
+        $\footnotesize{(\lambda x.\lambda y\ldotp\;
+        y.x\texttt{@students.mimuw.edu.pl}) \; \textrm{cichosz g}}$
+      </a>
+    </div>
+    <div class="vsjo">
+      <div class="text" id="notatki-jnp1-z5">
+        <div class="date_wrap"><span id="datka">06 XII 2021 r</span>
+        </div>
+        <h2 class="title">notatki do zadania 5 z jnp1</h2>
+        <p>notatki jakieś do użycia</p>
+        <h3>wyjątki</h3>
+        <p>operator &lt; może zwrócić wyjątek nawet
+          gdyby chciał. ale <code>int a, b</code> i potem <code>a &lt; b</code> spoko chyba zawsze bo jest noexcept</p>
+        <p>ale na własnej klasie chyba mogę dać w środku throw&#8230;</p>
+        <p>na pointerach git wszystko</p>
+        <h4>gwarancje</h4>
+        <p>są różne poziomy</p>
+        <ul>
+          <li>brak wyjątków, no-throw, noexcept</li>
+          <li>silna, strong &#8211; może być wyjątek, ale jeśli będzie rzucony, to nie będzie skutków
+            ubocznych, albo operacja przejdzie albo <i>au revoir</i>, stan jak sprzed wywołania</li>
+          <li>słaba, weak  &#8211; po rzuceniu wyjątku obiekt będzie poprawny i używalny, ale mógł się
+            zmienić
+            np wkladamy 5 elementow, ale wejdą tylko 3 i pozostaje zbior poprawny i <b>używalny</b></li>
+          <li>brak gwarancji &#8211; diabli wzięli wszystko</li>
+        </ul>
+        <p><b>docelowo szukamy stronga wszędzie lub noexcepta</b> w tym zadaniu</p>
+        <h4>jak zapewnić silną gwarajcję?</h4>
+        <ol>
+          <li>działamy na kopii i potem <code>swap</code> (bezwyjątkowy) i mamy zrobione
+            minusy to ofc kopiowanie czegoś dużego</li>
+          <li>zał, że destruktory są <code>noexcept</code> (a gdyby byly wyjatki tam to dupa xd)</li>
+          <li>metody <code>const</code> dają <i>(na ogół)</i> silną gwarancję bo no nie zmienia się</li>
+          <li>korzystamy sami tylko z <code>noexcept</code>-ów i silnie gwarantowanych</li>
+        </ol>
+        <h5>z takimi założeniami trzeba jakoś ostrożnie dłubać</h5>
+        <p>case&#8217;y</p>
+        <ul>
+          <li>neoxcept i noexcept -&gt; noexcept</li>
+          <li>strong i potem noexcept -&gt; strong</li>
+          <li>noexcept i potem strong -&gt; weak, bo pierwszej nie cofniemy</li>
+          <li>weak i cokolwiek -&gt; weak</li>
+        </ul>
+        <p>unikać należy jakoś</p>
+        <h4>5. cofanie operacji</h4>
+        <p>robimy cofanie w try catchach jakoś</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="n">strong1</span><span class="p">;</span>
+<span class="n">try</span> <span class="p">{</span>
+  <span class="n">strong2</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">catch</span> <span class="p">(...)</span> <span class="p">{</span>
+  <span class="n">cofamy</span> <span class="n">strong1</span><span class="p">;</span>               <span class="c1">// noexcept</span>
+  <span class="n">throw</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+        </div>
+        <p>jak cofnąć i nie rzucić?
+          otóż np <code>erase(iterator)</code> jest noexcept prawie zawsze, jest jakaś tabelka
+          na iteratorach usuwanie jest bezwyjątkowe, więc można ładnie działać</p>
+        <p><b>najpierw szukamy iteratorów i potem dopiero sami kombinujemy</b></p>
+        <h4>6. strażnik</h4>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="n">class</span> <span class="n">Guard</span>
+<span class="p">{</span>
+  <span class="n">bool</span> <span class="n">reverse</span><span class="p">;</span>
+<span class="nl">public:</span>
+  <span class="n">Guard</span><span class="p">(...)</span> <span class="o">:</span> <span class="n">reverse</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="o">~</span><span class="n">Guard</span><span class="p">()</span> <span class="n">noexcept</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">reverse</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">czy</span><span class="err">ś</span><span class="n">cimy</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">done</span><span class="p">()</span> <span class="n">noexcept</span>
+  <span class="p">{</span>
+    <span class="n">reverse</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="p">{</span>
+  <span class="n">Guard</span> <span class="n">g</span><span class="p">(...);</span>
+  <span class="n">modyfikacje</span> <span class="n">obiektu</span><span class="p">;</span>
+  <span class="n">g</span><span class="p">.</span><span class="n">done</span><span class="p">();</span>
+<span class="p">}</span></code></pre>
+        </div>
+        <p>mniej try catchy tylko wypadający ze scope&#8217;a guard nam czyści, zaleznie gdzie wypadnie
+          to inne zachowanie bo done może być nieustawione</p>
+        <h3>operator <code>new</code></h3>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="n">C</span> <span class="nf">c</span><span class="p">(</span><span class="n">new</span> <span class="n">A</span><span class="p">);</span>                     <span class="c1">// źle, new moze byc zle, kto nam zwolni pamiec</span>
+
+<span class="n">shared_ptr</span><span class="p">(</span><span class="n">new</span> <span class="n">A</span><span class="p">);</span>              <span class="c1">// zle!!!!</span>
+<span class="n">make_shared</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">();</span>               <span class="c1">// bdb</span></code></pre>
+        </div>
+        <p>to nie gubi pamięci (w zadaniu będzie&#8230;)</p>
+        <h3>sprytne wskaźniki</h3>
+        <blockquote>
+          <p><b>nie używać jawnie operatora</b> <code>new</code>
+            byłby to błąd w tym zadaniu</p>
+        </blockquote>
+        <p>&#8211; <i>Peczar</i></p>
+        <h4>shared pointer</h4>
+        <p>używać ich do zarządzania pamięcią, ale ordynardne wsk też spoko i może nawet trzeba
+          (bo np cykl by nam rozjebał wskaźniki i zwolnienie pamięci)</p>
+        <p><code>shared_ptr</code> trzyma wsk na jakis obiekt i ten obiekt cos trzymac tez moze, aby byly
+          cykle to <code>weak_ptr</code> lub po prostu wskaźnik C-owski.</p>
+        <p>te cykle w implementacji gdzie indziej np:
+          rodzice są i potomkowie jacyś, w węźle rodzica lista <code>shared_ptr</code> dzieci, ale możemy
+          też jakoś od potomka do rodzica dowiązać i cykl w strukutrze, ale nie grafie</p>
+        <p>shared tylko na potomkow, a na parentow np ordynus?</p>
+        <h3>jak testwać odpornosc na wyjatki</h3>
+        <p>w klasie Virus wszystko rzuca wyjątki losowo prócz destr xd</p>
+        <div class="highlight">
+          <pre class="codehilite"><code><span class="c1">// np na operatorze zaleznie od throw value robimy coś rzucamy</span>
+
+<span class="kt">int</span> <span class="n">throw_value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">do</span> <span class="p">{</span>
+  <span class="n">init</span> <span class="n">struktury</span><span class="p">;</span>
+  <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">try</span> <span class="p">{</span>
+    <span class="n">co</span><span class="err">ś</span><span class="p">;</span>
+  <span class="p">}</span> <span class="n">catch</span> <span class="p">(...)</span> <span class="p">{</span>
+    <span class="n">test</span> <span class="n">silnej</span> <span class="n">gw</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="o">++</span><span class="n">throw_value</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">by</span><span class="err">ł</span> <span class="n">wyj</span><span class="err">ą</span><span class="n">tek</span><span class="p">);</span></code></pre>
+        </div>
+        <h3>iterator</h3>
+        <p>musi byc strzałka, dereferencja, inkrementacja i dekrementacja (prefix i postfix)
+          <code>bidirectional iterator</code> oraz <code>const</code></p>
+        <p><a id="linek" href="http://ideone.com/7YdiQY">tutaj</a> prawie identique jak we wzorc</p>
+        <p>postifksowe trikowo z intem (?)</p>
+        <p>nie jest to trudne <i>bardzo</i></p>
+        <p>opkowne pointery?</p>
+        <h3>addycje</h3>
+        <ul>
+          <li>public dziedziczenie po std::excption</li>
+          <li>delete kopiowanie i operator=</li>
+          <li><i>trzeba tę implementację zrobic jakoś rozsądnie</i></li>
+          <li>usunięcie ma na serio usuwać!!!</li>
+          <li>szukanie jakąś mapą pewnie bo nie liniowo</li>
+          <li>consty i noexcepty pilnować</li>
+          <li>nie kopiować</li>
+          <li><b>iterator</b></li>
+          <li>nie trzeba samemu testować czy wirus spełnia koncepty jakieś</li>
+          <li>valgrindyzacja będzie, najs..</li>
+        </ul>
+        <h3>coś tam</h3>
+        <p>jakiś ziomek daje <a id="linek" href="https://mimuw.edu.pl/~prutka/">swoje notatki</a></p>
+        <h3>wielkosc</h3>
+        <p>200 linijek kodu, ale <i>truuuudne</i></p>
+        <h2>pytania</h2>
+        <p><i>gówno</i></p>
+      </div>
+       <!-- fin_post_notatki-jnp1-z5 -->
+      <!--END_KURDE-->
+    </div>
+  </body>
+</html>
